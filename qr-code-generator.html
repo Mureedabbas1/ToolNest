@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free QR Code Generator Online | ToolNest</title>
+
+  <meta name="description" content="Create QR codes online for free with ToolNest. Generate QR codes for websites, URLs, text and more. Easy, fast and free.">
+
+  <meta name="keywords" content="QR code generator, free QR code generator, QR code maker, create QR code online, URL QR code, QR generator">
+
+  <meta name="author" content="ToolNest">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://mureedabbas1.github.io/ToolNest/qr-code-generator.html">
+
+  <meta property="og:title" content="Free QR Code Generator Online | ToolNest">
+  <meta property="og:description" content="Create free QR codes for websites, URLs and text with ToolNest.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mureedabbas1.github.io/ToolNest/qr-code-generator.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      color: #1e293b;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 38px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .tool-box,
+    .info {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    textarea {
+      width: 100%;
+      max-width: 650px;
+      min-height: 130px;
+      padding: 15px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 16px;
+      resize: vertical;
+      outline: none;
+    }
+
+    textarea:focus {
+      border-color: #6366f1;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 13px 22px;
+      margin: 15px 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #4f46e5;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .download {
+      background: #16a34a;
+      display: none;
+    }
+
+    #qrContainer {
+      margin: 25px auto;
+      min-height: 20px;
+    }
+
+    #qrImage {
+      max-width: 100%;
+      border-radius: 10px;
+      display: none;
+      margin: auto;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+      line-height: 1.7;
+    }
+
+    .info {
+      text-align: left;
+      margin-top: 30px;
+    }
+
+    .info h2,
+    .info h3 {
+      color: #4338ca;
+    }
+
+    .info h3 {
+      margin-top: 25px;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #64748b;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      .tool-box,
+      .info {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <h1>Free QR Code Generator</h1>
+
+  <p>
+    Create QR codes for URLs, websites and text
+  </p>
+
+  <a
+    class="home-link"
+    href="https://mureedabbas1.github.io/ToolNest/"
+  >
+    ← Back to ToolNest
+  </a>
+
+</header>
+
+
+<div class="container">
+
+  <div class="tool-box">
+
+    <h2>Create Your QR Code</h2>
+
+    <p>
+      Enter a website URL or any text below.
+    </p>
+
+    <textarea
+      id="qrText"
+      placeholder="Example: https://example.com"
+    ></textarea>
+
+    <br>
+
+    <button onclick="generateQR()">
+      Generate QR Code
+    </button>
+
+    <div id="qrContainer">
+
+      <img
+        id="qrImage"
+        alt="Generated QR Code"
+      >
+
+    </div>
+
+    <button
+      id="downloadBtn"
+      class="download"
+      onclick="downloadQR()"
+    >
+      Download QR Code
+    </button>
+
+    <div id="result"></div>
+
+  </div>
+
+
+  <div class="info">
+
+    <h2>
+      Free QR Code Generator Online
+    </h2>
+
+    <p>
+      ToolNest's free QR code generator allows you to create
+      QR codes for websites, URLs and text. Simply enter your
+      information and generate your QR code instantly.
+    </p>
+
+
+    <h3>
+      How to Create a QR Code
+    </h3>
+
+    <ol>
+
+      <li>
+        Enter your website URL or text.
+      </li>
+
+      <li>
+        Click the "Generate QR Code" button.
+      </li>
+
+      <li>
+        Your QR code will appear on the screen.
+      </li>
+
+      <li>
+        Click "Download QR Code" to save it.
+      </li>
+
+    </ol>
+
+
+    <h3>
+      What Can QR Codes Be Used For?
+    </h3>
+
+    <p>
+      QR codes can be used for websites, online menus,
+      contact information, marketing materials, product
+      packaging, event information and many other purposes.
+    </p>
+
+
+    <h3>
+      Is This QR Code Generator Free?
+    </h3>
+
+    <p>
+      Yes. ToolNest's QR code generator is free to use.
+    </p>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  © 2026 ToolNest — Free Online Tools for Everyone
+
+</footer>
+
+
+<script>
+
+  let qrURL = "";
+
+
+  function generateQR() {
+
+    const text =
+      document.getElementById("qrText").value.trim();
+
+    const qrImage =
+      document.getElementById("qrImage");
+
+    const downloadBtn =
+      document.getElementById("downloadBtn");
+
+    const result =
+      document.getElementById("result");
+
+
+    if (!text) {
+
+      alert("Please enter a URL or text first.");
+
+      return;
+
+    }
+
+
+    qrURL =
+      "https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=" +
+      encodeURIComponent(text);
+
+
+    qrImage.src = qrURL;
+
+    qrImage.style.display = "block";
+
+    downloadBtn.style.display = "inline-block";
+
+    result.innerHTML =
+      "QR code generated successfully.";
+
+  }
+
+
+  function downloadQR() {
+
+    if (!qrURL) {
+      return;
+    }
+
+
+    const link =
+      document.createElement("a");
+
+    link.href = qrURL;
+
+    link.target = "_blank";
+
+    link.download =
+      "toolnest-qr-code.png";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+  }
+
+</script>
+
+</body>
+</html>
