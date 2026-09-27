@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Image Compressor Online | ToolNest</title>
+
+  <meta name="description" content="Compress images online for free with ToolNest. Reduce JPG, PNG and WebP image file size while keeping good quality. No software required.">
+
+  <meta name="keywords" content="image compressor, compress image online, free image compressor, reduce image size, JPG compressor, PNG compressor, WebP compressor">
+
+  <meta name="author" content="ToolNest">
+
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://mureedabbas1.github.io/ToolNest/image-compressor.html">
+
+  <meta property="og:title" content="Free Image Compressor Online | ToolNest">
+  <meta property="og:description" content="Compress JPG, PNG and WebP images online for free with ToolNest.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mureedabbas1.github.io/ToolNest/image-compressor.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      color: #1e293b;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 38px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 17px;
+      opacity: 0.95;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .tool-box {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .upload-area {
+      border: 2px dashed #6366f1;
+      border-radius: 15px;
+      padding: 35px 20px;
+      margin-bottom: 25px;
+      background: #f8f7ff;
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+      padding: 10px;
+      max-width: 100%;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin: 15px 0 8px;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      max-width: 500px;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 13px 22px;
+      margin: 10px 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #4f46e5;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .download {
+      background: #16a34a;
+      display: none;
+    }
+
+    #preview {
+      max-width: 100%;
+      max-height: 350px;
+      margin: 20px auto;
+      border-radius: 10px;
+      display: none;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      line-height: 1.7;
+    }
+
+    .info {
+      background: white;
+      margin-top: 30px;
+      padding: 30px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+    }
+
+    .info h2 {
+      color: #4338ca;
+    }
+
+    .info h3 {
+      margin-top: 25px;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #64748b;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      .tool-box,
+      .info {
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <h1>Free Image Compressor</h1>
+  <p>Compress JPG, PNG and WebP images online for free</p>
+
+  <a class="home-link" href="https://mureedabbas1.github.io/ToolNest/">
+    ← Back to ToolNest
+  </a>
+</header>
+
+<div class="container">
+
+  <div class="tool-box">
+
+    <div class="upload-area">
+      <h2>Compress Your Image</h2>
+      <p>Select an image from your device</p>
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/jpeg,image/png,image/webp"
+      >
+    </div>
+
+    <img id="preview" alt="Image preview">
+
+    <label for="quality">
+      Compression Quality:
+      <span id="qualityValue">70</span>%
+    </label>
+
+    <input
+      type="range"
+      id="quality"
+      min="10"
+      max="100"
+      value="70"
+    >
+
+    <br>
+
+    <button onclick="compressImage()">
+      Compress Image
+    </button>
+
+    <button
+      id="downloadBtn"
+      class="download"
+      onclick="downloadImage()"
+    >
+      Download Compressed Image
+    </button>
+
+    <div id="result"></div>
+
+  </div>
+
+  <div class="info">
+
+    <h2>Free Image Compressor Online</h2>
+
+    <p>
+      ToolNest's free image compressor lets you reduce image file size
+      directly in your browser. You can compress JPG, PNG and WebP images
+      without installing any software.
+    </p>
+
+    <h3>How to Compress an Image</h3>
+
+    <ol>
+      <li>Select your image using the upload button.</li>
+      <li>Choose your preferred compression quality.</li>
+      <li>Click the <strong>Compress Image</strong> button.</li>
+      <li>Download your compressed image.</li>
+    </ol>
+
+    <h3>Why Compress Images?</h3>
+
+    <p>
+      Large images can take longer to upload and can use more storage.
+      Compressing images can reduce their file size and make them easier
+      to upload, share and store.
+    </p>
+
+    <h3>Is This Image Compressor Free?</h3>
+
+    <p>
+      Yes. ToolNest provides this image compressor free of charge.
+      Your selected image is processed directly in your browser.
+    </p>
+
+    <h3>Supported Image Formats</h3>
+
+    <p>
+      This tool supports common image formats including
+      <strong>JPG, PNG and WebP</strong>.
+    </p>
+
+  </div>
+
+</div>
+
+<footer>
+  © 2026 ToolNest — Free Online Tools for Everyone
+</footer>
+
+
+<script>
+
+  const imageInput = document.getElementById("imageInput");
+  const quality = document.getElementById("quality");
+  const qualityValue = document.getElementById("qualityValue");
+  const preview = document.getElementById("preview");
+  const result = document.getElementById("result");
+  const downloadBtn = document.getElementById("downloadBtn");
+
+  let compressedImage = null;
+
+  quality.addEventListener("input", function () {
+    qualityValue.textContent = quality.value;
+  });
+
+
+  imageInput.addEventListener("change", function () {
+
+    const file = imageInput.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+      preview.src = event.target.result;
+      preview.style.display = "block";
+    };
+
+    reader.readAsDataURL(file);
+
+    result.innerHTML = "";
+    downloadBtn.style.display = "none";
+  });
+
+
+  function compressImage() {
+
+    const file = imageInput.files[0];
+
+    if (!file) {
+      alert("Please select an image first.");
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+
+      const img = new Image();
+
+      img.onload = function () {
+
+        const canvas = document.createElement("canvas");
+        const ctx = canvas.getContext("2d");
+
+        canvas.width = img.width;
+        canvas.height = img.height;
+
+        ctx.drawImage(img, 0, 0);
+
+        const compressionQuality = parseInt(quality.value) / 100;
+
+        compressedImage = canvas.toDataURL(
+          "image/jpeg",
+          compressionQuality
+        );
+
+        const originalSize = file.size;
+
+        const base64Length = compressedImage.length - "data:image/jpeg;base64,".length;
+
+        const compressedSize = Math.round(
+          base64Length * 0.75
+        );
+
+        const reduction = Math.max(
+          0,
+          Math.round(
+            ((originalSize - compressedSize) / originalSize) * 100
+          )
+        );
+
+        result.innerHTML =
+          "Original size: " +
+          formatBytes(originalSize) +
+          "<br>" +
+          "Compressed size: " +
+          formatBytes(compressedSize) +
+          "<br>" +
+          "Approximate reduction: " +
+          reduction +
+          "%";
+
+        downloadBtn.style.display = "inline-block";
+
+      };
+
+      img.src = event.target.result;
+
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+
+  function downloadImage() {
+
+    if (!compressedImage) {
+      return;
+    }
+
+    const link = document.createElement("a");
+
+    link.href = compressedImage;
+    link.download = "toolnest-compressed-image.jpg";
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+  }
+
+
+  function formatBytes(bytes) {
+
+    if (bytes === 0) {
+      return "0 Bytes";
+    }
+
+    const sizes = [
+      "Bytes",
+      "KB",
+      "MB",
+      "GB"
+    ];
+
+    const i = Math.floor(
+      Math.log(bytes) / Math.log(1024)
+    );
+
+    return (
+      parseFloat(
+        (bytes / Math.pow(1024, i)).toFixed(2)
+      ) +
+      " " +
+      sizes[i]
+    );
+  }
+
+</script>
+
+</body>
+</html>
