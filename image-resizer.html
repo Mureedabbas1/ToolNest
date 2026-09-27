@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Image Resizer Online | Resize JPG PNG WebP | ToolNest</title>
+
+  <meta name="description" content="Resize JPG, PNG and WebP images online for free. Set custom width and height with ToolNest's easy image resizer.">
+
+  <meta name="keywords" content="image resizer, resize image online, free image resizer, resize JPG, resize PNG, resize WebP, change image dimensions">
+
+  <meta name="author" content="ToolNest">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://mureedabbas1.github.io/ToolNest/image-resizer.html">
+
+  <meta property="og:title" content="Free Image Resizer Online | ToolNest">
+  <meta property="og:description" content="Resize JPG, PNG and WebP images online for free with ToolNest.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mureedabbas1.github.io/ToolNest/image-resizer.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      color: #1e293b;
+    }
+
+    header {
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: white;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    header h1 {
+      margin: 0 0 10px;
+      font-size: 38px;
+    }
+
+    header p {
+      margin: 0;
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 35px auto;
+      padding: 0 20px;
+    }
+
+    .tool-box,
+    .info {
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+    }
+
+    .upload-area {
+      border: 2px dashed #6366f1;
+      border-radius: 15px;
+      padding: 35px 20px;
+      margin-bottom: 25px;
+      background: #f8f7ff;
+      text-align: center;
+    }
+
+    input[type="file"] {
+      margin: 15px 0;
+      max-width: 100%;
+    }
+
+    .dimensions {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin: 20px 0;
+    }
+
+    .dimension-box {
+      text-align: left;
+    }
+
+    .dimension-box label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 7px;
+    }
+
+    input[type="number"] {
+      width: 180px;
+      padding: 12px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+    .checkbox {
+      margin: 15px 0;
+    }
+
+    button {
+      border: none;
+      border-radius: 10px;
+      padding: 13px 22px;
+      margin: 10px 5px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      background: #4f46e5;
+      color: white;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    .download {
+      background: #16a34a;
+      display: none;
+    }
+
+    #preview {
+      max-width: 100%;
+      max-height: 350px;
+      display: none;
+      margin: 20px auto;
+      border-radius: 10px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+      line-height: 1.7;
+    }
+
+    .info {
+      margin-top: 30px;
+    }
+
+    .info h2,
+    .info h3 {
+      color: #4338ca;
+    }
+
+    .info h3 {
+      margin-top: 25px;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 20px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      color: #64748b;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 30px;
+      }
+
+      .tool-box,
+      .info {
+        padding: 20px;
+      }
+
+      input[type="number"] {
+        width: 100%;
+      }
+
+      .dimension-box {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+
+  <h1>Free Image Resizer</h1>
+
+  <p>
+    Resize JPG, PNG and WebP images online for free
+  </p>
+
+  <a
+    class="home-link"
+    href="https://mureedabbas1.github.io/ToolNest/"
+  >
+    ← Back to ToolNest
+  </a>
+
+</header>
+
+
+<div class="container">
+
+  <div class="tool-box">
+
+    <div class="upload-area">
+
+      <h2>Resize Your Image</h2>
+
+      <p>Select an image from your device</p>
+
+      <input
+        type="file"
+        id="imageInput"
+        accept="image/jpeg,image/png,image/webp"
+      >
+
+    </div>
+
+
+    <img
+      id="preview"
+      alt="Image preview"
+    >
+
+
+    <div class="dimensions">
+
+      <div class="dimension-box">
+
+        <label for="width">
+          Width (px)
+        </label>
+
+        <input
+          type="number"
+          id="width"
+          min="1"
+          placeholder="Width"
+        >
+
+      </div>
+
+
+      <div class="dimension-box">
+
+        <label for="height">
+          Height (px)
+        </label>
+
+        <input
+          type="number"
+          id="height"
+          min="1"
+          placeholder="Height"
+        >
+
+      </div>
+
+    </div>
+
+
+    <div class="checkbox">
+
+      <label>
+
+        <input
+          type="checkbox"
+          id="lockRatio"
+          checked
+        >
+
+        Keep aspect ratio
+
+      </label>
+
+    </div>
+
+
+    <button onclick="resizeImage()">
+      Resize Image
+    </button>
+
+
+    <button
+      id="downloadBtn"
+      class="download"
+      onclick="downloadImage()"
+    >
+      Download Resized Image
+    </button>
+
+
+    <div id="result"></div>
+
+  </div>
+
+
+  <div class="info">
+
+    <h2>
+      Free Image Resizer Online
+    </h2>
+
+    <p>
+      ToolNest's free image resizer lets you change the width and
+      height of your images directly in your browser. Resize JPG,
+      PNG and WebP images without installing software.
+    </p>
+
+
+    <h3>
+      How to Resize an Image
+    </h3>
+
+    <ol>
+
+      <li>
+        Select an image from your device.
+      </li>
+
+      <li>
+        Enter your desired width and height.
+      </li>
+
+      <li>
+        Keep "Keep aspect ratio" enabled if you want to maintain
+        the original proportions.
+      </li>
+
+      <li>
+        Click the "Resize Image" button.
+      </li>
+
+      <li>
+        Download your resized image.
+      </li>
+
+    </ol>
+
+
+    <h3>
+      Why Resize Images?
+    </h3>
+
+    <p>
+      Different websites, social media platforms and applications
+      may require specific image dimensions. Resizing an image can
+      help you meet those requirements.
+    </p>
+
+
+    <h3>
+      Supported Formats
+    </h3>
+
+    <p>
+      This image resizer supports common formats including
+      <strong>JPG, PNG and WebP</strong>.
+    </p>
+
+
+    <h3>
+      Is This Image Resizer Free?
+    </h3>
+
+    <p>
+      Yes. ToolNest provides this image resizer free to use.
+      Images are processed directly in your browser.
+    </p>
+
+  </div>
+
+</div>
+
+
+<footer>
+
+  © 2026 ToolNest — Free Online Tools for Everyone
+
+</footer>
+
+
+<script>
+
+  const imageInput =
+    document.getElementById("imageInput");
+
+  const widthInput =
+    document.getElementById("width");
+
+  const heightInput =
+    document.getElementById("height");
+
+  const lockRatio =
+    document.getElementById("lockRatio");
+
+  const preview =
+    document.getElementById("preview");
+
+  const result =
+    document.getElementById("result");
+
+  const downloadBtn =
+    document.getElementById("downloadBtn");
+
+  let originalWidth = 0;
+  let originalHeight = 0;
+  let resizedImage = null;
+
+
+  imageInput.addEventListener("change", function () {
+
+    const file = imageInput.files[0];
+
+    if (!file) {
+      return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function (event) {
+
+      preview.src = event.target.result;
+
+      preview.style.display = "block";
+
+      const img = new Image();
+
+      img.onload = function () {
+
+        originalWidth = img.width;
+        originalHeight = img.height;
+
+        widthInput.value = originalWidth;
+        heightInput.value = originalHeight;
+
+        result.innerHTML =
+          "Original dimensions: " +
+          originalWidth +
+          " × " +
+          originalHeight +
+          " px";
+
+      };
+
+      img.src = event.target.result;
+
+    };
+
+    reader.readAsDataURL(file);
+
+    downloadBtn.style.display = "none";
+
+  });
+
+
+  widthInput.addEventListener("input", function () {
+
+    if (
+      lockRatio.checked &&
+      originalWidth > 0 &&
+      widthInput.value
+    ) {
+
+      const newWidth =
+        parseInt(widthInput.value);
+
+      const newHeight =
+        Math.round(
+          newWidth *
+          originalHeight /
+          originalWidth
+        );
+
+      heightInput.value = newHeight;
+
+    }
+
+  });
+
+
+  heightInput.addEventListener("input", function () {
+
+    if (
+      lockRatio.checked &&
+      originalHeight > 0 &&
+      heightInput.value
+    ) {
+
+      const newHeight =
+        parseInt(heightInput.value);
+
+      const newWidth =
+        Math.round(
+          newHeight *
+          originalWidth /
+          originalHeight
+        );
+
+      widthInput.value = newWidth;
+
+    }
+
+  });
+
+
+  function resizeImage() {
+
+    const file = imageInput.files[0];
+
+    if (!file) {
+
+      alert("Please select an image first.");
+
+      return;
+
+    }
+
+
+    const newWidth =
+      parseInt(widthInput.value);
+
+    const newHeight =
+      parseInt(heightInput.value);
+
+
+    if (
+      !newWidth ||
+      !newHeight ||
+      newWidth < 1 ||
+      newHeight < 1
+    ) {
+
+      alert("Please enter valid width and height.");
+
+      return;
+
+    }
+
+
+    const reader = new FileReader();
+
+
+    reader.onload = function (event) {
+
+      const img = new Image();
+
+
+      img.onload = function () {
+
+        const canvas =
+          document.createElement("canvas");
+
+        const ctx =
+          canvas.getContext("2d");
+
+
+        canvas.width = newWidth;
+        canvas.height = newHeight;
+
+
+        ctx.drawImage(
+          img,
+          0,
+          0,
+          newWidth,
+          newHeight
+        );
+
+
+        resizedImage =
+          canvas.toDataURL(
+            "image/jpeg",
+            0.92
+          );
+
+
+        result.innerHTML =
+          "Original: " +
+          img.width +
+          " × " +
+          img.height +
+          " px<br>" +
+          "New size: " +
+          newWidth +
+          " × " +
+          newHeight +
+          " px";
+
+
+        downloadBtn.style.display =
+          "inline-block";
+
+      };
+
+
+      img.src = event.target.result;
+
+    };
+
+
+    reader.readAsDataURL(file);
+
+  }
+
+
+  function downloadImage() {
+
+    if (!resizedImage) {
+      return;
+    }
+
+
+    const link =
+      document.createElement("a");
+
+
+    link.href =
+      resizedImage;
+
+
+    link.download =
+      "toolnest-resized-image.jpg";
+
+
+    document.body.appendChild(link);
+
+    link.click();
+
+    document.body.removeChild(link);
+
+  }
+
+</script>
+
+</body>
+</html>
