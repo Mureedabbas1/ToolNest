@@ -1,629 +1,636 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>ToolNest - Free Online Tools</title>
-
-<meta name="description" content="ToolNest - Simple, fast and free online tools for images, PDFs, text and everyday tasks.">
+<meta name="description" content="ToolNest - Free online image, PDF and QR tools. Fast, simple and free tools for everyone.">
+<meta name="keywords" content="image compressor, image resizer, jpg to png, qr generator, pdf tools, free online tools">
+<title>ToolNest ✦ Free Online Tools</title>
 
 <style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
-
+*{box-sizing:border-box;margin:0;padding:0}
 body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f8f7ff;
-    color:#202033;
+  font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg,#f8f7ff,#eef5ff);
+  color:#20243a;
+  line-height:1.6;
 }
-
-/* NAVBAR */
-
-.navbar{
-    background:rgba(255,255,255,0.9);
-    backdrop-filter:blur(12px);
-    padding:18px 7%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    border-bottom:1px solid #eeeafd;
-    position:sticky;
-    top:0;
-    z-index:10;
+nav{
+  position:sticky;top:0;z-index:10;
+  background:rgba(255,255,255,.92);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid #e7e8f2;
+  padding:16px 6%;
+  display:flex;justify-content:space-between;align-items:center;
 }
-
-.logo{
-    font-size:25px;
-    font-weight:800;
-    color:#6c4df6;
-    letter-spacing:-1px;
-}
-
-.nav-btn{
-    text-decoration:none;
-    color:#55516b;
-    font-size:14px;
-}
-
-/* HERO */
-
+.logo{font-size:25px;font-weight:800;color:#6257d9}
+nav a{text-decoration:none;color:#454861;font-weight:600}
 .hero{
-    text-align:center;
-    padding:75px 20px 55px;
-    background:
-    radial-gradient(circle at 20% 20%,#e9ddff 0,transparent 30%),
-    radial-gradient(circle at 80% 10%,#d9f4ff 0,transparent 30%),
-    #f8f7ff;
+  text-align:center;
+  padding:75px 20px 55px;
 }
-
 .badge{
-    display:inline-block;
-    background:#eee9ff;
-    color:#6546df;
-    padding:8px 16px;
-    border-radius:30px;
-    font-size:13px;
-    font-weight:bold;
-    margin-bottom:20px;
+  display:inline-block;
+  background:#e9e6ff;
+  color:#5d50d0;
+  padding:7px 16px;
+  border-radius:30px;
+  font-weight:700;
+  margin-bottom:18px;
 }
-
-.hero h1{
-    font-size:52px;
-    line-height:1.1;
-    max-width:750px;
-    margin:auto;
-    letter-spacing:-2px;
+h1{
+  font-size:clamp(38px,7vw,65px);
+  line-height:1.05;
+  margin-bottom:20px;
 }
-
-.hero h1 span{
-    background:linear-gradient(90deg,#6c4df6,#9b65ff,#37bde8);
-    -webkit-background-clip:text;
-    color:transparent;
-}
-
 .hero p{
-    max-width:620px;
-    margin:20px auto;
-    color:#706d82;
-    font-size:18px;
-    line-height:1.6;
+  max-width:680px;
+  margin:auto;
+  color:#686d82;
+  font-size:18px;
 }
-
-/* MAIN */
-
 .container{
-    max-width:1050px;
-    margin:auto;
-    padding:20px;
+  width:min(1100px,92%);
+  margin:auto;
 }
-
-/* TOOL */
-
-.tool{
-    background:white;
-    padding:40px;
-    border-radius:25px;
-    box-shadow:0 15px 50px rgba(80,60,150,.10);
-    border:1px solid #eeeaff;
-    text-align:center;
-    max-width:750px;
-    margin:0 auto 55px;
-}
-
-.tool-title{
-    font-size:25px;
-    margin-bottom:8px;
-}
-
-.tool-subtitle{
-    color:#858196;
-    margin-bottom:25px;
-}
-
-.upload{
-    display:block;
-    border:2px dashed #cfc6f8;
-    background:#faf9ff;
-    padding:45px 20px;
-    border-radius:20px;
-    cursor:pointer;
-    transition:.25s;
-}
-
-.upload:hover{
-    background:#f3efff;
-    border-color:#8b70f5;
-    transform:translateY(-2px);
-}
-
-.upload-icon{
-    font-size:45px;
-    margin-bottom:12px;
-}
-
-.upload strong{
-    color:#4c4663;
-}
-
-.upload small{
-    display:block;
-    margin-top:8px;
-    color:#9994aa;
-}
-
-input[type=file]{
-    display:none;
-}
-
-#status{
-    margin:20px 0;
-    color:#655e7d;
-    font-size:14px;
-}
-
-.main-btn{
-    border:none;
-    color:white;
-    padding:14px 28px;
-    border-radius:12px;
-    font-size:16px;
-    font-weight:bold;
-    cursor:pointer;
-    background:linear-gradient(135deg,#6c4df6,#8b62ff);
-    box-shadow:0 8px 20px rgba(108,77,246,.25);
-    transition:.25s;
-}
-
-.main-btn:hover{
-    transform:translateY(-2px);
-    box-shadow:0 12px 25px rgba(108,77,246,.32);
-}
-
-#download{
-    display:none;
-    margin-top:18px;
-    text-decoration:none;
-    background:linear-gradient(135deg,#20b486,#37c99a);
-    color:white;
-    padding:13px 25px;
-    border-radius:12px;
-    font-weight:bold;
-}
-
-/* TOOLS */
-
-.section-title{
-    text-align:center;
-    font-size:30px;
-    margin-bottom:10px;
-}
-
-.section-text{
-    text-align:center;
-    color:#858196;
-    margin-bottom:30px;
-}
-
 .tools{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(210px,1fr));
-    gap:20px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+  gap:22px;
+  padding-bottom:70px;
 }
-
 .card{
-    background:white;
-    padding:28px 22px;
-    border-radius:20px;
-    border:1px solid #eeeaff;
-    box-shadow:0 8px 25px rgba(60,50,120,.06);
-    transition:.25s;
+  background:#fff;
+  border:1px solid #e7e8f2;
+  border-radius:22px;
+  padding:27px;
+  box-shadow:0 10px 30px rgba(57,54,100,.07);
 }
-
-.card:hover{
-    transform:translateY(-5px);
-    box-shadow:0 15px 35px rgba(60,50,120,.11);
+.icon{font-size:38px;margin-bottom:10px}
+.card h2{font-size:23px;margin-bottom:7px}
+.card p{color:#707589;margin-bottom:20px}
+.upload{
+  border:2px dashed #c9c7e8;
+  border-radius:15px;
+  padding:25px 15px;
+  text-align:center;
+  cursor:pointer;
+  background:#fafaff;
+  margin-bottom:15px;
 }
-
-.card-icon{
-    width:55px;
-    height:55px;
-    border-radius:15px;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:27px;
-    background:#f0ecff;
-    margin-bottom:17px;
+.upload:hover{background:#f4f2ff}
+input[type=file]{display:none}
+input[type=number],input[type=text],select{
+  width:100%;
+  padding:12px;
+  border:1px solid #d9dbe8;
+  border-radius:10px;
+  margin:6px 0 12px;
+  font-size:15px;
 }
-
-.card h3{
-    margin-bottom:8px;
-    font-size:18px;
+.row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:10px;
 }
-
-.card p{
-    color:#89849a;
-    font-size:14px;
-    line-height:1.5;
+button,.download{
+  border:0;
+  background:#6559dc;
+  color:white;
+  padding:12px 18px;
+  border-radius:10px;
+  cursor:pointer;
+  font-weight:700;
+  font-size:15px;
+  text-decoration:none;
+  display:inline-block;
 }
-
-.coming{
-    display:inline-block;
-    margin-top:12px;
-    font-size:11px;
-    background:#f1eff6;
-    color:#777185;
-    padding:5px 9px;
-    border-radius:20px;
+button:hover,.download:hover{background:#5146c8}
+.secondary{
+  background:#ecebfa;
+  color:#5148aa;
 }
-
-/* FOOTER */
-
+.result{
+  margin-top:15px;
+  padding:12px;
+  border-radius:10px;
+  background:#f5f5fb;
+  display:none;
+}
+.preview{
+  max-width:100%;
+  max-height:220px;
+  border-radius:12px;
+  margin:12px 0;
+  display:none;
+}
+hr{
+  border:0;
+  border-top:1px solid #ececf4;
+  margin:18px 0;
+}
+.note{
+  font-size:13px;
+  color:#777b8e;
+  margin-top:8px;
+}
 footer{
-    margin-top:70px;
-    background:#201b38;
-    color:#aaa5bb;
-    text-align:center;
-    padding:35px 20px;
+  text-align:center;
+  padding:35px 20px;
+  border-top:1px solid #e5e6ef;
+  color:#737789;
+  background:white;
 }
-
-footer strong{
-    color:white;
-}
-
-footer p{
-    margin-top:8px;
-    font-size:13px;
-}
-
-/* MOBILE */
-
+.success{color:#16834b;font-weight:700}
+.error{color:#c63e3e;font-weight:700}
 @media(max-width:600px){
-
-    .hero{
-        padding:55px 18px 40px;
-    }
-
-    .hero h1{
-        font-size:38px;
-    }
-
-    .hero p{
-        font-size:16px;
-    }
-
-    .tool{
-        padding:25px 18px;
-    }
-
-    .navbar{
-        padding:16px 20px;
-    }
-
+  nav{padding:14px 5%}
+  .hero{padding-top:50px}
+  .tools{grid-template-columns:1fr}
+  .row{grid-template-columns:1fr}
 }
-
 </style>
 </head>
 
 <body>
 
-<nav class="navbar">
-
-    <div class="logo">ToolNest ✦</div>
-
-    <a class="nav-btn" href="#tools">
-        Explore Tools
-    </a>
-
+<nav>
+  <div class="logo">ToolNest ✦</div>
+  <a href="#tools">Explore Tools</a>
 </nav>
 
-
 <section class="hero">
-
-    <div class="badge">
-        ✨ Simple • Fast • Free
-    </div>
-
-    <h1>
-        Useful tools for your
-        <span>everyday life.</span>
-    </h1>
-
-    <p>
-        Compress images, convert files and use helpful online tools
-        without complicated software.
-    </p>
-
+  <div class="badge">✨ Simple • Fast • Free</div>
+  <h1>Useful tools for your everyday life.</h1>
+  <p>
+    Compress images, resize photos, convert JPG to PNG,
+    create QR codes and use helpful PDF tools — directly in your browser.
+  </p>
 </section>
 
-
-<div class="container">
+<main class="container">
+<section class="tools" id="tools">
 
 <!-- IMAGE COMPRESSOR -->
+<div class="card">
+  <div class="icon">🖼️</div>
+  <h2>Image Compressor</h2>
+  <p>Reduce image size while keeping good quality.</p>
 
-<div class="tool">
+  <label class="upload">
+    <strong>☁️ Click to choose an image</strong><br>
+    JPG • PNG • WebP
+    <input type="file" id="compressFile" accept="image/*">
+  </label>
 
-    <h2 class="tool-title">
-        🖼️ Free Image Compressor
-    </h2>
-
-    <p class="tool-subtitle">
-        Make your images smaller in seconds.
-    </p>
-
-    <label class="upload" for="imageInput">
-
-        <div class="upload-icon">☁️</div>
-
-        <strong>
-            Click to choose an image
-        </strong>
-
-        <small>
-            JPG • PNG • WebP
-        </small>
-
-    </label>
-
-    <input
-        type="file"
-        id="imageInput"
-        accept="image/*"
-    >
-
-    <div id="status"></div>
-
-    <button
-        class="main-btn"
-        onclick="compressImage()"
-    >
-        Compress Image
-    </button>
-
-    <br>
-
-    <a
-        id="download"
-        download="toolnest-compressed.jpg"
-    >
-        ↓ Download Compressed Image
-    </a>
-
+  <button onclick="compressImage()">Compress Image</button>
+  <div id="compressResult" class="result"></div>
 </div>
 
+<!-- IMAGE RESIZER -->
+<div class="card">
+  <div class="icon">📐</div>
+  <h2>Image Resizer</h2>
+  <p>Resize an image to your required width and height.</p>
 
-<!-- OTHER TOOLS -->
+  <label class="upload">
+    <strong>📷 Choose image</strong><br>
+    JPG • PNG • WebP
+    <input type="file" id="resizeFile" accept="image/*">
+  </label>
 
-<section id="tools">
-
-    <h2 class="section-title">
-        Explore Our Tools
-    </h2>
-
-    <p class="section-text">
-        More useful tools are coming to ToolNest.
-    </p>
-
-
-    <div class="tools">
-
-        <div class="card">
-
-            <div class="card-icon">📐</div>
-
-            <h3>Image Resizer</h3>
-
-            <p>
-                Resize images quickly for websites,
-                social media and documents.
-            </p>
-
-            <span class="coming">
-                COMING SOON
-            </span>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🔄</div>
-
-            <h3>JPG to PNG</h3>
-
-            <p>
-                Convert JPG images into PNG format
-                easily.
-            </p>
-
-            <span class="coming">
-                COMING SOON
-            </span>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">📄</div>
-
-            <h3>PDF Tools</h3>
-
-            <p>
-                Useful PDF tools for everyday
-                documents and files.
-            </p>
-
-            <span class="coming">
-                COMING SOON
-            </span>
-
-        </div>
-
-
-        <div class="card">
-
-            <div class="card-icon">🔗</div>
-
-            <h3>QR Generator</h3>
-
-            <p>
-                Create QR codes for links,
-                information and businesses.
-            </p>
-
-            <span class="coming">
-                COMING SOON
-            </span>
-
-        </div>
-
+  <div class="row">
+    <div>
+      <label>Width (px)</label>
+      <input type="number" id="resizeWidth" placeholder="800">
     </div>
+    <div>
+      <label>Height (px)</label>
+      <input type="number" id="resizeHeight" placeholder="600">
+    </div>
+  </div>
+
+  <button onclick="resizeImage()">Resize & Download</button>
+  <div id="resizeResult" class="result"></div>
+</div>
+
+<!-- JPG TO PNG -->
+<div class="card">
+  <div class="icon">🔄</div>
+  <h2>JPG to PNG</h2>
+  <p>Convert JPG/JPEG images into PNG format.</p>
+
+  <label class="upload">
+    <strong>📁 Choose JPG image</strong><br>
+    JPG • JPEG
+    <input type="file" id="jpgFile" accept=".jpg,.jpeg,image/jpeg">
+  </label>
+
+  <button onclick="convertPNG()">Convert to PNG</button>
+  <div id="pngResult" class="result"></div>
+</div>
+
+<!-- QR GENERATOR -->
+<div class="card">
+  <div class="icon">🔗</div>
+  <h2>QR Code Generator</h2>
+  <p>Create a QR code for a website, text or contact information.</p>
+
+  <input type="text" id="qrText" placeholder="https://example.com">
+
+  <button onclick="generateQR()">Generate QR Code</button>
+
+  <div id="qrBox" class="result" style="text-align:center">
+    <canvas id="qrCanvas"></canvas>
+    <br>
+    <a id="qrDownload" class="download" download="toolnest-qr.png">
+      Download QR
+    </a>
+  </div>
+
+  <p class="note">QR generation works directly in your browser.</p>
+</div>
+
+<!-- PDF TEXT TOOL -->
+<div class="card">
+  <div class="icon">📄</div>
+  <h2>PDF Text Tool</h2>
+  <p>Create a simple PDF document from your text.</p>
+
+  <input type="text" id="pdfTitle" placeholder="Document title">
+
+  <textarea id="pdfText"
+    placeholder="Write your text here..."
+    style="width:100%;height:150px;padding:12px;border:1px solid #d9dbe8;border-radius:10px;resize:vertical;font-family:Arial;margin-bottom:12px">
+  </textarea>
+
+  <button onclick="createPDF()">Create PDF</button>
+  <div id="pdfResult" class="result"></div>
+</div>
+
+<!-- IMAGE FORMAT -->
+<div class="card">
+  <div class="icon">🎨</div>
+  <h2>Image Converter</h2>
+  <p>Convert an image to JPG format directly in your browser.</p>
+
+  <label class="upload">
+    <strong>🖼️ Choose image</strong><br>
+    PNG • WebP • JPG
+    <input type="file" id="jpgConvertFile" accept="image/*">
+  </label>
+
+  <button onclick="convertJPG()">Convert to JPG</button>
+  <div id="jpgResult" class="result"></div>
+</div>
 
 </section>
-
-</div>
-
+</main>
 
 <footer>
-
-    <strong>ToolNest ✦</strong>
-
-    <p>
-        Free online tools for everyone.
-    </p>
-
-    <p>
-        © 2026 ToolNest. All rights reserved.
-    </p>
-
+  <strong>ToolNest ✦</strong>
+  <p>Free online tools for everyone.</p>
+  <p>© 2026 ToolNest. All rights reserved.</p>
 </footer>
-
 
 <script>
 
-let selectedImage = null;
-
-document
-.getElementById("imageInput")
-.addEventListener("change", function(e){
-
-    selectedImage = e.target.files[0];
-
-    if(selectedImage){
-
-        document.getElementById("status").innerText =
-        "✓ " + selectedImage.name + " selected";
-
-    }
-
-});
-
+/* ---------- IMAGE COMPRESSOR ---------- */
 
 function compressImage(){
+  const file=document.getElementById("compressFile").files[0];
+  const result=document.getElementById("compressResult");
 
-    if(!selectedImage){
+  if(!file){
+    result.style.display="block";
+    result.innerHTML='<span class="error">Please choose an image first.</span>';
+    return;
+  }
 
-        document.getElementById("status").innerText =
-        "Please choose an image first.";
+  const img=new Image();
+  const reader=new FileReader();
 
-        return;
+  reader.onload=e=>{
+    img.onload=()=>{
+      const canvas=document.createElement("canvas");
+      const ctx=canvas.getContext("2d");
 
-    }
+      canvas.width=img.width;
+      canvas.height=img.height;
+      ctx.drawImage(img,0,0);
 
+      canvas.toBlob(blob=>{
+        const url=URL.createObjectURL(blob);
 
-    document.getElementById("status").innerText =
-    "Compressing your image...";
+        result.style.display="block";
+        result.innerHTML=
+          '<span class="success">Image compressed successfully!</span><br>'+
+          'Original: '+formatBytes(file.size)+'<br>'+
+          'New size: '+formatBytes(blob.size)+'<br><br>'+
+          '<a class="download" href="'+url+'" download="compressed-image.jpg">Download Image</a>';
+      },"image/jpeg",0.65);
+    };
+    img.src=e.target.result;
+  };
 
-
-    const reader = new FileReader();
-
-
-    reader.onload = function(e){
-
-        const img = new Image();
-
-
-        img.onload = function(){
-
-            const canvas =
-            document.createElement("canvas");
-
-            const ctx =
-            canvas.getContext("2d");
-
-
-            let width = img.width;
-            let height = img.height;
-
-
-            const maxWidth = 1600;
-
-
-            if(width > maxWidth){
-
-                height =
-                height * maxWidth / width;
-
-                width = maxWidth;
-
-            }
+  reader.readAsDataURL(file);
+}
 
 
-            canvas.width = width;
-            canvas.height = height;
+/* ---------- IMAGE RESIZER ---------- */
 
+function resizeImage(){
+  const file=document.getElementById("resizeFile").files[0];
+  const width=parseInt(document.getElementById("resizeWidth").value);
+  const height=parseInt(document.getElementById("resizeHeight").value);
+  const result=document.getElementById("resizeResult");
 
-            ctx.drawImage(
-                img,
-                0,
-                0,
-                width,
-                height
-            );
+  if(!file){
+    showError(result,"Please choose an image first.");
+    return;
+  }
 
+  if(!width || !height || width<1 || height<1){
+    showError(result,"Please enter a valid width and height.");
+    return;
+  }
 
-            canvas.toBlob(function(blob){
+  const reader=new FileReader();
+  const img=new Image();
 
-                const url =
-                URL.createObjectURL(blob);
+  reader.onload=e=>{
+    img.onload=()=>{
+      const canvas=document.createElement("canvas");
+      canvas.width=width;
+      canvas.height=height;
 
+      const ctx=canvas.getContext("2d");
+      ctx.drawImage(img,0,0,width,height);
 
-                const download =
-                document.getElementById("download");
+      canvas.toBlob(blob=>{
+        const url=URL.createObjectURL(blob);
 
-
-                download.href = url;
-
-                download.style.display =
-                "inline-block";
-
-
-                document.getElementById("status")
-                .innerText =
-                "✓ Image compressed successfully!";
-
-
-            },"image/jpeg",0.7);
-
-        };
-
-
-        img.src = e.target.result;
-
+        result.style.display="block";
+        result.innerHTML=
+          '<span class="success">Image resized successfully!</span><br><br>'+
+          '<a class="download" href="'+url+'" download="resized-image.jpg">Download Resized Image</a>';
+      },"image/jpeg",0.9);
     };
 
+    img.src=e.target.result;
+  };
 
-    reader.readAsDataURL(selectedImage);
+  reader.readAsDataURL(file);
+}
 
+
+/* ---------- JPG TO PNG ---------- */
+
+function convertPNG(){
+  const file=document.getElementById("jpgFile").files[0];
+  const result=document.getElementById("pngResult");
+
+  if(!file){
+    showError(result,"Please choose a JPG image first.");
+    return;
+  }
+
+  const reader=new FileReader();
+  const img=new Image();
+
+  reader.onload=e=>{
+    img.onload=()=>{
+      const canvas=document.createElement("canvas");
+      canvas.width=img.width;
+      canvas.height=img.height;
+
+      const ctx=canvas.getContext("2d");
+      ctx.drawImage(img,0,0);
+
+      canvas.toBlob(blob=>{
+        const url=URL.createObjectURL(blob);
+
+        result.style.display="block";
+        result.innerHTML=
+          '<span class="success">Converted to PNG successfully!</span><br><br>'+
+          '<a class="download" href="'+url+'" download="converted-image.png">Download PNG</a>';
+      },"image/png");
+    };
+
+    img.src=e.target.result;
+  };
+
+  reader.readAsDataURL(file);
+}
+
+
+/* ---------- IMAGE TO JPG ---------- */
+
+function convertJPG(){
+  const file=document.getElementById("jpgConvertFile").files[0];
+  const result=document.getElementById("jpgResult");
+
+  if(!file){
+    showError(result,"Please choose an image first.");
+    return;
+  }
+
+  const reader=new FileReader();
+  const img=new Image();
+
+  reader.onload=e=>{
+    img.onload=()=>{
+      const canvas=document.createElement("canvas");
+      canvas.width=img.width;
+      canvas.height=img.height;
+
+      const ctx=canvas.getContext("2d");
+
+      /* White background for transparent PNG images */
+      ctx.fillStyle="#ffffff";
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+
+      ctx.drawImage(img,0,0);
+
+      canvas.toBlob(blob=>{
+        const url=URL.createObjectURL(blob);
+
+        result.style.display="block";
+        result.innerHTML=
+          '<span class="success">Converted to JPG successfully!</span><br><br>'+
+          '<a class="download" href="'+url+'" download="converted-image.jpg">Download JPG</a>';
+      },"image/jpeg",0.9);
+    };
+
+    img.src=e.target.result;
+  };
+
+  reader.readAsDataURL(file);
+}
+
+
+/* ---------- QR GENERATOR ---------- */
+
+function generateQR(){
+  const text=document.getElementById("qrText").value.trim();
+  const box=document.getElementById("qrBox");
+  const canvas=document.getElementById("qrCanvas");
+  const download=document.getElementById("qrDownload");
+
+  if(!text){
+    box.style.display="block";
+    box.innerHTML='<span class="error">Please enter a link or text.</span>';
+    return;
+  }
+
+  /*
+    Simple QR-style generator using a public QR image service.
+    The generated image can be downloaded from the browser.
+  */
+
+  const img=new Image();
+  img.crossOrigin="anonymous";
+
+  img.onload=function(){
+    canvas.width=300;
+    canvas.height=300;
+
+    const ctx=canvas.getContext("2d");
+    ctx.drawImage(img,0,0,300,300);
+
+    box.style.display="block";
+    download.href=canvas.toDataURL("image/png");
+  };
+
+  img.onerror=function(){
+    box.style.display="block";
+    box.innerHTML='<span class="error">QR could not be generated. Please check your internet connection.</span>';
+  };
+
+  img.src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(text);
+}
+
+
+/* ---------- SIMPLE PDF CREATOR ---------- */
+
+function createPDF(){
+  const title=document.getElementById("pdfTitle").value.trim() || "ToolNest Document";
+  const text=document.getElementById("pdfText").value.trim();
+  const result=document.getElementById("pdfResult");
+
+  if(!text){
+    showError(result,"Please write some text first.");
+    return;
+  }
+
+  /*
+    Creates a very simple PDF file without a server.
+    Suitable for basic text documents.
+  */
+
+  const lines=text.split("\n");
+  let content="BT\n/F1 18 Tf\n50 780 Td\n";
+
+  content+="("+escapePDF(title)+") Tj\n";
+  content+="/F1 11 Tf\n0 -30 Td\n";
+
+  lines.forEach(line=>{
+    const wrapped=wrapText(line,85);
+
+    wrapped.forEach(part=>{
+      content+="("+escapePDF(part)+") Tj\n0 -16 Td\n";
+    });
+  });
+
+  content+="ET";
+
+  const pdf=createPDFFile(content);
+  const blob=new Blob([pdf],{type:"application/pdf"});
+  const url=URL.createObjectURL(blob);
+
+  result.style.display="block";
+  result.innerHTML=
+    '<span class="success">PDF created successfully!</span><br><br>'+
+    '<a class="download" href="'+url+'" download="toolnest-document.pdf">Download PDF</a>';
+}
+
+function escapePDF(str){
+  return str
+    .replace(/\\/g,"\\\\")
+    .replace(/\(/g,"\\(")
+    .replace(/\)/g,"\\)")
+    .replace(/[^\x00-\x7F]/g,"?");
+}
+
+function wrapText(text,max){
+  const words=text.split(/\s+/);
+  const lines=[];
+  let current="";
+
+  words.forEach(word=>{
+    if((current+" "+word).trim().length<=max){
+      current=(current+" "+word).trim();
+    }else{
+      if(current) lines.push(current);
+      current=word;
+    }
+  });
+
+  if(current) lines.push(current);
+  return lines.length?lines:[""];
+}
+
+function createPDFFile(content){
+
+  const objects=[];
+
+  objects[1]="<< /Type /Catalog /Pages 2 0 R >>";
+  objects[2]="<< /Type /Pages /Kids [3 0 R] /Count 1 >>";
+  objects[3]="<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>";
+  objects[4]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
+  objects[5]="<< /Length "+content.length+" >>\nstream\n"+content+"\nendstream";
+
+  let pdf="%PDF-1.4\n";
+  const offsets=[0];
+
+  for(let i=1;i<objects.length;i++){
+    offsets[i]=pdf.length;
+    pdf+=i+" 0 obj\n"+objects[i]+"\nendobj\n";
+  }
+
+  const xref=pdf.length;
+
+  pdf+="xref\n0 "+objects.length+"\n";
+  pdf+="0000000000 65535 f \n";
+
+  for(let i=1;i<objects.length;i++){
+    pdf+=String(offsets[i]).padStart(10,"0")+" 00000 n \n";
+  }
+
+  pdf+="trailer\n<< /Size "+objects.length+" /Root 1 0 R >>\n";
+  pdf+="startxref\n"+xref+"\n%%EOF";
+
+  return pdf;
+}
+
+
+/* ---------- HELPERS ---------- */
+
+function formatBytes(bytes){
+  if(bytes===0)return "0 Bytes";
+  const sizes=["Bytes","KB","MB","GB"];
+  const i=Math.floor(Math.log(bytes)/Math.log(1024));
+  return parseFloat((bytes/Math.pow(1024,i)).toFixed(2))+" "+sizes[i];
+}
+
+function showError(element,message){
+  element.style.display="block";
+  element.innerHTML='<span class="error">'+message+'</span>';
 }
 
 </script>
 
 </body>
 </html>
+```
