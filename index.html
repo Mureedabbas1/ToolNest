@@ -1,154 +1,351 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="ToolNest - Free online image, PDF and QR tools. Fast, simple and free tools for everyone.">
-<meta name="keywords" content="image compressor, image resizer, jpg to png, qr generator, pdf tools, free online tools">
+
+<meta name="description" content="ToolNest - Free online tools for images, text, QR codes, calculators and documents. Fast, simple and free.">
+<meta name="keywords" content="free online tools, image compressor, image resizer, jpg to png, qr generator, word counter, case converter, age calculator, percentage calculator">
+<meta name="author" content="ToolNest">
+
 <title>ToolNest ✦ Free Online Tools</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
 body{
   font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(135deg,#f8f7ff,#eef5ff);
   color:#20243a;
-  line-height:1.6;
+  background:
+    radial-gradient(circle at 10% 10%,#e7e2ff 0,transparent 30%),
+    radial-gradient(circle at 90% 20%,#dff4ff 0,transparent 28%),
+    linear-gradient(135deg,#fafaff,#f1f6ff);
+  min-height:100vh;
 }
+
 nav{
-  position:sticky;top:0;z-index:10;
-  background:rgba(255,255,255,.92);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid #e7e8f2;
-  padding:16px 6%;
-  display:flex;justify-content:space-between;align-items:center;
+  position:sticky;
+  top:0;
+  z-index:100;
+  padding:15px 6%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:rgba(255,255,255,.88);
+  backdrop-filter:blur(15px);
+  border-bottom:1px solid #e6e7f0;
 }
-.logo{font-size:25px;font-weight:800;color:#6257d9}
-nav a{text-decoration:none;color:#454861;font-weight:600}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  text-decoration:none;
+  color:#25233d;
+  font-weight:900;
+  font-size:25px;
+}
+
+.logo-mark{
+  width:40px;
+  height:40px;
+  border-radius:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  background:linear-gradient(135deg,#7567ed,#4b8cff);
+  box-shadow:0 8px 20px rgba(91,82,220,.25);
+  font-size:22px;
+}
+
+.logo span{
+  color:#6659df;
+}
+
+nav a{
+  text-decoration:none;
+  color:#555a70;
+  font-weight:700;
+}
+
 .hero{
   text-align:center;
   padding:75px 20px 55px;
 }
+
 .badge{
   display:inline-block;
+  padding:8px 17px;
+  border-radius:50px;
   background:#e9e6ff;
-  color:#5d50d0;
-  padding:7px 16px;
-  border-radius:30px;
-  font-weight:700;
-  margin-bottom:18px;
-}
-h1{
-  font-size:clamp(38px,7vw,65px);
-  line-height:1.05;
+  color:#5c50ce;
+  font-weight:800;
   margin-bottom:20px;
 }
+
+.hero h1{
+  max-width:850px;
+  margin:auto;
+  font-size:clamp(42px,7vw,72px);
+  line-height:1.03;
+  letter-spacing:-2px;
+}
+
+.gradient-text{
+  background:linear-gradient(90deg,#5f51dc,#398eea);
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
 .hero p{
-  max-width:680px;
-  margin:auto;
-  color:#686d82;
+  max-width:700px;
+  margin:22px auto 0;
+  color:#70758a;
   font-size:18px;
+  line-height:1.7;
 }
+
 .container{
-  width:min(1100px,92%);
+  width:min(1150px,92%);
   margin:auto;
 }
+
+.section-title{
+  text-align:center;
+  margin:20px 0 30px;
+}
+
+.section-title h2{
+  font-size:32px;
+  margin-bottom:7px;
+}
+
+.section-title p{
+  color:#777c90;
+}
+
 .tools{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(310px,1fr));
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
   gap:22px;
   padding-bottom:70px;
 }
+
 .card{
-  background:#fff;
-  border:1px solid #e7e8f2;
-  border-radius:22px;
-  padding:27px;
-  box-shadow:0 10px 30px rgba(57,54,100,.07);
+  background:rgba(255,255,255,.92);
+  border:1px solid #e5e6ef;
+  border-radius:24px;
+  padding:26px;
+  box-shadow:0 12px 35px rgba(50,50,100,.07);
+  transition:.25s;
 }
-.icon{font-size:38px;margin-bottom:10px}
-.card h2{font-size:23px;margin-bottom:7px}
-.card p{color:#707589;margin-bottom:20px}
-.upload{
-  border:2px dashed #c9c7e8;
-  border-radius:15px;
-  padding:25px 15px;
-  text-align:center;
-  cursor:pointer;
-  background:#fafaff;
+
+.card:hover{
+  transform:translateY(-4px);
+  box-shadow:0 18px 40px rgba(50,50,100,.11);
+}
+
+.icon{
+  width:58px;
+  height:58px;
+  border-radius:17px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#efedff;
+  font-size:30px;
   margin-bottom:15px;
 }
-.upload:hover{background:#f4f2ff}
-input[type=file]{display:none}
-input[type=number],input[type=text],select{
-  width:100%;
-  padding:12px;
-  border:1px solid #d9dbe8;
-  border-radius:10px;
-  margin:6px 0 12px;
-  font-size:15px;
+
+.card h3{
+  font-size:23px;
+  margin-bottom:7px;
 }
+
+.card>p{
+  color:#74798c;
+  margin-bottom:20px;
+}
+
+.upload{
+  display:block;
+  text-align:center;
+  border:2px dashed #c9c6eb;
+  border-radius:16px;
+  padding:25px 12px;
+  cursor:pointer;
+  background:#fbfaff;
+  margin-bottom:14px;
+  color:#555a72;
+}
+
+.upload:hover{
+  background:#f3f1ff;
+}
+
+input[type=file]{
+  display:none;
+}
+
+input[type=text],
+input[type=number],
+textarea,
+select{
+  width:100%;
+  padding:13px;
+  border:1px solid #d9dbe7;
+  border-radius:11px;
+  background:white;
+  color:#25283b;
+  font-size:15px;
+  margin:6px 0 12px;
+  outline:none;
+}
+
+textarea{
+  resize:vertical;
+  min-height:130px;
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+  border-color:#7567ed;
+  box-shadow:0 0 0 3px rgba(117,103,237,.1);
+}
+
 .row{
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
 }
-button,.download{
-  border:0;
-  background:#6559dc;
-  color:white;
-  padding:12px 18px;
-  border-radius:10px;
-  cursor:pointer;
-  font-weight:700;
-  font-size:15px;
-  text-decoration:none;
+
+button,
+.download{
   display:inline-block;
+  border:0;
+  padding:12px 18px;
+  border-radius:11px;
+  background:linear-gradient(135deg,#6859df,#4d8dea);
+  color:white;
+  font-weight:800;
+  cursor:pointer;
+  text-decoration:none;
+  font-size:15px;
 }
-button:hover,.download:hover{background:#5146c8}
+
+button:hover,
+.download:hover{
+  opacity:.9;
+}
+
 .secondary{
   background:#ecebfa;
-  color:#5148aa;
+  color:#5148ad;
 }
+
 .result{
-  margin-top:15px;
-  padding:12px;
-  border-radius:10px;
-  background:#f5f5fb;
   display:none;
+  margin-top:15px;
+  padding:14px;
+  background:#f6f6fb;
+  border-radius:12px;
+  color:#555a70;
 }
+
+.success{
+  color:#16824b;
+  font-weight:800;
+}
+
+.error{
+  color:#c33e3e;
+  font-weight:800;
+}
+
 .preview{
+  display:none;
   max-width:100%;
   max-height:220px;
   border-radius:12px;
-  margin:12px 0;
-  display:none;
+  margin:12px auto;
 }
-hr{
-  border:0;
-  border-top:1px solid #ececf4;
-  margin:18px 0;
+
+.calculator{
+  font-size:17px;
 }
+
+.big-result{
+  font-size:25px;
+  font-weight:900;
+  margin-top:10px;
+}
+
+.tool-count{
+  text-align:center;
+  margin-bottom:30px;
+  color:#73788b;
+}
+
+footer{
+  background:white;
+  border-top:1px solid #e5e6ef;
+  text-align:center;
+  padding:40px 20px;
+  color:#74798b;
+}
+
+.footer-logo{
+  font-size:23px;
+  font-weight:900;
+  color:#6257d9;
+  margin-bottom:8px;
+}
+
 .note{
   font-size:13px;
-  color:#777b8e;
-  margin-top:8px;
+  color:#85899a;
+  margin-top:9px;
 }
-footer{
-  text-align:center;
-  padding:35px 20px;
-  border-top:1px solid #e5e6ef;
-  color:#737789;
-  background:white;
-}
-.success{color:#16834b;font-weight:700}
-.error{color:#c63e3e;font-weight:700}
+
 @media(max-width:600px){
-  nav{padding:14px 5%}
-  .hero{padding-top:50px}
-  .tools{grid-template-columns:1fr}
-  .row{grid-template-columns:1fr}
+  nav{
+    padding:13px 5%;
+  }
+
+  .logo{
+    font-size:21px;
+  }
+
+  .logo-mark{
+    width:35px;
+    height:35px;
+  }
+
+  .hero{
+    padding-top:50px;
+  }
+
+  .hero h1{
+    letter-spacing:-1px;
+  }
+
+  .tools{
+    grid-template-columns:1fr;
+  }
+
+  .row{
+    grid-template-columns:1fr;
+  }
 }
 </style>
 </head>
@@ -156,481 +353,1196 @@ footer{
 <body>
 
 <nav>
-  <div class="logo">ToolNest ✦</div>
-  <a href="#tools">Explore Tools</a>
+  <a class="logo" href="#">
+    <div class="logo-mark">✦</div>
+    Tool<span>Nest</span>
+  </a>
+
+  <a href="#tools">Explore Tools →</a>
 </nav>
 
+
 <section class="hero">
+
   <div class="badge">✨ Simple • Fast • Free</div>
-  <h1>Useful tools for your everyday life.</h1>
+
+  <h1>
+    Useful tools for your
+    <span class="gradient-text">everyday life.</span>
+  </h1>
+
   <p>
-    Compress images, resize photos, convert JPG to PNG,
-    create QR codes and use helpful PDF tools — directly in your browser.
+    Compress images, resize photos, convert files, create QR codes,
+    calculate percentages and more — all in one simple place.
   </p>
+
 </section>
+
 
 <main class="container">
-<section class="tools" id="tools">
 
-<!-- IMAGE COMPRESSOR -->
-<div class="card">
-  <div class="icon">🖼️</div>
-  <h2>Image Compressor</h2>
-  <p>Reduce image size while keeping good quality.</p>
-
-  <label class="upload">
-    <strong>☁️ Click to choose an image</strong><br>
-    JPG • PNG • WebP
-    <input type="file" id="compressFile" accept="image/*">
-  </label>
-
-  <button onclick="compressImage()">Compress Image</button>
-  <div id="compressResult" class="result"></div>
+<div class="section-title" id="tools">
+  <h2>Explore Our Tools</h2>
+  <p>Free tools designed to make everyday tasks easier.</p>
 </div>
 
-<!-- IMAGE RESIZER -->
-<div class="card">
-  <div class="icon">📐</div>
-  <h2>Image Resizer</h2>
-  <p>Resize an image to your required width and height.</p>
-
-  <label class="upload">
-    <strong>📷 Choose image</strong><br>
-    JPG • PNG • WebP
-    <input type="file" id="resizeFile" accept="image/*">
-  </label>
-
-  <div class="row">
-    <div>
-      <label>Width (px)</label>
-      <input type="number" id="resizeWidth" placeholder="800">
-    </div>
-    <div>
-      <label>Height (px)</label>
-      <input type="number" id="resizeHeight" placeholder="600">
-    </div>
-  </div>
-
-  <button onclick="resizeImage()">Resize & Download</button>
-  <div id="resizeResult" class="result"></div>
+<div class="tool-count">
+  <strong>12+ Free Tools</strong> available on ToolNest
 </div>
 
-<!-- JPG TO PNG -->
+
+<section class="tools">
+
+
+<!-- 1 IMAGE COMPRESSOR -->
+
 <div class="card">
-  <div class="icon">🔄</div>
-  <h2>JPG to PNG</h2>
-  <p>Convert JPG/JPEG images into PNG format.</p>
 
-  <label class="upload">
-    <strong>📁 Choose JPG image</strong><br>
-    JPG • JPEG
-    <input type="file" id="jpgFile" accept=".jpg,.jpeg,image/jpeg">
-  </label>
+<div class="icon">🖼️</div>
 
-  <button onclick="convertPNG()">Convert to PNG</button>
-  <div id="pngResult" class="result"></div>
+<h3>Image Compressor</h3>
+
+<p>Make JPG, PNG and WebP images smaller.</p>
+
+<label class="upload">
+
+<strong>☁️ Choose an image</strong><br>
+JPG • PNG • WebP
+
+<input type="file" id="compressFile" accept="image/*">
+
+</label>
+
+<button onclick="compressImage()">Compress Image</button>
+
+<div id="compressResult" class="result"></div>
+
 </div>
 
-<!-- QR GENERATOR -->
+
+<!-- 2 IMAGE RESIZER -->
+
 <div class="card">
-  <div class="icon">🔗</div>
-  <h2>QR Code Generator</h2>
-  <p>Create a QR code for a website, text or contact information.</p>
 
-  <input type="text" id="qrText" placeholder="https://example.com">
+<div class="icon">📐</div>
 
-  <button onclick="generateQR()">Generate QR Code</button>
+<h3>Image Resizer</h3>
 
-  <div id="qrBox" class="result" style="text-align:center">
-    <canvas id="qrCanvas"></canvas>
-    <br>
-    <a id="qrDownload" class="download" download="toolnest-qr.png">
-      Download QR
-    </a>
-  </div>
+<p>Resize images to any width and height.</p>
 
-  <p class="note">QR generation works directly in your browser.</p>
+<label class="upload">
+
+<strong>📷 Choose image</strong><br>
+JPG • PNG • WebP
+
+<input type="file" id="resizeFile" accept="image/*">
+
+</label>
+
+<div class="row">
+
+<div>
+<label>Width</label>
+<input type="number" id="resizeWidth" placeholder="800">
 </div>
 
-<!-- PDF TEXT TOOL -->
-<div class="card">
-  <div class="icon">📄</div>
-  <h2>PDF Text Tool</h2>
-  <p>Create a simple PDF document from your text.</p>
-
-  <input type="text" id="pdfTitle" placeholder="Document title">
-
-  <textarea id="pdfText"
-    placeholder="Write your text here..."
-    style="width:100%;height:150px;padding:12px;border:1px solid #d9dbe8;border-radius:10px;resize:vertical;font-family:Arial;margin-bottom:12px">
-  </textarea>
-
-  <button onclick="createPDF()">Create PDF</button>
-  <div id="pdfResult" class="result"></div>
+<div>
+<label>Height</label>
+<input type="number" id="resizeHeight" placeholder="600">
 </div>
 
-<!-- IMAGE FORMAT -->
-<div class="card">
-  <div class="icon">🎨</div>
-  <h2>Image Converter</h2>
-  <p>Convert an image to JPG format directly in your browser.</p>
-
-  <label class="upload">
-    <strong>🖼️ Choose image</strong><br>
-    PNG • WebP • JPG
-    <input type="file" id="jpgConvertFile" accept="image/*">
-  </label>
-
-  <button onclick="convertJPG()">Convert to JPG</button>
-  <div id="jpgResult" class="result"></div>
 </div>
+
+<button onclick="resizeImage()">Resize & Download</button>
+
+<div id="resizeResult" class="result"></div>
+
+</div>
+
+
+<!-- 3 JPG PNG -->
+
+<div class="card">
+
+<div class="icon">🔄</div>
+
+<h3>JPG → PNG</h3>
+
+<p>Convert JPG or JPEG images to PNG.</p>
+
+<label class="upload">
+
+<strong>📁 Choose JPG</strong><br>
+JPG • JPEG
+
+<input type="file" id="jpgFile" accept=".jpg,.jpeg,image/jpeg">
+
+</label>
+
+<button onclick="convertPNG()">Convert to PNG</button>
+
+<div id="pngResult" class="result"></div>
+
+</div>
+
+
+<!-- 4 PNG/JPG -->
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>Image → JPG</h3>
+
+<p>Convert PNG, WebP or other images into JPG.</p>
+
+<label class="upload">
+
+<strong>🖼️ Choose image</strong>
+
+<input type="file" id="jpgConvertFile" accept="image/*">
+
+</label>
+
+<button onclick="convertJPG()">Convert to JPG</button>
+
+<div id="jpgResult" class="result"></div>
+
+</div>
+
+
+<!-- 5 IMAGE CROP -->
+
+<div class="card">
+
+<div class="icon">✂️</div>
+
+<h3>Image Cropper</h3>
+
+<p>Crop an image quickly using a custom size.</p>
+
+<label class="upload">
+
+<strong>📷 Choose image</strong>
+
+<input type="file" id="cropFile" accept="image/*">
+
+</label>
+
+<div class="row">
+
+<div>
+<label>Width</label>
+<input type="number" id="cropWidth" placeholder="800">
+</div>
+
+<div>
+<label>Height</label>
+<input type="number" id="cropHeight" placeholder="600">
+</div>
+
+</div>
+
+<button onclick="cropImage()">Crop & Download</button>
+
+<div id="cropResult" class="result"></div>
+
+</div>
+
+
+<!-- 6 QR -->
+
+<div class="card">
+
+<div class="icon">🔗</div>
+
+<h3>QR Code Generator</h3>
+
+<p>Create a QR code for links or text.</p>
+
+<input type="text" id="qrText" placeholder="https://example.com">
+
+<button onclick="generateQR()">Generate QR</button>
+
+<div id="qrBox" class="result" style="text-align:center">
+
+<img id="qrImage"
+style="max-width:300px;width:100%;border-radius:10px;">
+
+<br><br>
+
+<a id="qrDownload" class="download" download="toolnest-qr.png">
+Download QR
+</a>
+
+</div>
+
+</div>
+
+
+<!-- 7 WORD COUNTER -->
+
+<div class="card">
+
+<div class="icon">✍️</div>
+
+<h3>Word Counter</h3>
+
+<p>Count words, characters and sentences.</p>
+
+<textarea id="wordText"
+placeholder="Type or paste your text here..."
+oninput="countWords()"></textarea>
+
+<div id="wordResult" class="result" style="display:block">
+
+Words: <strong id="words">0</strong><br>
+Characters: <strong id="characters">0</strong><br>
+Sentences: <strong id="sentences">0</strong>
+
+</div>
+
+</div>
+
+
+<!-- 8 CASE CONVERTER -->
+
+<div class="card">
+
+<div class="icon">🔤</div>
+
+<h3>Case Converter</h3>
+
+<p>Convert your text to different letter cases.</p>
+
+<textarea id="caseText"
+placeholder="Enter your text..."></textarea>
+
+<div class="row">
+
+<button onclick="upperCase()">UPPERCASE</button>
+
+<button onclick="lowerCase()">lowercase</button>
+
+</div>
+
+<br>
+
+<button class="secondary" onclick="titleCase()">Title Case</button>
+
+</div>
+
+
+<!-- 9 AGE CALCULATOR -->
+
+<div class="card">
+
+<div class="icon">🎂</div>
+
+<h3>Age Calculator</h3>
+
+<p>Calculate your exact age from your date of birth.</p>
+
+<input type="date" id="birthDate">
+
+<button onclick="calculateAge()">Calculate Age</button>
+
+<div id="ageResult" class="result"></div>
+
+</div>
+
+
+<!-- 10 PERCENTAGE -->
+
+<div class="card">
+
+<div class="icon">％</div>
+
+<h3>Percentage Calculator</h3>
+
+<p>Find percentages quickly and easily.</p>
+
+<input type="number" id="percentValue" placeholder="Enter number">
+
+<input type="number" id="percentTotal" placeholder="Enter total">
+
+<button onclick="calculatePercentage()">Calculate</button>
+
+<div id="percentResult" class="result"></div>
+
+</div>
+
+
+<!-- 11 BMI -->
+
+<div class="card">
+
+<div class="icon">⚖️</div>
+
+<h3>BMI Calculator</h3>
+
+<p>Calculate BMI using height and weight.</p>
+
+<input type="number" id="bmiWeight" placeholder="Weight in kg">
+
+<input type="number" id="bmiHeight" placeholder="Height in cm">
+
+<button onclick="calculateBMI()">Calculate BMI</button>
+
+<div id="bmiResult" class="result"></div>
+
+</div>
+
+
+<!-- 12 PASSWORD -->
+
+<div class="card">
+
+<div class="icon">🔐</div>
+
+<h3>Password Generator</h3>
+
+<p>Create a strong random password instantly.</p>
+
+<input type="number" id="passLength" value="16" min="6" max="50">
+
+<input type="text" id="passwordOutput" readonly placeholder="Your password">
+
+<button onclick="generatePassword()">Generate Password</button>
+
+<button class="secondary" onclick="copyPassword()">Copy</button>
+
+</div>
+
+
+<!-- 13 JPG TO PDF STYLE TEXT PDF -->
+
+<div class="card">
+
+<div class="icon">📄</div>
+
+<h3>Text → PDF</h3>
+
+<p>Create a simple PDF document from your text.</p>
+
+<input type="text" id="pdfTitle" placeholder="Document title">
+
+<textarea id="pdfText" placeholder="Write your text here..."></textarea>
+
+<button onclick="createPDF()">Create PDF</button>
+
+<div id="pdfResult" class="result"></div>
+
+</div>
+
 
 </section>
+
 </main>
 
+
 <footer>
-  <strong>ToolNest ✦</strong>
-  <p>Free online tools for everyone.</p>
-  <p>© 2026 ToolNest. All rights reserved.</p>
+
+<div class="footer-logo">ToolNest ✦</div>
+
+<p>Free online tools for everyone.</p>
+
+<p>© 2026 ToolNest. All rights reserved.</p>
+
 </footer>
+
 
 <script>
 
-/* ---------- IMAGE COMPRESSOR ---------- */
+
+/* =========================
+   IMAGE COMPRESSOR
+========================= */
 
 function compressImage(){
-  const file=document.getElementById("compressFile").files[0];
-  const result=document.getElementById("compressResult");
 
-  if(!file){
-    result.style.display="block";
-    result.innerHTML='<span class="error">Please choose an image first.</span>';
-    return;
-  }
+const file=document.getElementById("compressFile").files[0];
+const result=document.getElementById("compressResult");
 
-  const img=new Image();
-  const reader=new FileReader();
+if(!file){
+showError(result,"Please choose an image first.");
+return;
+}
 
-  reader.onload=e=>{
-    img.onload=()=>{
-      const canvas=document.createElement("canvas");
-      const ctx=canvas.getContext("2d");
+const reader=new FileReader();
+const img=new Image();
 
-      canvas.width=img.width;
-      canvas.height=img.height;
-      ctx.drawImage(img,0,0);
+reader.onload=e=>{
 
-      canvas.toBlob(blob=>{
-        const url=URL.createObjectURL(blob);
+img.onload=()=>{
 
-        result.style.display="block";
-        result.innerHTML=
-          '<span class="success">Image compressed successfully!</span><br>'+
-          'Original: '+formatBytes(file.size)+'<br>'+
-          'New size: '+formatBytes(blob.size)+'<br><br>'+
-          '<a class="download" href="'+url+'" download="compressed-image.jpg">Download Image</a>';
-      },"image/jpeg",0.65);
-    };
-    img.src=e.target.result;
-  };
+const canvas=document.createElement("canvas");
 
-  reader.readAsDataURL(file);
+canvas.width=img.width;
+canvas.height=img.height;
+
+const ctx=canvas.getContext("2d");
+
+ctx.drawImage(img,0,0);
+
+canvas.toBlob(blob=>{
+
+const url=URL.createObjectURL(blob);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Image compressed!</span><br><br>'+
+'Original: '+formatBytes(file.size)+'<br>'+
+'New size: '+formatBytes(blob.size)+'<br><br>'+
+'<a class="download" href="'+url+'" download="toolnest-compressed.jpg">Download</a>';
+
+},"image/jpeg",0.65);
+
+};
+
+img.src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
 }
 
 
-/* ---------- IMAGE RESIZER ---------- */
+/* =========================
+   IMAGE RESIZER
+========================= */
 
 function resizeImage(){
-  const file=document.getElementById("resizeFile").files[0];
-  const width=parseInt(document.getElementById("resizeWidth").value);
-  const height=parseInt(document.getElementById("resizeHeight").value);
-  const result=document.getElementById("resizeResult");
 
-  if(!file){
-    showError(result,"Please choose an image first.");
-    return;
-  }
+const file=document.getElementById("resizeFile").files[0];
 
-  if(!width || !height || width<1 || height<1){
-    showError(result,"Please enter a valid width and height.");
-    return;
-  }
+const width=parseInt(document.getElementById("resizeWidth").value);
+const height=parseInt(document.getElementById("resizeHeight").value);
 
-  const reader=new FileReader();
-  const img=new Image();
+const result=document.getElementById("resizeResult");
 
-  reader.onload=e=>{
-    img.onload=()=>{
-      const canvas=document.createElement("canvas");
-      canvas.width=width;
-      canvas.height=height;
+if(!file){
+showError(result,"Please choose an image.");
+return;
+}
 
-      const ctx=canvas.getContext("2d");
-      ctx.drawImage(img,0,0,width,height);
+if(!width || !height){
+showError(result,"Please enter width and height.");
+return;
+}
 
-      canvas.toBlob(blob=>{
-        const url=URL.createObjectURL(blob);
+const reader=new FileReader();
+const img=new Image();
 
-        result.style.display="block";
-        result.innerHTML=
-          '<span class="success">Image resized successfully!</span><br><br>'+
-          '<a class="download" href="'+url+'" download="resized-image.jpg">Download Resized Image</a>';
-      },"image/jpeg",0.9);
-    };
+reader.onload=e=>{
 
-    img.src=e.target.result;
-  };
+img.onload=()=>{
 
-  reader.readAsDataURL(file);
+const canvas=document.createElement("canvas");
+
+canvas.width=width;
+canvas.height=height;
+
+const ctx=canvas.getContext("2d");
+
+ctx.drawImage(img,0,0,width,height);
+
+canvas.toBlob(blob=>{
+
+const url=URL.createObjectURL(blob);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Image resized!</span><br><br>'+
+'<a class="download" href="'+url+'" download="toolnest-resized.jpg">Download</a>';
+
+},"image/jpeg",.9);
+
+};
+
+img.src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
 }
 
 
-/* ---------- JPG TO PNG ---------- */
+/* =========================
+   JPG TO PNG
+========================= */
 
 function convertPNG(){
-  const file=document.getElementById("jpgFile").files[0];
-  const result=document.getElementById("pngResult");
 
-  if(!file){
-    showError(result,"Please choose a JPG image first.");
-    return;
-  }
+const file=document.getElementById("jpgFile").files[0];
+const result=document.getElementById("pngResult");
 
-  const reader=new FileReader();
-  const img=new Image();
+if(!file){
+showError(result,"Please choose a JPG image.");
+return;
+}
 
-  reader.onload=e=>{
-    img.onload=()=>{
-      const canvas=document.createElement("canvas");
-      canvas.width=img.width;
-      canvas.height=img.height;
+const reader=new FileReader();
+const img=new Image();
 
-      const ctx=canvas.getContext("2d");
-      ctx.drawImage(img,0,0);
+reader.onload=e=>{
 
-      canvas.toBlob(blob=>{
-        const url=URL.createObjectURL(blob);
+img.onload=()=>{
 
-        result.style.display="block";
-        result.innerHTML=
-          '<span class="success">Converted to PNG successfully!</span><br><br>'+
-          '<a class="download" href="'+url+'" download="converted-image.png">Download PNG</a>';
-      },"image/png");
-    };
+const canvas=document.createElement("canvas");
 
-    img.src=e.target.result;
-  };
+canvas.width=img.width;
+canvas.height=img.height;
 
-  reader.readAsDataURL(file);
+canvas.getContext("2d").drawImage(img,0,0);
+
+canvas.toBlob(blob=>{
+
+const url=URL.createObjectURL(blob);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Converted to PNG!</span><br><br>'+
+'<a class="download" href="'+url+'" download="toolnest-image.png">Download PNG</a>';
+
+},"image/png");
+
+};
+
+img.src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
 }
 
 
-/* ---------- IMAGE TO JPG ---------- */
+/* =========================
+   IMAGE TO JPG
+========================= */
 
 function convertJPG(){
-  const file=document.getElementById("jpgConvertFile").files[0];
-  const result=document.getElementById("jpgResult");
 
-  if(!file){
-    showError(result,"Please choose an image first.");
-    return;
-  }
+const file=document.getElementById("jpgConvertFile").files[0];
+const result=document.getElementById("jpgResult");
 
-  const reader=new FileReader();
-  const img=new Image();
+if(!file){
+showError(result,"Please choose an image.");
+return;
+}
 
-  reader.onload=e=>{
-    img.onload=()=>{
-      const canvas=document.createElement("canvas");
-      canvas.width=img.width;
-      canvas.height=img.height;
+const reader=new FileReader();
+const img=new Image();
 
-      const ctx=canvas.getContext("2d");
+reader.onload=e=>{
 
-      /* White background for transparent PNG images */
-      ctx.fillStyle="#ffffff";
-      ctx.fillRect(0,0,canvas.width,canvas.height);
+img.onload=()=>{
 
-      ctx.drawImage(img,0,0);
+const canvas=document.createElement("canvas");
 
-      canvas.toBlob(blob=>{
-        const url=URL.createObjectURL(blob);
+canvas.width=img.width;
+canvas.height=img.height;
 
-        result.style.display="block";
-        result.innerHTML=
-          '<span class="success">Converted to JPG successfully!</span><br><br>'+
-          '<a class="download" href="'+url+'" download="converted-image.jpg">Download JPG</a>';
-      },"image/jpeg",0.9);
-    };
+const ctx=canvas.getContext("2d");
 
-    img.src=e.target.result;
-  };
+ctx.fillStyle="#ffffff";
+ctx.fillRect(0,0,canvas.width,canvas.height);
 
-  reader.readAsDataURL(file);
+ctx.drawImage(img,0,0);
+
+canvas.toBlob(blob=>{
+
+const url=URL.createObjectURL(blob);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Converted to JPG!</span><br><br>'+
+'<a class="download" href="'+url+'" download="toolnest-image.jpg">Download JPG</a>';
+
+},"image/jpeg",.9);
+
+};
+
+img.src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
 }
 
 
-/* ---------- QR GENERATOR ---------- */
+/* =========================
+   IMAGE CROPPER
+========================= */
+
+function cropImage(){
+
+const file=document.getElementById("cropFile").files[0];
+
+const width=parseInt(document.getElementById("cropWidth").value);
+const height=parseInt(document.getElementById("cropHeight").value);
+
+const result=document.getElementById("cropResult");
+
+if(!file){
+showError(result,"Please choose an image.");
+return;
+}
+
+if(!width || !height){
+showError(result,"Please enter crop width and height.");
+return;
+}
+
+const reader=new FileReader();
+const img=new Image();
+
+reader.onload=e=>{
+
+img.onload=()=>{
+
+const canvas=document.createElement("canvas");
+
+canvas.width=width;
+canvas.height=height;
+
+const ctx=canvas.getContext("2d");
+
+const sx=Math.max(0,(img.width-width)/2);
+const sy=Math.max(0,(img.height-height)/2);
+
+ctx.drawImage(
+img,
+sx,
+sy,
+Math.min(width,img.width),
+Math.min(height,img.height),
+0,
+0,
+width,
+height
+);
+
+canvas.toBlob(blob=>{
+
+const url=URL.createObjectURL(blob);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Image cropped!</span><br><br>'+
+'<a class="download" href="'+url+'" download="toolnest-cropped.jpg">Download</a>';
+
+},"image/jpeg",.9);
+
+};
+
+img.src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+
+/* =========================
+   QR GENERATOR
+========================= */
 
 function generateQR(){
-  const text=document.getElementById("qrText").value.trim();
-  const box=document.getElementById("qrBox");
-  const canvas=document.getElementById("qrCanvas");
-  const download=document.getElementById("qrDownload");
 
-  if(!text){
-    box.style.display="block";
-    box.innerHTML='<span class="error">Please enter a link or text.</span>';
-    return;
-  }
+const text=document.getElementById("qrText").value.trim();
 
-  /*
-    Simple QR-style generator using a public QR image service.
-    The generated image can be downloaded from the browser.
-  */
+const box=document.getElementById("qrBox");
+const image=document.getElementById("qrImage");
+const download=document.getElementById("qrDownload");
 
-  const img=new Image();
-  img.crossOrigin="anonymous";
+if(!text){
 
-  img.onload=function(){
-    canvas.width=300;
-    canvas.height=300;
+box.style.display="block";
 
-    const ctx=canvas.getContext("2d");
-    ctx.drawImage(img,0,0,300,300);
+box.innerHTML='<span class="error">Please enter text or a link.</span>';
 
-    box.style.display="block";
-    download.href=canvas.toDataURL("image/png");
-  };
+return;
 
-  img.onerror=function(){
-    box.style.display="block";
-    box.innerHTML='<span class="error">QR could not be generated. Please check your internet connection.</span>';
-  };
+}
 
-  img.src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(text);
+const url=
+"https://api.qrserver.com/v1/create-qr-code/?size=400x400&data="+
+encodeURIComponent(text);
+
+image.src=url;
+
+image.onload=()=>{
+
+box.style.display="block";
+
+download.href=url;
+
+};
+
 }
 
 
-/* ---------- SIMPLE PDF CREATOR ---------- */
+/* =========================
+   WORD COUNTER
+========================= */
+
+function countWords(){
+
+const text=document.getElementById("wordText").value;
+
+const words=text.trim()
+? text.trim().split(/\s+/).length
+:0;
+
+const characters=text.length;
+
+const sentences=text
+.split(/[.!?]+/)
+.filter(x=>x.trim().length>0)
+.length;
+
+document.getElementById("words").textContent=words;
+
+document.getElementById("characters").textContent=characters;
+
+document.getElementById("sentences").textContent=sentences;
+
+}
+
+
+/* =========================
+   CASE CONVERTER
+========================= */
+
+function upperCase(){
+
+const box=document.getElementById("caseText");
+
+box.value=box.value.toUpperCase();
+
+}
+
+function lowerCase(){
+
+const box=document.getElementById("caseText");
+
+box.value=box.value.toLowerCase();
+
+}
+
+function titleCase(){
+
+const box=document.getElementById("caseText");
+
+box.value=box.value
+.toLowerCase()
+.replace(/\b\w/g,c=>c.toUpperCase());
+
+}
+
+
+/* =========================
+   AGE CALCULATOR
+========================= */
+
+function calculateAge(){
+
+const input=document.getElementById("birthDate").value;
+
+const result=document.getElementById("ageResult");
+
+if(!input){
+
+showError(result,"Please select your date of birth.");
+
+return;
+
+}
+
+const birth=new Date(input);
+const today=new Date();
+
+let years=today.getFullYear()-birth.getFullYear();
+
+let months=today.getMonth()-birth.getMonth();
+
+let days=today.getDate()-birth.getDate();
+
+if(days<0){
+
+months--;
+
+const previousMonth=new Date(
+today.getFullYear(),
+today.getMonth(),
+0
+);
+
+days+=previousMonth.getDate();
+
+}
+
+if(months<0){
+
+years--;
+months+=12;
+
+}
+
+result.style.display="block";
+
+result.innerHTML=
+'<div class="success">Your age is:</div>'+
+'<div class="big-result">'+
+years+' Years, '+months+' Months, '+days+' Days'+
+'</div>';
+
+}
+
+
+/* =========================
+   PERCENTAGE
+========================= */
+
+function calculatePercentage(){
+
+const value=parseFloat(
+document.getElementById("percentValue").value
+);
+
+const total=parseFloat(
+document.getElementById("percentTotal").value
+);
+
+const result=document.getElementById("percentResult");
+
+if(isNaN(value)||isNaN(total)||total===0){
+
+showError(result,"Please enter valid numbers.");
+
+return;
+
+}
+
+const answer=(value/total)*100;
+
+result.style.display="block";
+
+result.innerHTML=
+'<strong>'+answer.toFixed(2)+'%</strong>';
+
+}
+
+
+/* =========================
+   BMI
+========================= */
+
+function calculateBMI(){
+
+const weight=parseFloat(
+document.getElementById("bmiWeight").value
+);
+
+const height=parseFloat(
+document.getElementById("bmiHeight").value
+);
+
+const result=document.getElementById("bmiResult");
+
+if(!weight||!height){
+
+showError(result,"Please enter weight and height.");
+
+return;
+
+}
+
+const meters=height/100;
+
+const bmi=weight/(meters*meters);
+
+let category="";
+
+if(bmi<18.5)
+category="Underweight";
+else if(bmi<25)
+category="Normal range";
+else if(bmi<30)
+category="Overweight";
+else
+category="Obesity range";
+
+result.style.display="block";
+
+result.innerHTML=
+'<div class="big-result">'+bmi.toFixed(1)+'</div>'+
+'<strong>'+category+'</strong>';
+
+}
+
+
+/* =========================
+   PASSWORD GENERATOR
+========================= */
+
+function generatePassword(){
+
+const length=parseInt(
+document.getElementById("passLength").value
+)||16;
+
+const chars=
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ"+
+"abcdefghijklmnopqrstuvwxyz"+
+"0123456789"+
+"!@#$%^&*()_+-=[]{}";
+
+let password="";
+
+for(let i=0;i<length;i++){
+
+password+=chars.charAt(
+Math.floor(Math.random()*chars.length)
+);
+
+}
+
+document.getElementById("passwordOutput").value=password;
+
+}
+
+function copyPassword(){
+
+const box=document.getElementById("passwordOutput");
+
+if(!box.value){
+
+generatePassword();
+
+}
+
+navigator.clipboard.writeText(box.value);
+
+}
+
+
+/* =========================
+   SIMPLE PDF CREATOR
+========================= */
 
 function createPDF(){
-  const title=document.getElementById("pdfTitle").value.trim() || "ToolNest Document";
-  const text=document.getElementById("pdfText").value.trim();
-  const result=document.getElementById("pdfResult");
 
-  if(!text){
-    showError(result,"Please write some text first.");
-    return;
-  }
+const title=
+document.getElementById("pdfTitle").value.trim()
+||"ToolNest Document";
 
-  /*
-    Creates a very simple PDF file without a server.
-    Suitable for basic text documents.
-  */
+const text=
+document.getElementById("pdfText").value.trim();
 
-  const lines=text.split("\n");
-  let content="BT\n/F1 18 Tf\n50 780 Td\n";
+const result=document.getElementById("pdfResult");
 
-  content+="("+escapePDF(title)+") Tj\n";
-  content+="/F1 11 Tf\n0 -30 Td\n";
+if(!text){
 
-  lines.forEach(line=>{
-    const wrapped=wrapText(line,85);
+showError(result,"Please enter some text.");
 
-    wrapped.forEach(part=>{
-      content+="("+escapePDF(part)+") Tj\n0 -16 Td\n";
-    });
-  });
+return;
 
-  content+="ET";
-
-  const pdf=createPDFFile(content);
-  const blob=new Blob([pdf],{type:"application/pdf"});
-  const url=URL.createObjectURL(blob);
-
-  result.style.display="block";
-  result.innerHTML=
-    '<span class="success">PDF created successfully!</span><br><br>'+
-    '<a class="download" href="'+url+'" download="toolnest-document.pdf">Download PDF</a>';
 }
+
+const lines=text.split("\n");
+
+let content=
+"BT\n/F1 18 Tf\n50 780 Td\n"+
+"("+escapePDF(title)+") Tj\n"+
+"/F1 11 Tf\n0 -30 Td\n";
+
+lines.forEach(line=>{
+
+const wrapped=wrapText(line,85);
+
+wrapped.forEach(part=>{
+
+content+=
+"("+escapePDF(part)+") Tj\n0 -16 Td\n";
+
+});
+
+});
+
+content+="ET";
+
+const pdf=createPDFFile(content);
+
+const blob=new Blob([pdf],{
+type:"application/pdf"
+});
+
+const url=URL.createObjectURL(blob);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ PDF created!</span><br><br>'+
+'<a class="download" href="'+url+'" download="toolnest-document.pdf">Download PDF</a>';
+
+}
+
 
 function escapePDF(str){
-  return str
-    .replace(/\\/g,"\\\\")
-    .replace(/\(/g,"\\(")
-    .replace(/\)/g,"\\)")
-    .replace(/[^\x00-\x7F]/g,"?");
+
+return str
+.replace(/\\/g,"\\\\")
+.replace(/\(/g,"\\(")
+.replace(/\)/g,"\\)")
+.replace(/[^\x00-\x7F]/g,"?");
+
 }
+
 
 function wrapText(text,max){
-  const words=text.split(/\s+/);
-  const lines=[];
-  let current="";
 
-  words.forEach(word=>{
-    if((current+" "+word).trim().length<=max){
-      current=(current+" "+word).trim();
-    }else{
-      if(current) lines.push(current);
-      current=word;
-    }
-  });
+const words=text.split(/\s+/);
 
-  if(current) lines.push(current);
-  return lines.length?lines:[""];
+const lines=[];
+
+let current="";
+
+words.forEach(word=>{
+
+if((current+" "+word).trim().length<=max){
+
+current=(current+" "+word).trim();
+
+}else{
+
+if(current) lines.push(current);
+
+current=word;
+
 }
+
+});
+
+if(current) lines.push(current);
+
+return lines.length?lines:[""];
+
+}
+
 
 function createPDFFile(content){
 
-  const objects=[];
+const objects=[];
 
-  objects[1]="<< /Type /Catalog /Pages 2 0 R >>";
-  objects[2]="<< /Type /Pages /Kids [3 0 R] /Count 1 >>";
-  objects[3]="<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >>";
-  objects[4]="<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
-  objects[5]="<< /Length "+content.length+" >>\nstream\n"+content+"\nendstream";
+objects[1]="<< /Type /Catalog /Pages 2 0 R >>";
 
-  let pdf="%PDF-1.4\n";
-  const offsets=[0];
+objects[2]="<< /Type /Pages /Kids [3 0 R] /Count 1 >>";
 
-  for(let i=1;i<objects.length;i++){
-    offsets[i]=pdf.length;
-    pdf+=i+" 0 obj\n"+objects[i]+"\nendobj\n";
-  }
+objects[3]=
+"<< /Type /Page /Parent 2 0 R "+
+"/MediaBox [0 0 612 792] "+
+"/Resources << /Font << /F1 4 0 R >> >> "+
+"/Contents 5 0 R >>";
 
-  const xref=pdf.length;
+objects[4]=
+"<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
 
-  pdf+="xref\n0 "+objects.length+"\n";
-  pdf+="0000000000 65535 f \n";
+objects[5]=
+"<< /Length "+content.length+" >>\n"+
+"stream\n"+content+"\nendstream";
 
-  for(let i=1;i<objects.length;i++){
-    pdf+=String(offsets[i]).padStart(10,"0")+" 00000 n \n";
-  }
+let pdf="%PDF-1.4\n";
 
-  pdf+="trailer\n<< /Size "+objects.length+" /Root 1 0 R >>\n";
-  pdf+="startxref\n"+xref+"\n%%EOF";
+const offsets=[0];
 
-  return pdf;
+for(let i=1;i<objects.length;i++){
+
+offsets[i]=pdf.length;
+
+pdf+=
+i+" 0 obj\n"+
+objects[i]+
+"\nendobj\n";
+
+}
+
+const xref=pdf.length;
+
+pdf+="xref\n0 "+objects.length+"\n";
+
+pdf+="0000000000 65535 f \n";
+
+for(let i=1;i<objects.length;i++){
+
+pdf+=
+String(offsets[i]).padStart(10,"0")+
+" 00000 n \n";
+
+}
+
+pdf+=
+"trailer\n<< /Size "+
+objects.length+
+" /Root 1 0 R >>\n";
+
+pdf+=
+"startxref\n"+
+xref+
+"\n%%EOF";
+
+return pdf;
+
 }
 
 
-/* ---------- HELPERS ---------- */
+/* =========================
+   HELPERS
+========================= */
 
 function formatBytes(bytes){
-  if(bytes===0)return "0 Bytes";
-  const sizes=["Bytes","KB","MB","GB"];
-  const i=Math.floor(Math.log(bytes)/Math.log(1024));
-  return parseFloat((bytes/Math.pow(1024,i)).toFixed(2))+" "+sizes[i];
+
+if(bytes===0)return"0 Bytes";
+
+const sizes=[
+"Bytes",
+"KB",
+"MB",
+"GB"
+];
+
+const i=Math.floor(
+Math.log(bytes)/Math.log(1024)
+);
+
+return parseFloat(
+(bytes/Math.pow(1024,i)).toFixed(2)
+)+" "+sizes[i];
+
 }
 
+
 function showError(element,message){
-  element.style.display="block";
-  element.innerHTML='<span class="error">'+message+'</span>';
+
+element.style.display="block";
+
+element.innerHTML=
+'<span class="error">'+message+'</span>';
+
 }
 
 </script>
 
 </body>
 </html>
-
