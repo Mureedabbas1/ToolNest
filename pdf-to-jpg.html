@@ -4,11 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PDF to JPG Converter – Free Online Tool | ToolNest</title>
-  <meta name="description" content="Convert PDF pages to JPG images online for free. Fast, simple and secure PDF to JPG converter. No signup required.">
+  <title>PDF to JPG Converter - Free Online Tool | ToolRivo</title>
+
+  <meta name="description" content="Convert PDF pages to JPG images online for free with ToolRivo. Fast, simple and secure PDF to JPG converter. No signup required.">
+
   <meta name="keywords" content="PDF to JPG, PDF to image, convert PDF to JPG, PDF converter, free PDF tools">
 
-  <link rel="canonical" href="https://mureedabbas1.github.io/ToolNest/pdf-to-jpg.html">
+  <meta name="author" content="ToolRivo">
+  <meta name="robots" content="index, follow">
+
+  <link rel="canonical" href="https://mureedabbas1.github.io/ToolRivo/pdf-to-jpg.html">
+
+  <meta property="og:title" content="Free PDF to JPG Converter | ToolRivo">
+  <meta property="og:description" content="Convert PDF pages into JPG images online for free with ToolRivo.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mureedabbas1.github.io/ToolRivo/pdf-to-jpg.html">
 
   <style>
     * {
@@ -25,13 +35,25 @@
     header {
       background: #111827;
       color: white;
-      padding: 18px 20px;
+      padding: 25px 20px;
       text-align: center;
     }
 
     header h1 {
       margin: 0;
       font-size: 28px;
+    }
+
+    .home-link {
+      display: inline-block;
+      margin-top: 12px;
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .home-link:hover {
+      text-decoration: underline;
     }
 
     .container {
@@ -60,6 +82,7 @@
     }
 
     .upload-box {
+      display: block;
       border: 2px dashed #9ca3af;
       border-radius: 12px;
       padding: 40px 20px;
@@ -86,6 +109,7 @@
     .file-name {
       margin-top: 15px;
       color: #555;
+      word-break: break-word;
     }
 
     button {
@@ -102,7 +126,7 @@
       color: white;
     }
 
-    #convertBtn:hover {
+    #convertBtn:hover:not(:disabled) {
       background: #1d4ed8;
     }
 
@@ -111,6 +135,8 @@
       color: white;
       text-decoration: none;
       display: inline-block;
+      padding: 10px 15px;
+      border-radius: 8px;
     }
 
     .download-btn:hover {
@@ -126,6 +152,7 @@
       margin: 20px 0;
       font-weight: bold;
       color: #444;
+      line-height: 1.6;
     }
 
     .result {
@@ -154,11 +181,27 @@
       line-height: 1.7;
     }
 
+    .info h3 {
+      margin-top: 25px;
+      color: #1e40af;
+    }
+
     footer {
       text-align: center;
-      padding: 30px;
+      padding: 30px 20px;
       color: #666;
       font-size: 14px;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: #2563eb;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
@@ -174,6 +217,15 @@
       header h1 {
         font-size: 23px;
       }
+
+      button {
+        width: 100%;
+        margin: 8px 0;
+      }
+
+      .download-btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -181,8 +233,18 @@
 <body>
 
 <header>
-  <h1>ToolNest</h1>
+
+  <h1>ToolRivo - PDF to JPG Converter</h1>
+
+  <a
+    class="home-link"
+    href="https://mureedabbas1.github.io/ToolRivo/"
+  >
+    ← Back to ToolRivo
+  </a>
+
 </header>
+
 
 <div class="container">
 
@@ -195,26 +257,52 @@
       Your files are processed directly in your browser.
     </p>
 
+
     <label class="upload-box" for="pdfFile">
+
       <strong>📄 Choose PDF File</strong>
-      <span>Click here to select your PDF</span>
-      <input type="file" id="pdfFile" accept="application/pdf">
+
+      <span>
+        Click here to select your PDF
+      </span>
+
+      <input
+        type="file"
+        id="pdfFile"
+        accept="application/pdf,.pdf"
+      >
+
     </label>
 
-    <div class="file-name" id="fileName">
+
+    <div
+      class="file-name"
+      id="fileName"
+    >
       No file selected
     </div>
 
-    <button id="convertBtn" disabled>
+
+    <button
+      id="convertBtn"
+      disabled
+    >
       Convert PDF to JPG
     </button>
 
+
     <div id="status"></div>
 
-    <div class="result" id="result"></div>
+
+    <div
+      class="result"
+      id="result"
+    ></div>
+
 
     <div class="info">
-      <h3>How to convert PDF to JPG?</h3>
+
+      <h3>How to Convert PDF to JPG?</h3>
 
       <ol>
         <li>Select your PDF file.</li>
@@ -223,44 +311,109 @@
         <li>Download each JPG image.</li>
       </ol>
 
-      <h3>Is this PDF converter free?</h3>
+
+      <h3>Is This PDF Converter Free?</h3>
 
       <p>
-        Yes. ToolNest PDF to JPG Converter is free to use and does not
+        Yes. ToolRivo PDF to JPG Converter is free to use and does not
         require registration.
       </p>
 
-      <h3>Is my PDF uploaded?</h3>
+
+      <h3>Is My PDF Uploaded?</h3>
 
       <p>
-        No. The conversion happens directly inside your web browser.
-        Your PDF is not uploaded to our server.
+        No. The conversion is performed directly inside your web browser.
+        Your PDF is not uploaded to our server by this tool.
       </p>
+
+
+      <h3>What PDF Files Are Supported?</h3>
+
+      <p>
+        This tool works with standard PDF files that can be opened by
+        modern web browsers.
+      </p>
+
     </div>
 
   </div>
 
 </div>
 
+
 <footer>
-  © 2026 ToolNest — Free Online Tools
+
+  <p>
+    <strong>ToolRivo ✦</strong>
+  </p>
+
+  <p>
+    Free online tools for everyone.
+  </p>
+
+  <p>
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/privacy-policy.html">
+      Privacy Policy
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/terms.html">
+      Terms & Conditions
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/about.html">
+      About
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/contact.html">
+      Contact
+    </a>
+
+  </p>
+
+  <p>
+    © 2026 ToolRivo. All rights reserved.
+  </p>
+
 </footer>
 
+
 <!-- PDF.js -->
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
 
 <script>
 
   pdfjsLib.GlobalWorkerOptions.workerSrc =
     "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-  const pdfFile = document.getElementById("pdfFile");
-  const convertBtn = document.getElementById("convertBtn");
-  const fileName = document.getElementById("fileName");
-  const status = document.getElementById("status");
-  const result = document.getElementById("result");
+
+  const pdfFile =
+    document.getElementById("pdfFile");
+
+  const convertBtn =
+    document.getElementById("convertBtn");
+
+  const fileName =
+    document.getElementById("fileName");
+
+  const status =
+    document.getElementById("status");
+
+  const result =
+    document.getElementById("result");
+
 
   let selectedFile = null;
+
 
   pdfFile.addEventListener("change", function () {
 
@@ -269,85 +422,177 @@
     result.innerHTML = "";
     status.textContent = "";
 
+
     if (selectedFile) {
-      fileName.textContent = "Selected: " + selectedFile.name;
+
+      if (selectedFile.type !== "application/pdf") {
+
+        alert("Please select a valid PDF file.");
+
+        selectedFile = null;
+        fileName.textContent = "No file selected";
+        convertBtn.disabled = true;
+
+        return;
+      }
+
+
+      fileName.textContent =
+        "Selected: " + selectedFile.name;
+
       convertBtn.disabled = false;
+
     } else {
-      fileName.textContent = "No file selected";
+
+      fileName.textContent =
+        "No file selected";
+
       convertBtn.disabled = true;
+
     }
 
   });
 
+
   convertBtn.addEventListener("click", async function () {
 
-    if (!selectedFile) return;
+    if (!selectedFile) {
+      return;
+    }
+
 
     convertBtn.disabled = true;
+
     result.innerHTML = "";
-    status.textContent = "Converting PDF... Please wait.";
+
+    status.textContent =
+      "Converting PDF... Please wait.";
+
 
     try {
 
-      const arrayBuffer = await selectedFile.arrayBuffer();
+      const arrayBuffer =
+        await selectedFile.arrayBuffer();
 
-      const pdf = await pdfjsLib.getDocument({
-        data: arrayBuffer
-      }).promise;
+
+      const pdf =
+        await pdfjsLib.getDocument({
+          data: arrayBuffer
+        }).promise;
+
 
       status.textContent =
-        "Converting " + pdf.numPages + " page(s)...";
+        "Converting " +
+        pdf.numPages +
+        " page(s)...";
 
-      for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
 
-        const page = await pdf.getPage(pageNumber);
+      for (
+        let pageNumber = 1;
+        pageNumber <= pdf.numPages;
+        pageNumber++
+      ) {
+
+        const page =
+          await pdf.getPage(pageNumber);
+
 
         const scale = 2;
-        const viewport = page.getViewport({
-          scale: scale
-        });
 
-        const canvas = document.createElement("canvas");
-        const context = canvas.getContext("2d");
 
-        canvas.width = viewport.width;
-        canvas.height = viewport.height;
+        const viewport =
+          page.getViewport({
+            scale: scale
+          });
+
+
+        const canvas =
+          document.createElement("canvas");
+
+
+        const context =
+          canvas.getContext("2d");
+
+
+        canvas.width =
+          viewport.width;
+
+        canvas.height =
+          viewport.height;
+
 
         await page.render({
           canvasContext: context,
           viewport: viewport
         }).promise;
 
-        const jpgData = canvas.toDataURL("image/jpeg", 0.92);
 
-        const pageCard = document.createElement("div");
-        pageCard.className = "page-card";
+        const jpgData =
+          canvas.toDataURL(
+            "image/jpeg",
+            0.92
+          );
 
-        const image = document.createElement("img");
-        image.src = jpgData;
-        image.alt = "PDF page " + pageNumber;
 
-        const download = document.createElement("a");
-        download.href = jpgData;
+        const pageCard =
+          document.createElement("div");
+
+
+        pageCard.className =
+          "page-card";
+
+
+        const image =
+          document.createElement("img");
+
+
+        image.src =
+          jpgData;
+
+
+        image.alt =
+          "PDF page " + pageNumber;
+
+
+        const download =
+          document.createElement("a");
+
+
+        download.href =
+          jpgData;
+
+
         download.download =
-          selectedFile.name.replace(/\.pdf$/i, "") +
+          selectedFile.name.replace(
+            /\.pdf$/i,
+            ""
+          ) +
           "-page-" +
           pageNumber +
           ".jpg";
 
-        download.textContent =
-          "Download Page " + pageNumber;
 
-        download.className = "download-btn";
+        download.textContent =
+          "Download Page " +
+          pageNumber;
+
+
+        download.className =
+          "download-btn";
+
 
         pageCard.appendChild(image);
+
         pageCard.appendChild(download);
 
         result.appendChild(pageCard);
+
       }
+
 
       status.textContent =
         "✅ Conversion complete! Download your JPG images below.";
+
 
     } catch (error) {
 
@@ -357,6 +602,7 @@
         "❌ Could not convert this PDF. Please try another PDF file.";
 
     }
+
 
     convertBtn.disabled = false;
 
