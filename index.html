@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,9 +9,9 @@
 
 <title>ToolNest - Free Online Tools for Everyone</title>
 
-<meta name="description" content="ToolNest provides free online tools including image compressor, image resizer, JPG to PNG converter, image to JPG, image cropper, QR code generator, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator and text to PDF.">
+<meta name="description" content="ToolNest provides free online tools including image compressor, image resizer, JPG to PNG converter, image to JPG, image cropper, QR code generator, PDF to JPG converter, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator and text to PDF.">
 
-<meta name="keywords" content="free online tools, image compressor, image resizer, JPG to PNG converter, image to JPG, image cropper, QR code generator, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator, text to PDF">
+<meta name="keywords" content="free online tools, image compressor, image resizer, JPG to PNG converter, image to JPG, image cropper, QR code generator, PDF to JPG converter, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator, text to PDF">
 
 <meta name="author" content="ToolNest">
 
@@ -343,6 +344,10 @@ color:#85899a;
 margin-top:9px;
 }
 
+.tool-link{
+margin-top:12px;
+}
+
 @media(max-width:600px){
 
 nav{
@@ -413,8 +418,8 @@ Free online tools for your
 
 <p>
 Compress images, resize photos, convert images, create QR codes,
-count words, calculate percentages, generate passwords and create
-simple PDFs — all in one free online tool website.
+convert PDF to JPG, count words, calculate percentages, generate
+passwords and create simple PDFs — all in one free online tool website.
 </p>
 
 </section>
@@ -432,9 +437,10 @@ Fast and simple tools for images, text, QR codes, calculations and documents.
 
 </div>
 
+
 <div class="tool-count">
 
-<strong>12+ Free Tools</strong> available on ToolNest
+<strong>13+ Free Tools</strong> available on ToolNest
 
 </div>
 
@@ -462,6 +468,14 @@ JPG • PNG • WebP
 </label>
 
 <button onclick="compressImage()">Compress Image</button>
+
+<div class="tool-link">
+
+<a class="download" href="image-compressor.html">
+Open Full Tool →
+</a>
+
+</div>
 
 <div id="compressResult" class="result"></div>
 
@@ -508,6 +522,14 @@ JPG • PNG • WebP
 </div>
 
 <button onclick="resizeImage()">Resize & Download</button>
+
+<div class="tool-link">
+
+<a class="download" href="image-resizer.html">
+Open Full Tool →
+</a>
+
+</div>
 
 <div id="resizeResult" class="result"></div>
 
@@ -610,7 +632,7 @@ JPG • JPEG
 </div>
 
 
-<!-- QR -->
+<!-- QR CODE -->
 
 <div class="card">
 
@@ -623,6 +645,14 @@ JPG • JPEG
 <input type="text" id="qrText" placeholder="https://example.com">
 
 <button onclick="generateQR()">Generate QR</button>
+
+<div class="tool-link">
+
+<a class="download" href="qr-code-generator.html">
+Open Full Tool →
+</a>
+
+</div>
 
 <div id="qrBox" class="result" style="text-align:center">
 
@@ -637,6 +667,25 @@ Download QR
 </a>
 
 </div>
+
+</div>
+
+
+<!-- PDF TO JPG -->
+
+<div class="card">
+
+<div class="icon">📄</div>
+
+<h3>PDF to JPG Converter</h3>
+
+<p>
+Convert PDF pages into JPG images quickly and easily.
+</p>
+
+<a class="download" href="pdf-to-jpg.html">
+Open PDF to JPG →
+</a>
 
 </div>
 
@@ -694,7 +743,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<!-- AGE -->
+<!-- AGE CALCULATOR -->
 
 <div class="card">
 
@@ -755,7 +804,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<!-- PASSWORD -->
+<!-- PASSWORD GENERATOR -->
 
 <div class="card">
 
@@ -776,7 +825,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<!-- PDF -->
+<!-- TEXT TO PDF -->
 
 <div class="card">
 
@@ -807,9 +856,9 @@ placeholder="Enter your text..."></textarea>
 <p>
 ToolNest is a free online tools website designed to make everyday digital
 tasks easier. You can compress and resize images, convert image formats,
-create QR codes, count words, change text case, calculate age and
-percentages, calculate BMI, generate passwords and create simple PDF
-documents.
+create QR codes, convert PDF pages to JPG, count words, change text case,
+calculate age and percentages, calculate BMI, generate passwords and create
+simple PDF documents.
 </p>
 
 <p>
@@ -1547,78 +1596,5 @@ let pdf="%PDF-1.4\n";
 
 const offsets=[0];
 
-for(let i=1;i<objects.length;i++){
-
-offsets[i]=pdf.length;
-
-pdf+=
-i+" 0 obj\n"+
-objects[i]+
-"\nendobj\n";
-
-}
-
-const xref=pdf.length;
-
-pdf+="xref\n0 "+objects.length+"\n";
-
-pdf+="0000000000 65535 f \n";
-
-for(let i=1;i<objects.length;i++){
-
-pdf+=
-String(offsets[i]).padStart(10,"0")+
-" 00000 n \n";
-
-}
-
-pdf+=
-"trailer\n<< /Size "+
-objects.length+
-" /Root 1 0 R >>\n";
-
-pdf+=
-"startxref\n"+
-xref+
-"\n%%EOF";
-
-return pdf;
-
-}
-
-
-function formatBytes(bytes){
-
-if(bytes===0)return"0 Bytes";
-
-const sizes=[
-"Bytes",
-"KB",
-"MB",
-"GB"
-];
-
-const i=Math.floor(
-Math.log(bytes)/Math.log(1024)
-);
-
-return parseFloat(
-(bytes/Math.pow(1024,i)).toFixed(2)
-)+" "+sizes[i];
-
-}
-
-
-function showError(element,message){
-
-element.style.display="block";
-
-element.innerHTML=
-'<span class="error">'+message+'</span>';
-
-}
-
-</script>
-
-</body>
-</html>
+for(let i=1;i<objects.length
+```
