@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
 
@@ -8,9 +7,9 @@
 
 <title>ToolRivo - Free Online Tools for Everyone</title>
 
-<meta name="description" content="ToolRivo provides free online tools including image compressor, image resizer, JPG to PNG converter, image to JPG, image cropper, QR code generator, PDF to JPG converter, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator and text to PDF.">
+<meta name="description" content="ToolRivo provides free online tools including image compressor, image resizer, image converters, image cropper, QR tools, PDF tools, text tools, calculators, password generator and developer utilities.">
 
-<meta name="keywords" content="free online tools, image compressor, image resizer, JPG to PNG converter, image to JPG, image cropper, QR code generator, PDF to JPG converter, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator, text to PDF">
+<meta name="keywords" content="free online tools, image compressor, image resizer, JPG to PNG, image converter, image cropper, QR code generator, QR scanner, PDF to JPG, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator, JSON formatter, URL encoder, Base64, YouTube thumbnail downloader">
 
 <meta name="author" content="ToolRivo">
 <meta name="robots" content="index, follow">
@@ -18,7 +17,7 @@
 <link rel="canonical" href="https://mureedabbas1.github.io/ToolRivo/">
 
 <meta property="og:title" content="ToolRivo - Free Online Tools for Everyone">
-<meta property="og:description" content="Free online tools for images, text, QR codes, calculators and documents. Fast, simple and easy to use.">
+<meta property="og:description" content="Free online tools for images, text, QR codes, calculators, documents and developer utilities.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://mureedabbas1.github.io/ToolRivo/">
 
@@ -52,7 +51,7 @@ padding:15px 6%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-background:rgba(255,255,255,.9);
+background:rgba(255,255,255,.92);
 backdrop-filter:blur(15px);
 border-bottom:1px solid #e6e7f0;
 }
@@ -106,7 +105,7 @@ margin-bottom:20px;
 }
 
 .hero h1{
-max-width:850px;
+max-width:900px;
 margin:auto;
 font-size:clamp(42px,7vw,72px);
 line-height:1.03;
@@ -120,7 +119,7 @@ color:transparent;
 }
 
 .hero p{
-max-width:700px;
+max-width:750px;
 margin:22px auto 0;
 color:#70758a;
 font-size:18px;
@@ -146,11 +145,20 @@ margin-bottom:7px;
 color:#777c90;
 }
 
+.category-title{
+font-size:25px;
+margin:20px 0;
+padding:14px 18px;
+background:rgba(255,255,255,.7);
+border-radius:15px;
+border:1px solid #e5e6ef;
+}
+
 .tools{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
 gap:22px;
-padding-bottom:70px;
+padding-bottom:35px;
 }
 
 .card{
@@ -213,6 +221,7 @@ display:none;
 input[type=text],
 input[type=number],
 input[type=date],
+input[type=url],
 textarea,
 select{
 width:100%;
@@ -275,6 +284,7 @@ padding:14px;
 background:#f6f6fb;
 border-radius:12px;
 color:#555a70;
+overflow-wrap:anywhere;
 }
 
 .success{
@@ -341,6 +351,35 @@ margin-top:9px;
 
 .tool-link{
 margin-top:12px;
+}
+
+.preview-image{
+max-width:100%;
+max-height:300px;
+border-radius:12px;
+margin-top:10px;
+}
+
+.code-output{
+font-family:monospace;
+font-size:13px;
+white-space:pre-wrap;
+word-break:break-word;
+text-align:left;
+background:#171827;
+color:#fff;
+padding:15px;
+border-radius:10px;
+max-height:350px;
+overflow:auto;
+}
+
+.color-preview{
+width:100%;
+height:80px;
+border-radius:12px;
+margin:10px 0;
+border:1px solid #ddd;
 }
 
 @media(max-width:600px){
@@ -412,8 +451,8 @@ Free online tools for your
 
 <p>
 Compress images, resize photos, convert images, create QR codes,
-convert PDF to JPG, count words, calculate percentages, generate
-passwords and create simple PDFs — all in one free online tool website.
+work with text, calculate numbers, generate passwords and use
+developer tools — all in one free online website.
 </p>
 
 </section>
@@ -425,18 +464,24 @@ passwords and create simple PDFs — all in one free online tool website.
 <h2>Explore Our Free Online Tools</h2>
 
 <p>
-Fast and simple tools for images, text, QR codes, calculations and documents.
+Fast and simple tools for images, text, QR codes, calculations, documents and more.
 </p>
 
 </div>
 
 <div class="tool-count">
 
-<strong>13+ Free Tools</strong> available on ToolRivo
+<strong>25+ Free Tools</strong> available on ToolRivo
 
 </div>
 
+
+<!-- IMAGE TOOLS -->
+
+<h2 class="category-title">🖼️ Image Tools</h2>
+
 <section class="tools">
+
 
 <div class="card">
 
@@ -469,13 +514,14 @@ Open Full Tool →
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">📐</div>
 
 <h3>Image Resizer</h3>
 
-<p>Resize images to your required width and height online.</p>
+<p>Resize images to your required width and height.</p>
 
 <label class="upload">
 
@@ -488,21 +534,9 @@ JPG • PNG • WebP
 
 <div class="row">
 
-<div>
+<input type="number" id="resizeWidth" placeholder="Width">
 
-<label>Width</label>
-
-<input type="number" id="resizeWidth" placeholder="800">
-
-</div>
-
-<div>
-
-<label>Height</label>
-
-<input type="number" id="resizeHeight" placeholder="600">
-
-</div>
+<input type="number" id="resizeHeight" placeholder="Height">
 
 </div>
 
@@ -519,6 +553,7 @@ Open Full Tool →
 <div id="resizeResult" class="result"></div>
 
 </div>
+
 
 <div class="card">
 
@@ -543,13 +578,14 @@ JPG • JPEG
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">🎨</div>
 
 <h3>Image to JPG Converter</h3>
 
-<p>Convert PNG, WebP and other images into JPG format.</p>
+<p>Convert PNG, WebP and other images into JPG.</p>
 
 <label class="upload">
 
@@ -565,13 +601,14 @@ JPG • JPEG
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">✂️</div>
 
 <h3>Image Cropper</h3>
 
-<p>Crop images quickly using your preferred width and height.</p>
+<p>Crop images using your preferred width and height.</p>
 
 <label class="upload">
 
@@ -583,21 +620,9 @@ JPG • JPEG
 
 <div class="row">
 
-<div>
+<input type="number" id="cropWidth" placeholder="Width">
 
-<label>Width</label>
-
-<input type="number" id="cropWidth" placeholder="800">
-
-</div>
-
-<div>
-
-<label>Height</label>
-
-<input type="number" id="cropHeight" placeholder="600">
-
-</div>
+<input type="number" id="cropHeight" placeholder="Height">
 
 </div>
 
@@ -606,6 +631,56 @@ JPG • JPEG
 <div id="cropResult" class="result"></div>
 
 </div>
+
+
+<div class="card">
+
+<div class="icon">🔢</div>
+
+<h3>Image to Base64</h3>
+
+<p>Convert an image into Base64 text for web development.</p>
+
+<label class="upload">
+
+<strong>📷 Choose image</strong>
+
+<input type="file" id="base64ImageFile" accept="image/*">
+
+</label>
+
+<button onclick="imageToBase64()">Convert</button>
+
+<div id="base64ImageResult" class="result"></div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🖼️</div>
+
+<h3>Base64 to Image</h3>
+
+<p>Convert Base64 image data back into an image.</p>
+
+<textarea id="base64ToImageInput" placeholder="Paste Base64 image data here..."></textarea>
+
+<button onclick="base64ToImage()">Convert to Image</button>
+
+<div id="base64ToImageResult" class="result"></div>
+
+</div>
+
+</section>
+
+
+<!-- QR TOOLS -->
+
+<h2 class="category-title">🔗 QR Tools</h2>
+
+<section class="tools">
+
 
 <div class="card">
 
@@ -643,15 +718,46 @@ Download QR
 
 </div>
 
+
+<div class="card">
+
+<div class="icon">📷</div>
+
+<h3>QR Code Scanner</h3>
+
+<p>Scan a QR code from an image and read its content.</p>
+
+<label class="upload">
+
+<strong>📷 Choose QR image</strong>
+
+<input type="file" id="qrScanFile" accept="image/*">
+
+</label>
+
+<button onclick="scanQR()">Scan QR</button>
+
+<div id="qrScanResult" class="result"></div>
+
+</div>
+
+</section>
+
+
+<!-- DOCUMENT TOOLS -->
+
+<h2 class="category-title">📄 Document Tools</h2>
+
+<section class="tools">
+
+
 <div class="card">
 
 <div class="icon">📄</div>
 
 <h3>PDF to JPG Converter</h3>
 
-<p>
-Convert PDF pages into JPG images quickly and easily.
-</p>
+<p>Convert PDF pages into JPG images.</p>
 
 <a class="download" href="pdf-to-jpg.html">
 Open PDF to JPG →
@@ -659,13 +765,42 @@ Open PDF to JPG →
 
 </div>
 
+
+<div class="card">
+
+<div class="icon">📄</div>
+
+<h3>Text to PDF</h3>
+
+<p>Create a simple PDF document from your text.</p>
+
+<input type="text" id="pdfTitle" placeholder="Document title">
+
+<textarea id="pdfText" placeholder="Write your text here..."></textarea>
+
+<button onclick="createPDF()">Create PDF</button>
+
+<div id="pdfResult" class="result"></div>
+
+</div>
+
+</section>
+
+
+<!-- TEXT TOOLS -->
+
+<h2 class="category-title">✍️ Text Tools</h2>
+
+<section class="tools">
+
+
 <div class="card">
 
 <div class="icon">✍️</div>
 
 <h3>Word Counter</h3>
 
-<p>Count words, characters and sentences in your text.</p>
+<p>Count words, characters and sentences.</p>
 
 <textarea id="wordText"
 placeholder="Type or paste your text here..."
@@ -680,6 +815,7 @@ Sentences: <strong id="sentences">0</strong>
 </div>
 
 </div>
+
 
 <div class="card">
 
@@ -706,6 +842,33 @@ placeholder="Enter your text..."></textarea>
 
 </div>
 
+
+<div class="card">
+
+<div class="icon">🧹</div>
+
+<h3>Text Cleaner</h3>
+
+<p>Remove extra spaces and clean unwanted blank lines.</p>
+
+<textarea id="cleanText" placeholder="Paste your text here..."></textarea>
+
+<button onclick="cleanText()">Clean Text</button>
+
+<div id="cleanResult" class="result"></div>
+
+</div>
+
+</section>
+
+
+<!-- CALCULATORS -->
+
+<h2 class="category-title">🧮 Calculators</h2>
+
+<section class="tools">
+
+
 <div class="card">
 
 <div class="icon">🎂</div>
@@ -721,6 +884,7 @@ placeholder="Enter your text..."></textarea>
 <div id="ageResult" class="result"></div>
 
 </div>
+
 
 <div class="card">
 
@@ -740,6 +904,7 @@ placeholder="Enter your text..."></textarea>
 
 </div>
 
+
 <div class="card">
 
 <div class="icon">⚖️</div>
@@ -757,6 +922,16 @@ placeholder="Enter your text..."></textarea>
 <div id="bmiResult" class="result"></div>
 
 </div>
+
+</section>
+
+
+<!-- SECURITY -->
+
+<h2 class="category-title">🔐 Security Tools</h2>
+
+<section class="tools">
+
 
 <div class="card">
 
@@ -776,25 +951,165 @@ placeholder="Enter your text..."></textarea>
 
 </div>
 
+</section>
+
+
+<!-- DEVELOPER TOOLS -->
+
+<h2 class="category-title">💻 Developer Tools</h2>
+
+<section class="tools">
+
+
 <div class="card">
 
-<div class="icon">📄</div>
+<div class="icon">🧾</div>
 
-<h3>Text to PDF</h3>
+<h3>JSON Formatter</h3>
 
-<p>Create a simple PDF document from your text.</p>
+<p>Format and validate JSON data instantly.</p>
 
-<input type="text" id="pdfTitle" placeholder="Document title">
+<textarea id="jsonInput" placeholder='{"name":"ToolRivo","free":true}'></textarea>
 
-<textarea id="pdfText" placeholder="Write your text here..."></textarea>
+<button onclick="formatJSON()">Format JSON</button>
 
-<button onclick="createPDF()">Create PDF</button>
+<div id="jsonResult" class="result"></div>
 
-<div id="pdfResult" class="result"></div>
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔗</div>
+
+<h3>URL Encoder / Decoder</h3>
+
+<p>Encode or decode URLs and text.</p>
+
+<textarea id="urlInput" placeholder="Enter URL or text..."></textarea>
+
+<div class="row">
+
+<button onclick="encodeURL()">Encode</button>
+
+<button onclick="decodeURL()">Decode</button>
+
+</div>
+
+<div id="urlResult" class="result"></div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🔤</div>
+
+<h3>Base64 Encoder / Decoder</h3>
+
+<p>Encode or decode normal text using Base64.</p>
+
+<textarea id="base64Input" placeholder="Enter text..."></textarea>
+
+<div class="row">
+
+<button onclick="encodeBase64()">Encode</button>
+
+<button onclick="decodeBase64()">Decode</button>
+
+</div>
+
+<div id="base64Result" class="result"></div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎲</div>
+
+<h3>Random Number Generator</h3>
+
+<p>Generate a random number between two values.</p>
+
+<div class="row">
+
+<input type="number" id="randomMin" placeholder="Minimum">
+
+<input type="number" id="randomMax" placeholder="Maximum">
+
+</div>
+
+<button onclick="generateRandom()">Generate</button>
+
+<div id="randomResult" class="result"></div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">⏱️</div>
+
+<h3>Unix Timestamp Converter</h3>
+
+<p>Convert the current date into a Unix timestamp.</p>
+
+<button onclick="getTimestamp()">Get Current Timestamp</button>
+
+<div id="timestampResult" class="result"></div>
+
+</div>
+
+
+<div class="card">
+
+<div class="icon">🎨</div>
+
+<h3>Color Picker</h3>
+
+<p>Choose a color and get its HEX code.</p>
+
+<input type="color" id="colorPicker" value="#6659df">
+
+<div id="colorPreview" class="color-preview"></div>
+
+<input type="text" id="colorValue" value="#6659df" readonly>
+
+<button onclick="copyColor()">Copy HEX</button>
 
 </div>
 
 </section>
+
+
+<!-- YOUTUBE -->
+
+<h2 class="category-title">🎥 YouTube Tools</h2>
+
+<section class="tools">
+
+
+<div class="card">
+
+<div class="icon">▶️</div>
+
+<h3>YouTube Thumbnail Downloader</h3>
+
+<p>Get a YouTube video's thumbnail image.</p>
+
+<input type="url"
+id="youtubeURL"
+placeholder="Paste YouTube video URL">
+
+<button onclick="getYouTubeThumbnail()">Get Thumbnail</button>
+
+<div id="youtubeResult" class="result"></div>
+
+</div>
+
+</section>
+
 
 <section class="info-section">
 
@@ -803,9 +1118,9 @@ placeholder="Enter your text..."></textarea>
 <p>
 ToolRivo is a free online tools website designed to make everyday digital
 tasks easier. You can compress and resize images, convert image formats,
-create QR codes, convert PDF pages to JPG, count words, change text case,
-calculate age and percentages, calculate BMI, generate passwords and create
-simple PDF documents.
+create and scan QR codes, work with text, calculate age and percentages,
+calculate BMI, generate passwords, format JSON, encode URLs, work with
+Base64, generate random numbers and use other useful online tools.
 </p>
 
 <p>
@@ -829,35 +1144,60 @@ and mobile devices. No complicated software installation is required.
 
 </footer>
 
+
 <script>
 
+/* =========================
+   GENERAL FUNCTIONS
+========================= */
+
 function showError(element,message){
+
 element.style.display="block";
-element.innerHTML='<span class="error">✕ '+message+'</span>';
+
+element.innerHTML=
+'<span class="error">✕ '+message+'</span>';
+
 }
+
 
 function formatBytes(bytes){
 
 if(bytes===0)return "0 Bytes";
 
 const sizes=["Bytes","KB","MB","GB"];
-const i=Math.floor(Math.log(bytes)/Math.log(1024));
 
-return parseFloat((bytes/Math.pow(1024,i)).toFixed(2))+" "+sizes[i];
+const i=Math.floor(
+Math.log(bytes)/Math.log(1024)
+);
+
+return parseFloat(
+(bytes/Math.pow(1024,i)).toFixed(2)
+)+" "+sizes[i];
 
 }
+
+
+/* =========================
+   IMAGE COMPRESSOR
+========================= */
 
 function compressImage(){
 
 const file=document.getElementById("compressFile").files[0];
+
 const result=document.getElementById("compressResult");
 
 if(!file){
+
 showError(result,"Please choose an image first.");
+
 return;
+
 }
 
 const reader=new FileReader();
+
 const img=new Image();
 
 reader.onload=e=>{
@@ -897,27 +1237,43 @@ reader.readAsDataURL(file);
 
 }
 
+
+/* =========================
+   IMAGE RESIZER
+========================= */
+
 function resizeImage(){
 
 const file=document.getElementById("resizeFile").files[0];
 
-const width=parseInt(document.getElementById("resizeWidth").value);
+const width=parseInt(
+document.getElementById("resizeWidth").value
+);
 
-const height=parseInt(document.getElementById("resizeHeight").value);
+const height=parseInt(
+document.getElementById("resizeHeight").value
+);
 
 const result=document.getElementById("resizeResult");
 
 if(!file){
+
 showError(result,"Please choose an image.");
+
 return;
+
 }
 
 if(!width||!height){
+
 showError(result,"Please enter width and height.");
+
 return;
+
 }
 
 const reader=new FileReader();
+
 const img=new Image();
 
 reader.onload=e=>{
@@ -955,6 +1311,11 @@ reader.readAsDataURL(file);
 
 }
 
+
+/* =========================
+   JPG TO PNG
+========================= */
+
 function convertPNG(){
 
 const file=document.getElementById("jpgFile").files[0];
@@ -962,11 +1323,15 @@ const file=document.getElementById("jpgFile").files[0];
 const result=document.getElementById("pngResult");
 
 if(!file){
+
 showError(result,"Please choose a JPG image.");
+
 return;
+
 }
 
 const reader=new FileReader();
+
 const img=new Image();
 
 reader.onload=e=>{
@@ -1002,6 +1367,11 @@ reader.readAsDataURL(file);
 
 }
 
+
+/* =========================
+   IMAGE TO JPG
+========================= */
+
 function convertJPG(){
 
 const file=document.getElementById("jpgConvertFile").files[0];
@@ -1009,11 +1379,15 @@ const file=document.getElementById("jpgConvertFile").files[0];
 const result=document.getElementById("jpgResult");
 
 if(!file){
+
 showError(result,"Please choose an image.");
+
 return;
+
 }
 
 const reader=new FileReader();
+
 const img=new Image();
 
 reader.onload=e=>{
@@ -1028,7 +1402,13 @@ canvas.height=img.height;
 const ctx=canvas.getContext("2d");
 
 ctx.fillStyle="#ffffff";
-ctx.fillRect(0,0,canvas.width,canvas.height);
+
+ctx.fillRect(
+0,
+0,
+canvas.width,
+canvas.height
+);
 
 ctx.drawImage(img,0,0);
 
@@ -1054,27 +1434,43 @@ reader.readAsDataURL(file);
 
 }
 
+
+/* =========================
+   IMAGE CROPPER
+========================= */
+
 function cropImage(){
 
 const file=document.getElementById("cropFile").files[0];
 
-const width=parseInt(document.getElementById("cropWidth").value);
+const width=parseInt(
+document.getElementById("cropWidth").value
+);
 
-const height=parseInt(document.getElementById("cropHeight").value);
+const height=parseInt(
+document.getElementById("cropHeight").value
+);
 
 const result=document.getElementById("cropResult");
 
 if(!file){
+
 showError(result,"Please choose an image.");
+
 return;
+
 }
 
 if(!width||!height){
+
 showError(result,"Please enter crop width and height.");
+
 return;
+
 }
 
 const reader=new FileReader();
+
 const img=new Image();
 
 reader.onload=e=>{
@@ -1088,15 +1484,25 @@ canvas.height=height;
 
 const ctx=canvas.getContext("2d");
 
-const sx=Math.max(0,(img.width-width)/2);
-const sy=Math.max(0,(img.height-height)/2);
+const sx=Math.max(
+0,
+(img.width-width)/2
+);
+
+const sy=Math.max(
+0,
+(img.height-height)/2
+);
+
+const sw=Math.min(width,img.width);
+const sh=Math.min(height,img.height);
 
 ctx.drawImage(
 img,
 sx,
 sy,
-Math.min(width,img.width),
-Math.min(height,img.height),
+sw,
+sh,
 0,
 0,
 width,
@@ -1125,15 +1531,111 @@ reader.readAsDataURL(file);
 
 }
 
+
+/* =========================
+   IMAGE TO BASE64
+========================= */
+
+function imageToBase64(){
+
+const file=document.getElementById("base64ImageFile").files[0];
+
+const result=document.getElementById("base64ImageResult");
+
+if(!file){
+
+showError(result,"Please choose an image.");
+
+return;
+
+}
+
+const reader=new FileReader();
+
+reader.onload=e=>{
+
+const data=e.target.result;
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Image converted to Base64!</span><br><br>'+
+'<textarea id="base64ImageOutput" style="min-height:180px">'+
+data+
+'</textarea><br>'+
+'<button onclick="copyBase64Image()">Copy Base64</button>';
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+
+function copyBase64Image(){
+
+const box=document.getElementById("base64ImageOutput");
+
+navigator.clipboard.writeText(box.value);
+
+}
+
+
+/* =========================
+   BASE64 TO IMAGE
+========================= */
+
+function base64ToImage(){
+
+const value=
+document.getElementById("base64ToImageInput").value.trim();
+
+const result=
+document.getElementById("base64ToImageResult");
+
+if(!value){
+
+showError(result,"Please paste Base64 image data.");
+
+return;
+
+}
+
+let data=value;
+
+if(!data.startsWith("data:image")){
+
+data="data:image/png;base64,"+data;
+
+}
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Image created!</span><br><br>'+
+'<img class="preview-image" src="'+data+'" alt="Decoded Image"><br><br>'+
+'<a class="download" href="'+data+'" download="ToolRivo-image.png">Download Image</a>';
+
+}
+
+
+/* =========================
+   QR GENERATOR
+========================= */
+
 function generateQR(){
 
-const text=document.getElementById("qrText").value.trim();
+const text=
+document.getElementById("qrText").value.trim();
 
-const box=document.getElementById("qrBox");
+const box=
+document.getElementById("qrBox");
 
-const image=document.getElementById("qrImage");
+const image=
+document.getElementById("qrImage");
 
-const download=document.getElementById("qrDownload");
+const download=
+document.getElementById("qrDownload");
 
 if(!text){
 
@@ -1155,15 +1657,124 @@ image.src=url;
 image.onload=()=>{
 
 box.style.display="block";
+
 download.href=url;
 
 };
 
 }
 
+
+/* =========================
+   QR SCANNER
+========================= */
+
+function scanQR(){
+
+const file=
+document.getElementById("qrScanFile").files[0];
+
+const result=
+document.getElementById("qrScanResult");
+
+if(!file){
+
+showError(result,"Please choose a QR image.");
+
+return;
+
+}
+
+result.style.display="block";
+
+result.innerHTML=
+"⏳ Loading QR scanner...";
+
+if(typeof BarcodeDetector==="undefined"){
+
+result.innerHTML=
+'<span class="error">QR scanning is not supported by this browser. Please try Chrome or Edge.</span>';
+
+return;
+
+}
+
+const reader=new FileReader();
+
+reader.onload=e=>{
+
+const img=new Image();
+
+img.onload=async()=>{
+
+try{
+
+const detector=new BarcodeDetector({
+formats:["qr_code"]
+});
+
+const codes=await detector.detect(img);
+
+if(!codes.length){
+
+result.innerHTML=
+'<span class="error">✕ No QR code found in this image.</span>';
+
+return;
+
+}
+
+const value=codes[0].rawValue;
+
+result.innerHTML=
+'<span class="success">✓ QR Code detected!</span><br><br>'+
+'<strong>Result:</strong><br><br>'+
+'<div style="word-break:break-all">'+
+value+
+'</div><br>'+
+'<button onclick="copyQRResult()">Copy Result</button>';
+
+window.lastQRResult=value;
+
+}catch(error){
+
+result.innerHTML=
+'<span class="error">Unable to scan this QR image.</span>';
+
+}
+
+};
+
+img.src=e.target.result;
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+
+function copyQRResult(){
+
+if(window.lastQRResult){
+
+navigator.clipboard.writeText(
+window.lastQRResult
+);
+
+}
+
+}
+
+
+/* =========================
+   WORD COUNTER
+========================= */
+
 function countWords(){
 
-const text=document.getElementById("wordText").value;
+const text=
+document.getElementById("wordText").value;
 
 const words=text.trim()
 ?text.trim().split(/\s+/).length
@@ -1177,10 +1788,17 @@ const sentences=text
 .length;
 
 document.getElementById("words").textContent=words;
+
 document.getElementById("characters").textContent=characters;
+
 document.getElementById("sentences").textContent=sentences;
 
 }
+
+
+/* =========================
+   CASE CONVERTER
+========================= */
 
 function upperCase(){
 
@@ -1190,6 +1808,7 @@ box.value=box.value.toUpperCase();
 
 }
 
+
 function lowerCase(){
 
 const box=document.getElementById("caseText");
@@ -1197,6 +1816,7 @@ const box=document.getElementById("caseText");
 box.value=box.value.toLowerCase();
 
 }
+
 
 function titleCase(){
 
@@ -1208,34 +1828,85 @@ box.value=box.value
 
 }
 
+
+/* =========================
+   TEXT CLEANER
+========================= */
+
+function cleanText(){
+
+const box=
+document.getElementById("cleanText");
+
+const result=
+document.getElementById("cleanResult");
+
+if(!box.value.trim()){
+
+showError(result,"Please enter some text.");
+
+return;
+
+}
+
+const cleaned=box.value
+.split("\n")
+.map(line=>line.trim().replace(/\s+/g," "))
+.filter(line=>line.length>0)
+.join("\n");
+
+box.value=cleaned;
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Text cleaned successfully!</span>';
+
+}
+
+
+/* =========================
+   AGE CALCULATOR
+========================= */
+
 function calculateAge(){
 
-const input=document.getElementById("birthDate").value;
+const input=
+document.getElementById("birthDate").value;
 
-const result=document.getElementById("ageResult");
+const result=
+document.getElementById("ageResult");
 
 if(!input){
 
-showError(result,"Please select your date of birth.");
+showError(
+result,
+"Please select your date of birth."
+);
 
 return;
 
 }
 
 const birth=new Date(input);
+
 const today=new Date();
 
-let years=today.getFullYear()-birth.getFullYear();
+let years=
+today.getFullYear()-birth.getFullYear();
 
-let months=today.getMonth()-birth.getMonth();
+let months=
+today.getMonth()-birth.getMonth();
 
-let days=today.getDate()-birth.getDate();
+let days=
+today.getDate()-birth.getDate();
 
 if(days<0){
 
 months--;
 
-const previousMonth=new Date(
+const previousMonth=
+new Date(
 today.getFullYear(),
 today.getMonth(),
 0
@@ -1248,6 +1919,7 @@ days+=previousMonth.getDate();
 if(months<0){
 
 years--;
+
 months+=12;
 
 }
@@ -1257,10 +1929,20 @@ result.style.display="block";
 result.innerHTML=
 '<div class="success">Your age is:</div>'+
 '<div class="big-result">'+
-years+' Years, '+months+' Months, '+days+' Days'+
+years+
+' Years, '+
+months+
+' Months, '+
+days+
+' Days'+
 '</div>';
 
 }
+
+
+/* =========================
+   PERCENTAGE
+========================= */
 
 function calculatePercentage(){
 
@@ -1272,11 +1954,19 @@ const total=parseFloat(
 document.getElementById("percentTotal").value
 );
 
-const result=document.getElementById("percentResult");
+const result=
+document.getElementById("percentResult");
 
-if(isNaN(value)||isNaN(total)||total===0){
+if(
+isNaN(value)||
+isNaN(total)||
+total===0
+){
 
-showError(result,"Please enter valid numbers.");
+showError(
+result,
+"Please enter valid numbers."
+);
 
 return;
 
@@ -1291,6 +1981,11 @@ result.innerHTML=
 
 }
 
+
+/* =========================
+   BMI
+========================= */
+
 function calculateBMI(){
 
 const weight=parseFloat(
@@ -1301,11 +1996,15 @@ const height=parseFloat(
 document.getElementById("bmiHeight").value
 );
 
-const result=document.getElementById("bmiResult");
+const result=
+document.getElementById("bmiResult");
 
 if(!weight||!height){
 
-showError(result,"Please enter weight and height.");
+showError(
+result,
+"Please enter weight and height."
+);
 
 return;
 
@@ -1313,26 +2012,39 @@ return;
 
 const meters=height/100;
 
-const bmi=weight/(meters*meters);
+const bmi=
+weight/(meters*meters);
 
 let category="";
 
 if(bmi<18.5)
 category="Underweight";
+
 else if(bmi<25)
 category="Normal range";
+
 else if(bmi<30)
 category="Overweight";
+
 else
 category="Obesity range";
 
 result.style.display="block";
 
 result.innerHTML=
-'<div class="big-result">'+bmi.toFixed(1)+'</div>'+
-'<strong>'+category+'</strong>';
+'<div class="big-result">'+
+bmi.toFixed(1)+
+'</div>'+
+'<strong>'+
+category+
+'</strong>';
 
 }
+
+
+/* =========================
+   PASSWORD
+========================= */
 
 function generatePassword(){
 
@@ -1348,44 +2060,586 @@ const chars=
 
 let password="";
 
-for(let i=0;i<length;i++){
+for(
+let i=0;
+i<length;
+i++
+){
 
-password+=chars.charAt(
-Math.floor(Math.random()*chars.length)
+password+=
+chars.charAt(
+Math.floor(
+Math.random()*chars.length
+)
 );
 
 }
 
-document.getElementById("passwordOutput").value=password;
+document.getElementById(
+"passwordOutput"
+).value=password;
 
 }
+
 
 function copyPassword(){
 
-const box=document.getElementById("passwordOutput");
+const box=
+document.getElementById("passwordOutput");
 
 if(!box.value){
+
 generatePassword();
-}
-
-navigator.clipboard.writeText(box.value);
 
 }
+
+navigator.clipboard.writeText(
+box.value
+);
+
+}
+
+
+/* =========================
+   JSON FORMATTER
+========================= */
+
+function formatJSON(){
+
+const input=
+document.getElementById("jsonInput").value.trim();
+
+const result=
+document.getElementById("jsonResult");
+
+if(!input){
+
+showError(
+result,
+"Please enter JSON."
+);
+
+return;
+
+}
+
+try{
+
+const parsed=JSON.parse(input);
+
+const formatted=
+JSON.stringify(
+parsed,
+null,
+2
+);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Valid JSON</span><br><br>'+
+'<div class="code-output">'+
+escapeHTML(formatted)+
+'</div><br>'+
+'<button onclick="copyJSON()">Copy JSON</button>';
+
+window.lastJSON=formatted;
+
+}catch(error){
+
+showError(
+result,
+"Invalid JSON format."
+);
+
+}
+
+}
+
+
+function copyJSON(){
+
+if(window.lastJSON){
+
+navigator.clipboard.writeText(
+window.lastJSON
+);
+
+}
+
+}
+
+
+function escapeHTML(text){
+
+return text
+.replace(/&/g,"&amp;")
+.replace(/</g,"&lt;")
+.replace(/>/g,"&gt;")
+.replace(/"/g,"&quot;")
+.replace(/'/g,"&#039;");
+
+}
+
+
+/* =========================
+   URL ENCODER
+========================= */
+
+function encodeURL(){
+
+const value=
+document.getElementById("urlInput").value;
+
+const result=
+document.getElementById("urlResult");
+
+if(!value){
+
+showError(
+result,
+"Please enter text or URL."
+);
+
+return;
+
+}
+
+const encoded=
+encodeURIComponent(value);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">Encoded:</span><br><br>'+
+'<div class="code-output">'+
+escapeHTML(encoded)+
+'</div>';
+
+}
+
+
+function decodeURL(){
+
+const value=
+document.getElementById("urlInput").value;
+
+const result=
+document.getElementById("urlResult");
+
+if(!value){
+
+showError(
+result,
+"Please enter encoded text."
+);
+
+return;
+
+}
+
+try{
+
+const decoded=
+decodeURIComponent(value);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">Decoded:</span><br><br>'+
+'<div class="code-output">'+
+escapeHTML(decoded)+
+'</div>';
+
+}catch(error){
+
+showError(
+result,
+"Invalid encoded URL."
+);
+
+}
+
+}
+
+
+/* =========================
+   BASE64
+========================= */
+
+function encodeBase64(){
+
+const value=
+document.getElementById("base64Input").value;
+
+const result=
+document.getElementById("base64Result");
+
+if(!value){
+
+showError(
+result,
+"Please enter text."
+);
+
+return;
+
+}
+
+try{
+
+const encoded=
+btoa(
+unescape(
+encodeURIComponent(value)
+)
+);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">Base64:</span><br><br>'+
+'<div class="code-output">'+
+encoded+
+'</div>';
+
+window.lastBase64=encoded;
+
+}catch(error){
+
+showError(
+result,
+"Unable to encode text."
+);
+
+}
+
+}
+
+
+function decodeBase64(){
+
+const value=
+document.getElementById("base64Input").value.trim();
+
+const result=
+document.getElementById("base64Result");
+
+if(!value){
+
+showError(
+result,
+"Please enter Base64 text."
+);
+
+return;
+
+}
+
+try{
+
+const decoded=
+decodeURIComponent(
+escape(
+atob(value)
+)
+);
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">Decoded Text:</span><br><br>'+
+'<div class="code-output">'+
+escapeHTML(decoded)+
+'</div>';
+
+}catch(error){
+
+showError(
+result,
+"Invalid Base64 text."
+);
+
+}
+
+}
+
+
+/* =========================
+   RANDOM NUMBER
+========================= */
+
+function generateRandom(){
+
+const min=parseInt(
+document.getElementById("randomMin").value
+);
+
+const max=parseInt(
+document.getElementById("randomMax").value
+);
+
+const result=
+document.getElementById("randomResult");
+
+if(
+isNaN(min)||
+isNaN(max)
+){
+
+showError(
+result,
+"Please enter minimum and maximum."
+);
+
+return;
+
+}
+
+if(min>max){
+
+showError(
+result,
+"Minimum cannot be greater than maximum."
+);
+
+return;
+
+}
+
+const number=
+Math.floor(
+Math.random()*(max-min+1)
+)+min;
+
+result.style.display="block";
+
+result.innerHTML=
+'<div class="big-result">'+
+number+
+'</div>';
+
+}
+
+
+/* =========================
+   TIMESTAMP
+========================= */
+
+function getTimestamp(){
+
+const timestamp=
+Math.floor(
+Date.now()/1000
+);
+
+const result=
+document.getElementById(
+"timestampResult"
+);
+
+result.style.display="block";
+
+result.innerHTML=
+'<div class="big-result">'+
+timestamp+
+'</div><br>'+
+new Date().toLocaleString();
+
+}
+
+
+/* =========================
+   COLOR PICKER
+========================= */
+
+const colorPicker=
+document.getElementById("colorPicker");
+
+if(colorPicker){
+
+colorPicker.addEventListener(
+"input",
+updateColor
+);
+
+updateColor();
+
+}
+
+
+function updateColor(){
+
+const color=
+document.getElementById(
+"colorPicker"
+).value;
+
+document.getElementById(
+"colorPreview"
+).style.background=color;
+
+document.getElementById(
+"colorValue"
+).value=color;
+
+}
+
+
+function copyColor(){
+
+const value=
+document.getElementById(
+"colorValue"
+).value;
+
+navigator.clipboard.writeText(value);
+
+}
+
+
+/* =========================
+   YOUTUBE THUMBNAIL
+========================= */
+
+function getYouTubeThumbnail(){
+
+const input=
+document.getElementById(
+"youtubeURL"
+).value.trim();
+
+const result=
+document.getElementById(
+"youtubeResult"
+);
+
+if(!input){
+
+showError(
+result,
+"Please paste a YouTube URL."
+);
+
+return;
+
+}
+
+let videoId="";
+
+try{
+
+const url=new URL(input);
+
+if(url.hostname.includes("youtu.be")){
+
+videoId=url.pathname.substring(1);
+
+}
+
+else if(
+url.hostname.includes("youtube.com")
+){
+
+videoId=
+url.searchParams.get("v");
+
+if(
+!videoId &&
+url.pathname.includes("/shorts/")
+){
+
+videoId=
+url.pathname.split("/shorts/")[1]
+.split("/")[0];
+
+}
+
+if(
+!videoId &&
+url.pathname.includes("/embed/")
+){
+
+videoId=
+url.pathname.split("/embed/")[1]
+.split("/")[0];
+
+}
+
+}
+
+}catch(error){
+
+showError(
+result,
+"Invalid YouTube URL."
+);
+
+return;
+
+}
+
+if(!videoId){
+
+showError(
+result,
+"Could not find YouTube video ID."
+);
+
+return;
+
+}
+
+const thumbnail=
+"https://img.youtube.com/vi/"+
+videoId+
+"/maxresdefault.jpg";
+
+result.style.display="block";
+
+result.innerHTML=
+'<span class="success">✓ Thumbnail found!</span><br><br>'+
+'<img class="preview-image" src="'+
+thumbnail+
+'" alt="YouTube Thumbnail">'+
+'<br><br>'+
+'<a class="download" href="'+
+thumbnail+
+'" target="_blank">'+
+"Open Thumbnail"+
+"</a>";
+
+}
+
+
+/* =========================
+   TEXT TO PDF
+========================= */
 
 function createPDF(){
 
 const title=
-document.getElementById("pdfTitle").value.trim()
+document.getElementById(
+"pdfTitle"
+).value.trim()
 ||"ToolRivo Document";
 
 const text=
-document.getElementById("pdfText").value.trim();
+document.getElementById(
+"pdfText"
+).value.trim();
 
-const result=document.getElementById("pdfResult");
+const result=
+document.getElementById(
+"pdfResult"
+);
 
 if(!text){
 
-showError(result,"Please enter some text.");
+showError(
+result,
+"Please enter some text."
+);
 
 return;
 
@@ -1400,12 +2654,14 @@ let content=
 
 lines.forEach(line=>{
 
-const wrapped=wrapText(line,85);
+const wrapped=
+wrapText(line,85);
 
 wrapped.forEach(part=>{
 
 content+=
-"("+escapePDF(part)+") Tj\n0 -16 Td\n";
+"("+escapePDF(part)+") Tj\n"+
+"0 -16 Td\n";
 
 });
 
@@ -1413,21 +2669,28 @@ content+=
 
 content+="ET";
 
-const pdf=createPDFFile(content);
+const pdf=
+createPDFFile(content);
 
-const blob=new Blob([pdf],{
-type:"application/pdf"
-});
+const blob=
+new Blob(
+[pdf],
+{type:"application/pdf"}
+);
 
-const url=URL.createObjectURL(blob);
+const url=
+URL.createObjectURL(blob);
 
 result.style.display="block";
 
 result.innerHTML=
 '<span class="success">✓ PDF created!</span><br><br>'+
-'<a class="download" href="'+url+'" download="ToolRivo-document.pdf">Download PDF</a>';
+'<a class="download" href="'+
+url+
+'" download="ToolRivo-document.pdf">Download PDF</a>';
 
 }
+
 
 function escapePDF(str){
 
@@ -1439,22 +2702,32 @@ return str
 
 }
 
+
 function wrapText(text,max){
 
-const words=text.split(/\s+/);
+const words=
+text.split(/\s+/);
 
 const lines=[];
+
 let current="";
 
 words.forEach(word=>{
 
-if((current+" "+word).trim().length<=max){
+if(
+(current+" "+word)
+.trim()
+.length<=max
+){
 
-current=(current+" "+word).trim();
+current=
+(current+" "+word)
+.trim();
 
 }else{
 
-if(current)lines.push(current);
+if(current)
+lines.push(current);
 
 current=word;
 
@@ -1462,19 +2735,25 @@ current=word;
 
 });
 
-if(current)lines.push(current);
+if(current)
+lines.push(current);
 
-return lines.length?lines:[""];
+return lines.length
+?lines
+:[""];
 
 }
+
 
 function createPDFFile(content){
 
 const objects=[];
 
-objects[1]="<< /Type /Catalog /Pages 2 0 R >>";
+objects[1]=
+"<< /Type /Catalog /Pages 2 0 R >>";
 
-objects[2]="<< /Type /Pages /Kids [3 0 R] /Count 1 >>";
+objects[2]=
+"<< /Type /Pages /Kids [3 0 R] /Count 1 >>";
 
 objects[3]=
 "<< /Type /Page /Parent 2 0 R "+
@@ -1486,7 +2765,9 @@ objects[4]=
 "<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>";
 
 objects[5]=
-"<< /Length "+content.length+" >>\n"+
+"<< /Length "+
+content.length+
+" >>\n"+
 "stream\n"+
 content+
 "\nendstream";
@@ -1495,32 +2776,65 @@ let pdf="%PDF-1.4\n";
 
 const offsets=[0];
 
-for(let i=1;i<objects.length;i++){
+for(
+let i=1;
+i<objects.length;
+i++
+){
 
 offsets[i]=pdf.length;
 
-pdf+=i+" 0 obj\n";
-pdf+=objects[i]+"\n";
-pdf+="endobj\n";
+pdf+=
+i+
+" 0 obj\n";
+
+pdf+=
+objects[i]+
+"\nendobj\n";
 
 }
 
-const xref=pdf.length;
+const xref=
+pdf.length;
 
 pdf+="xref\n";
-pdf+="0 "+objects.length+"\n";
-pdf+="0000000000 65535 f \n";
 
-for(let i=1;i<objects.length;i++){
+pdf+=
+"0 "+
+objects.length+
+"\n";
 
-pdf+=String(offsets[i]).padStart(10,"0")+" 00000 n \n";
+pdf+=
+"0000000000 65535 f \n";
+
+for(
+let i=1;
+i<objects.length;
+i++
+){
+
+pdf+=
+String(
+offsets[i]
+).padStart(
+10,
+"0"
+)+
+" 00000 n \n";
 
 }
 
 pdf+="trailer\n";
-pdf+="<< /Size "+objects.length+" /Root 1 0 R >>\n";
+
+pdf+=
+"<< /Size "+
+objects.length+
+" /Root 1 0 R >>\n";
+
 pdf+="startxref\n";
+
 pdf+=xref+"\n";
+
 pdf+="%%EOF";
 
 return pdf;
