@@ -6,7 +6,7 @@
 
   <title>Free Image Resizer Online - Resize JPG PNG WebP | ToolRivo</title>
 
-  <meta name="description" content="Resize JPG, PNG and WebP images online for free with ToolRivo. Change image width and height easily while keeping good quality. Fast, simple and no software required.">
+  <meta name="description" content="Resize JPG, PNG and WebP images online for free with ToolRivo. Change image width and height easily while maintaining good quality. Fast, simple and no software required.">
 
   <meta name="keywords" content="image resizer, resize image online, free image resizer, resize JPG, resize PNG, resize WebP, change image dimensions">
 
@@ -60,7 +60,11 @@
       background: white;
       border-radius: 20px;
       padding: 30px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+    }
+
+    .tool-box {
+      text-align: center;
     }
 
     .upload-area {
@@ -103,8 +107,18 @@
       font-size: 16px;
     }
 
+    input[type="number"]:focus {
+      outline: 2px solid #6366f1;
+      border-color: #6366f1;
+    }
+
     .checkbox {
       margin: 15px 0;
+    }
+
+    .checkbox label {
+      cursor: pointer;
+      font-weight: bold;
     }
 
     button {
@@ -144,6 +158,7 @@
 
     .info {
       margin-top: 30px;
+      line-height: 1.7;
     }
 
     .info h2,
@@ -163,13 +178,29 @@
       font-weight: bold;
     }
 
+    .home-link:hover {
+      text-decoration: underline;
+    }
+
     footer {
       text-align: center;
       padding: 30px 20px;
       color: #64748b;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: #4f46e5;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
+
       header h1 {
         font-size: 30px;
       }
@@ -185,6 +216,11 @@
 
       .dimension-box {
         width: 100%;
+      }
+
+      button {
+        width: 100%;
+        margin: 8px 0;
       }
     }
   </style>
@@ -218,7 +254,9 @@
 
       <h2>Resize Your Image</h2>
 
-      <p>Select an image from your device</p>
+      <p>
+        Select an image from your device
+      </p>
 
       <input
         type="file"
@@ -274,15 +312,12 @@
     <div class="checkbox">
 
       <label>
-
         <input
           type="checkbox"
           id="lockRatio"
           checked
         >
-
         Keep aspect ratio
-
       </label>
 
     </div>
@@ -387,7 +422,43 @@
 
 <footer>
 
-  © 2026 ToolRivo — Free Online Tools for Everyone
+  <p>
+    <strong>ToolRivo ✦</strong>
+  </p>
+
+  <p>
+    Free online tools for everyone.
+  </p>
+
+  <p>
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/privacy-policy.html">
+      Privacy Policy
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/terms.html">
+      Terms & Conditions
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/about.html">
+      About
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/contact.html">
+      Contact
+    </a>
+
+  </p>
+
+  <p>
+    © 2026 ToolRivo. All rights reserved.
+  </p>
 
 </footer>
 
@@ -415,6 +486,7 @@
   const downloadBtn =
     document.getElementById("downloadBtn");
 
+
   let originalWidth = 0;
   let originalHeight = 0;
   let resizedImage = null;
@@ -422,29 +494,47 @@
 
   imageInput.addEventListener("change", function () {
 
-    const file = imageInput.files[0];
+    const file =
+      imageInput.files[0];
+
 
     if (!file) {
       return;
     }
 
-    const reader = new FileReader();
+
+    const reader =
+      new FileReader();
+
 
     reader.onload = function (event) {
 
-      preview.src = event.target.result;
+      preview.src =
+        event.target.result;
 
-      preview.style.display = "block";
+      preview.style.display =
+        "block";
 
-      const img = new Image();
+
+      const img =
+        new Image();
+
 
       img.onload = function () {
 
-        originalWidth = img.width;
-        originalHeight = img.height;
+        originalWidth =
+          img.width;
 
-        widthInput.value = originalWidth;
-        heightInput.value = originalHeight;
+        originalHeight =
+          img.height;
+
+
+        widthInput.value =
+          originalWidth;
+
+        heightInput.value =
+          originalHeight;
+
 
         result.innerHTML =
           "Original dimensions: " +
@@ -455,13 +545,31 @@
 
       };
 
-      img.src = event.target.result;
+
+      img.onerror = function () {
+
+        result.innerHTML =
+          "Unable to load this image. Please select another image.";
+
+        preview.style.display =
+          "none";
+
+      };
+
+
+      img.src =
+        event.target.result;
 
     };
 
+
     reader.readAsDataURL(file);
 
-    downloadBtn.style.display = "none";
+
+    downloadBtn.style.display =
+      "none";
+
+    resizedImage = null;
 
   });
 
@@ -475,16 +583,26 @@
     ) {
 
       const newWidth =
-        parseInt(widthInput.value);
-
-      const newHeight =
-        Math.round(
-          newWidth *
-          originalHeight /
-          originalWidth
+        parseInt(
+          widthInput.value,
+          10
         );
 
-      heightInput.value = newHeight;
+
+      if (newWidth > 0) {
+
+        const newHeight =
+          Math.round(
+            newWidth *
+            originalHeight /
+            originalWidth
+          );
+
+
+        heightInput.value =
+          newHeight;
+
+      }
 
     }
 
@@ -500,16 +618,26 @@
     ) {
 
       const newHeight =
-        parseInt(heightInput.value);
-
-      const newWidth =
-        Math.round(
-          newHeight *
-          originalWidth /
-          originalHeight
+        parseInt(
+          heightInput.value,
+          10
         );
 
-      widthInput.value = newWidth;
+
+      if (newHeight > 0) {
+
+        const newWidth =
+          Math.round(
+            newHeight *
+            originalWidth /
+            originalHeight
+          );
+
+
+        widthInput.value =
+          newWidth;
+
+      }
 
     }
 
@@ -518,11 +646,15 @@
 
   function resizeImage() {
 
-    const file = imageInput.files[0];
+    const file =
+      imageInput.files[0];
+
 
     if (!file) {
 
-      alert("Please select an image first.");
+      alert(
+        "Please select an image first."
+      );
 
       return;
 
@@ -530,10 +662,16 @@
 
 
     const newWidth =
-      parseInt(widthInput.value);
+      parseInt(
+        widthInput.value,
+        10
+      );
 
     const newHeight =
-      parseInt(heightInput.value);
+      parseInt(
+        heightInput.value,
+        10
+      );
 
 
     if (
@@ -543,19 +681,23 @@
       newHeight < 1
     ) {
 
-      alert("Please enter valid width and height.");
+      alert(
+        "Please enter valid width and height."
+      );
 
       return;
 
     }
 
 
-    const reader = new FileReader();
+    const reader =
+      new FileReader();
 
 
     reader.onload = function (event) {
 
-      const img = new Image();
+      const img =
+        new Image();
 
 
       img.onload = function () {
@@ -563,12 +705,16 @@
         const canvas =
           document.createElement("canvas");
 
+
         const ctx =
           canvas.getContext("2d");
 
 
-        canvas.width = newWidth;
-        canvas.height = newHeight;
+        canvas.width =
+          newWidth;
+
+        canvas.height =
+          newHeight;
 
 
         ctx.drawImage(
@@ -593,6 +739,7 @@
           " × " +
           img.height +
           " px<br>" +
+
           "New size: " +
           newWidth +
           " × " +
@@ -606,7 +753,17 @@
       };
 
 
-      img.src = event.target.result;
+      img.onerror = function () {
+
+        alert(
+          "Unable to process this image. Please try another image."
+        );
+
+      };
+
+
+      img.src =
+        event.target.result;
 
     };
 
@@ -637,7 +794,9 @@
 
     document.body.appendChild(link);
 
+
     link.click();
+
 
     document.body.removeChild(link);
 
