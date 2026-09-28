@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact - ToolRivo</title>
+
+<meta name="description" content="Contact ToolRivo for questions, suggestions, feedback and support.">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Arial,Helvetica,sans-serif;
+background:linear-gradient(135deg,#fafaff,#f1f6ff);
+color:#20243a;
+line-height:1.7;
+}
+
+nav{
+position:sticky;
+top:0;
+z-index:100;
+padding:14px 6%;
+display:flex;
+align-items:center;
+justify-content:space-between;
+background:rgba(255,255,255,.94);
+backdrop-filter:blur(15px);
+border-bottom:1px solid #e6e7f0;
+}
+
+.logo{
+text-decoration:none;
+font-size:25px;
+font-weight:900;
+color:#25233d;
+}
+
+.logo span{
+color:#6659df;
+}
+
+nav a:last-child{
+text-decoration:none;
+color:#555a70;
+font-weight:700;
+}
+
+.container{
+width:min(900px,92%);
+margin:45px auto;
+}
+
+.card{
+background:white;
+border:1px solid #e5e6ef;
+border-radius:22px;
+padding:35px;
+box-shadow:0 12px 35px rgba(50,50,100,.07);
+}
+
+h1{
+font-size:38px;
+margin-bottom:10px;
+}
+
+h2{
+font-size:24px;
+margin:28px 0 10px;
+}
+
+p{
+color:#62677a;
+margin-bottom:16px;
+}
+
+.info-box{
+background:#f5f4ff;
+border-radius:15px;
+padding:20px;
+margin:25px 0;
+border:1px solid #e5e2ff;
+}
+
+label{
+display:block;
+font-weight:700;
+margin-bottom:7px;
+color:#30334a;
+}
+
+input,
+textarea{
+width:100%;
+padding:13px 15px;
+border:1px solid #dfe1eb;
+border-radius:10px;
+font-size:15px;
+font-family:inherit;
+outline:none;
+margin-bottom:18px;
+}
+
+input:focus,
+textarea:focus{
+border-color:#6659df;
+}
+
+textarea{
+min-height:150px;
+resize:vertical;
+}
+
+button{
+border:none;
+background:#6659df;
+color:white;
+padding:13px 22px;
+border-radius:10px;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+}
+
+button:hover{
+opacity:.9;
+}
+
+.note{
+font-size:14px;
+color:#888da0;
+margin-top:12px;
+}
+
+footer{
+text-align:center;
+padding:35px 20px;
+background:white;
+border-top:1px solid #e5e6ef;
+color:#777c90;
+}
+
+footer p{
+margin:0;
+}
+
+@media(max-width:600px){
+
+.card{
+padding:23px;
+}
+
+h1{
+font-size:30px;
+}
+
+nav{
+padding:14px 5%;
+}
+
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<a class="logo" href="index.html">
+Tool<span>Rivo</span> ✦
+</a>
+
+<a href="index.html">← Back to Tools</a>
+
+</nav>
+
+<main class="container">
+
+<div class="card">
+
+<h1>Contact ToolRivo</h1>
+
+<p>
+Have a question, suggestion, bug report or feedback?
+We would love to hear from you.
+</p>
+
+<div class="info-box">
+
+<h2 style="margin-top:0;">Get in Touch</h2>
+
+<p>
+You can use the form below to prepare your message.
+A contact email or form service can be connected to this page later.
+</p>
+
+</div>
+
+<form onsubmit="sendMessage(event)">
+
+<label for="name">Your Name</label>
+
+<input
+type="text"
+id="name"
+placeholder="Enter your name"
+required
+>
+
+<label for="email">Your Email</label>
+
+<input
+type="email"
+id="email"
+placeholder="Enter your email"
+required
+>
+
+<label for="message">Message</label>
+
+<textarea
+id="message"
+placeholder="Write your message..."
+required
+></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+<p class="note">
+This form currently works as a demo. A form service can be connected
+later to receive messages.
+</p>
+
+</form>
+
+<h2>Feedback & Suggestions</h2>
+
+<p>
+If you find a problem with one of our tools or have an idea for a new
+tool, your feedback can help us improve ToolRivo.
+</p>
+
+<h2>About ToolRivo</h2>
+
+<p>
+ToolRivo provides simple and free online tools for everyday digital
+tasks including images, text, QR codes, calculators, PDFs and more.
+</p>
+
+<p>
+<a href="about.html"
+style="color:#6659df;font-weight:700;text-decoration:none;">
+Learn more about ToolRivo →
+</a>
+</p>
+
+</div>
+
+</main>
+
+<footer>
+
+<p>© 2026 ToolRivo. All rights reserved.</p>
+
+</footer>
+
+<script>
+
+function sendMessage(event){
+
+event.preventDefault();
+
+alert(
+"Thank you for contacting ToolRivo! Your message form is ready. A contact service will be connected soon."
+);
+
+}
+
+</script>
+
+</body>
+</html>
