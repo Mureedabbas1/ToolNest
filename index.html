@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ToolRivo - Free Online Tools for Everyone</title>
@@ -14,17 +13,13 @@
 <meta name="keywords" content="free online tools, image compressor, image resizer, JPG to PNG converter, image to JPG, image cropper, QR code generator, PDF to JPG converter, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator, text to PDF">
 
 <meta name="author" content="ToolRivo">
-
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://mureedabbas1.github.io/ToolRivo/">
 
 <meta property="og:title" content="ToolRivo - Free Online Tools for Everyone">
-
 <meta property="og:description" content="Free online tools for images, text, QR codes, calculators and documents. Fast, simple and easy to use.">
-
 <meta property="og:type" content="website">
-
 <meta property="og:url" content="https://mureedabbas1.github.io/ToolRivo/">
 
 <style>
@@ -399,13 +394,12 @@ padding:22px;
 
 <a class="logo" href="#">
 <div class="logo-mark">✦</div>
-Tool<span>Nest</span>
+Tool<span>Rivo</span>
 </a>
 
 <a href="#tools">Explore Tools →</a>
 
 </nav>
-
 
 <section class="hero">
 
@@ -424,7 +418,6 @@ passwords and create simple PDFs — all in one free online tool website.
 
 </section>
 
-
 <main class="container">
 
 <div class="section-title" id="tools">
@@ -437,18 +430,13 @@ Fast and simple tools for images, text, QR codes, calculations and documents.
 
 </div>
 
-
 <div class="tool-count">
 
 <strong>13+ Free Tools</strong> available on ToolRivo
 
 </div>
 
-
 <section class="tools">
-
-
-<!-- IMAGE COMPRESSOR -->
 
 <div class="card">
 
@@ -480,9 +468,6 @@ Open Full Tool →
 <div id="compressResult" class="result"></div>
 
 </div>
-
-
-<!-- IMAGE RESIZER -->
 
 <div class="card">
 
@@ -535,9 +520,6 @@ Open Full Tool →
 
 </div>
 
-
-<!-- JPG TO PNG -->
-
 <div class="card">
 
 <div class="icon">🔄</div>
@@ -561,9 +543,6 @@ JPG • JPEG
 
 </div>
 
-
-<!-- IMAGE TO JPG -->
-
 <div class="card">
 
 <div class="icon">🎨</div>
@@ -585,9 +564,6 @@ JPG • JPEG
 <div id="jpgResult" class="result"></div>
 
 </div>
-
-
-<!-- IMAGE CROPPER -->
 
 <div class="card">
 
@@ -631,9 +607,6 @@ JPG • JPEG
 
 </div>
 
-
-<!-- QR CODE -->
-
 <div class="card">
 
 <div class="icon">🔗</div>
@@ -670,9 +643,6 @@ Download QR
 
 </div>
 
-
-<!-- PDF TO JPG -->
-
 <div class="card">
 
 <div class="icon">📄</div>
@@ -688,9 +658,6 @@ Open PDF to JPG →
 </a>
 
 </div>
-
-
-<!-- WORD COUNTER -->
 
 <div class="card">
 
@@ -713,9 +680,6 @@ Sentences: <strong id="sentences">0</strong>
 </div>
 
 </div>
-
-
-<!-- CASE CONVERTER -->
 
 <div class="card">
 
@@ -742,9 +706,6 @@ placeholder="Enter your text..."></textarea>
 
 </div>
 
-
-<!-- AGE CALCULATOR -->
-
 <div class="card">
 
 <div class="icon">🎂</div>
@@ -760,9 +721,6 @@ placeholder="Enter your text..."></textarea>
 <div id="ageResult" class="result"></div>
 
 </div>
-
-
-<!-- PERCENTAGE -->
 
 <div class="card">
 
@@ -782,9 +740,6 @@ placeholder="Enter your text..."></textarea>
 
 </div>
 
-
-<!-- BMI -->
-
 <div class="card">
 
 <div class="icon">⚖️</div>
@@ -802,9 +757,6 @@ placeholder="Enter your text..."></textarea>
 <div id="bmiResult" class="result"></div>
 
 </div>
-
-
-<!-- PASSWORD GENERATOR -->
 
 <div class="card">
 
@@ -824,9 +776,6 @@ placeholder="Enter your text..."></textarea>
 
 </div>
 
-
-<!-- TEXT TO PDF -->
-
 <div class="card">
 
 <div class="icon">📄</div>
@@ -845,9 +794,7 @@ placeholder="Enter your text..."></textarea>
 
 </div>
 
-
 </section>
-
 
 <section class="info-section">
 
@@ -870,7 +817,6 @@ and mobile devices. No complicated software installation is required.
 
 </main>
 
-
 <footer>
 
 <div class="footer-logo">ToolRivo ✦</div>
@@ -883,26 +829,35 @@ and mobile devices. No complicated software installation is required.
 
 </footer>
 
-
 <script>
 
+function showError(element,message){
+element.style.display="block";
+element.innerHTML='<span class="error">✕ '+message+'</span>';
+}
+
+function formatBytes(bytes){
+
+if(bytes===0)return "0 Bytes";
+
+const sizes=["Bytes","KB","MB","GB"];
+const i=Math.floor(Math.log(bytes)/Math.log(1024));
+
+return parseFloat((bytes/Math.pow(1024,i)).toFixed(2))+" "+sizes[i];
+
+}
 
 function compressImage(){
 
 const file=document.getElementById("compressFile").files[0];
-
 const result=document.getElementById("compressResult");
 
 if(!file){
-
 showError(result,"Please choose an image first.");
-
 return;
-
 }
 
 const reader=new FileReader();
-
 const img=new Image();
 
 reader.onload=e=>{
@@ -912,7 +867,6 @@ img.onload=()=>{
 const canvas=document.createElement("canvas");
 
 canvas.width=img.width;
-
 canvas.height=img.height;
 
 const ctx=canvas.getContext("2d");
@@ -943,7 +897,6 @@ reader.readAsDataURL(file);
 
 }
 
-
 function resizeImage(){
 
 const file=document.getElementById("resizeFile").files[0];
@@ -955,23 +908,16 @@ const height=parseInt(document.getElementById("resizeHeight").value);
 const result=document.getElementById("resizeResult");
 
 if(!file){
-
 showError(result,"Please choose an image.");
-
 return;
-
 }
 
 if(!width||!height){
-
 showError(result,"Please enter width and height.");
-
 return;
-
 }
 
 const reader=new FileReader();
-
 const img=new Image();
 
 reader.onload=e=>{
@@ -981,7 +927,6 @@ img.onload=()=>{
 const canvas=document.createElement("canvas");
 
 canvas.width=width;
-
 canvas.height=height;
 
 const ctx=canvas.getContext("2d");
@@ -1010,7 +955,6 @@ reader.readAsDataURL(file);
 
 }
 
-
 function convertPNG(){
 
 const file=document.getElementById("jpgFile").files[0];
@@ -1018,15 +962,11 @@ const file=document.getElementById("jpgFile").files[0];
 const result=document.getElementById("pngResult");
 
 if(!file){
-
 showError(result,"Please choose a JPG image.");
-
 return;
-
 }
 
 const reader=new FileReader();
-
 const img=new Image();
 
 reader.onload=e=>{
@@ -1036,7 +976,6 @@ img.onload=()=>{
 const canvas=document.createElement("canvas");
 
 canvas.width=img.width;
-
 canvas.height=img.height;
 
 canvas.getContext("2d").drawImage(img,0,0);
@@ -1063,7 +1002,6 @@ reader.readAsDataURL(file);
 
 }
 
-
 function convertJPG(){
 
 const file=document.getElementById("jpgConvertFile").files[0];
@@ -1071,15 +1009,11 @@ const file=document.getElementById("jpgConvertFile").files[0];
 const result=document.getElementById("jpgResult");
 
 if(!file){
-
 showError(result,"Please choose an image.");
-
 return;
-
 }
 
 const reader=new FileReader();
-
 const img=new Image();
 
 reader.onload=e=>{
@@ -1089,13 +1023,11 @@ img.onload=()=>{
 const canvas=document.createElement("canvas");
 
 canvas.width=img.width;
-
 canvas.height=img.height;
 
 const ctx=canvas.getContext("2d");
 
 ctx.fillStyle="#ffffff";
-
 ctx.fillRect(0,0,canvas.width,canvas.height);
 
 ctx.drawImage(img,0,0);
@@ -1122,7 +1054,6 @@ reader.readAsDataURL(file);
 
 }
 
-
 function cropImage(){
 
 const file=document.getElementById("cropFile").files[0];
@@ -1134,23 +1065,16 @@ const height=parseInt(document.getElementById("cropHeight").value);
 const result=document.getElementById("cropResult");
 
 if(!file){
-
 showError(result,"Please choose an image.");
-
 return;
-
 }
 
 if(!width||!height){
-
 showError(result,"Please enter crop width and height.");
-
 return;
-
 }
 
 const reader=new FileReader();
-
 const img=new Image();
 
 reader.onload=e=>{
@@ -1160,13 +1084,11 @@ img.onload=()=>{
 const canvas=document.createElement("canvas");
 
 canvas.width=width;
-
 canvas.height=height;
 
 const ctx=canvas.getContext("2d");
 
 const sx=Math.max(0,(img.width-width)/2);
-
 const sy=Math.max(0,(img.height-height)/2);
 
 ctx.drawImage(
@@ -1203,7 +1125,6 @@ reader.readAsDataURL(file);
 
 }
 
-
 function generateQR(){
 
 const text=document.getElementById("qrText").value.trim();
@@ -1234,13 +1155,11 @@ image.src=url;
 image.onload=()=>{
 
 box.style.display="block";
-
 download.href=url;
 
 };
 
 }
-
 
 function countWords(){
 
@@ -1258,13 +1177,10 @@ const sentences=text
 .length;
 
 document.getElementById("words").textContent=words;
-
 document.getElementById("characters").textContent=characters;
-
 document.getElementById("sentences").textContent=sentences;
 
 }
-
 
 function upperCase(){
 
@@ -1274,7 +1190,6 @@ box.value=box.value.toUpperCase();
 
 }
 
-
 function lowerCase(){
 
 const box=document.getElementById("caseText");
@@ -1282,7 +1197,6 @@ const box=document.getElementById("caseText");
 box.value=box.value.toLowerCase();
 
 }
-
 
 function titleCase(){
 
@@ -1293,7 +1207,6 @@ box.value=box.value
 .replace(/\b\w/g,c=>c.toUpperCase());
 
 }
-
 
 function calculateAge(){
 
@@ -1310,7 +1223,6 @@ return;
 }
 
 const birth=new Date(input);
-
 const today=new Date();
 
 let years=today.getFullYear()-birth.getFullYear();
@@ -1336,7 +1248,6 @@ days+=previousMonth.getDate();
 if(months<0){
 
 years--;
-
 months+=12;
 
 }
@@ -1350,7 +1261,6 @@ years+' Years, '+months+' Months, '+days+' Days'+
 '</div>';
 
 }
-
 
 function calculatePercentage(){
 
@@ -1381,7 +1291,6 @@ result.innerHTML=
 
 }
 
-
 function calculateBMI(){
 
 const weight=parseFloat(
@@ -1410,13 +1319,10 @@ let category="";
 
 if(bmi<18.5)
 category="Underweight";
-
 else if(bmi<25)
 category="Normal range";
-
 else if(bmi<30)
 category="Overweight";
-
 else
 category="Obesity range";
 
@@ -1427,7 +1333,6 @@ result.innerHTML=
 '<strong>'+category+'</strong>';
 
 }
-
 
 function generatePassword(){
 
@@ -1455,21 +1360,17 @@ document.getElementById("passwordOutput").value=password;
 
 }
 
-
 function copyPassword(){
 
 const box=document.getElementById("passwordOutput");
 
 if(!box.value){
-
 generatePassword();
-
 }
 
 navigator.clipboard.writeText(box.value);
 
 }
-
 
 function createPDF(){
 
@@ -1528,7 +1429,6 @@ result.innerHTML=
 
 }
 
-
 function escapePDF(str){
 
 return str
@@ -1539,13 +1439,11 @@ return str
 
 }
 
-
 function wrapText(text,max){
 
 const words=text.split(/\s+/);
 
 const lines=[];
-
 let current="";
 
 words.forEach(word=>{
@@ -1570,7 +1468,6 @@ return lines.length?lines:[""];
 
 }
 
-
 function createPDFFile(content){
 
 const objects=[];
@@ -1590,11 +1487,47 @@ objects[4]=
 
 objects[5]=
 "<< /Length "+content.length+" >>\n"+
-"stream\n"+content+"\nendstream";
+"stream\n"+
+content+
+"\nendstream";
 
 let pdf="%PDF-1.4\n";
 
 const offsets=[0];
 
-for(let i=1;i<objects.length
-```
+for(let i=1;i<objects.length;i++){
+
+offsets[i]=pdf.length;
+
+pdf+=i+" 0 obj\n";
+pdf+=objects[i]+"\n";
+pdf+="endobj\n";
+
+}
+
+const xref=pdf.length;
+
+pdf+="xref\n";
+pdf+="0 "+objects.length+"\n";
+pdf+="0000000000 65535 f \n";
+
+for(let i=1;i<objects.length;i++){
+
+pdf+=String(offsets[i]).padStart(10,"0")+" 00000 n \n";
+
+}
+
+pdf+="trailer\n";
+pdf+="<< /Size "+objects.length+" /Root 1 0 R >>\n";
+pdf+="startxref\n";
+pdf+=xref+"\n";
+pdf+="%%EOF";
+
+return pdf;
+
+}
+
+</script>
+
+</body>
+</html>
