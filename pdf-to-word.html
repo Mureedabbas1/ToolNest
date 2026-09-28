@@ -1,0 +1,627 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>PDF to Word Converter – Free Online Tool | ToolNest</title>
+
+  <meta name="description" content="Convert PDF files to editable Word documents online for free with ToolNest. Fast, simple and browser-based PDF to Word converter.">
+
+  <meta name="keywords" content="PDF to Word, PDF to DOCX, convert PDF to Word, free PDF converter, online PDF tools, ToolNest">
+
+  <link rel="canonical" href="https://mureedabbas1.github.io/ToolNest/pdf-to-word.html">
+
+  <meta property="og:title" content="PDF to Word Converter – Free Online Tool | ToolNest">
+  <meta property="og:description" content="Convert PDF files to editable Word documents online for free.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://mureedabbas1.github.io/ToolNest/pdf-to-word.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+      color: #222;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #111827;
+      padding: 18px 20px;
+      color: white;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 25px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+    }
+
+    .home {
+      color: white;
+      text-decoration: none;
+      font-size: 15px;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 55px 20px 35px;
+    }
+
+    .hero h1 {
+      font-size: 38px;
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .hero p {
+      max-width: 700px;
+      margin: auto;
+      color: #667085;
+      font-size: 17px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto 60px;
+      padding: 0 20px;
+    }
+
+    .tool-box {
+      background: white;
+      border-radius: 18px;
+      padding: 35px;
+      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      text-align: center;
+    }
+
+    .upload-area {
+      border: 2px dashed #6366f1;
+      border-radius: 14px;
+      padding: 40px 20px;
+      margin-bottom: 20px;
+      background: #fafaff;
+    }
+
+    .upload-area h2 {
+      margin-bottom: 10px;
+      color: #111827;
+    }
+
+    .upload-area p {
+      color: #667085;
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .choose-btn {
+      display: inline-block;
+      background: #6366f1;
+      color: white;
+      padding: 13px 25px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-weight: bold;
+      border: none;
+    }
+
+    .choose-btn:hover {
+      background: #4f46e5;
+    }
+
+    #fileName {
+      margin-top: 15px;
+      color: #344054;
+      font-size: 14px;
+    }
+
+    .convert-btn {
+      width: 100%;
+      background: #111827;
+      color: white;
+      border: none;
+      padding: 14px;
+      border-radius: 9px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
+
+    .convert-btn:hover {
+      background: #000;
+    }
+
+    .convert-btn:disabled {
+      background: #98a2b3;
+      cursor: not-allowed;
+    }
+
+    #status {
+      margin-top: 20px;
+      font-weight: bold;
+      color: #475467;
+    }
+
+    #downloadArea {
+      margin-top: 20px;
+    }
+
+    .download-btn {
+      display: inline-block;
+      background: #16a34a;
+      color: white;
+      text-decoration: none;
+      padding: 13px 25px;
+      border-radius: 9px;
+      font-weight: bold;
+    }
+
+    .download-btn:hover {
+      background: #15803d;
+    }
+
+    .info {
+      margin-top: 35px;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    }
+
+    .info h2 {
+      margin-bottom: 12px;
+      color: #111827;
+    }
+
+    .info p {
+      color: #667085;
+      margin-bottom: 12px;
+    }
+
+    .info ul {
+      padding-left: 20px;
+      color: #475467;
+    }
+
+    .info li {
+      margin-bottom: 8px;
+    }
+
+    footer {
+      background: #111827;
+      color: #d0d5dd;
+      text-align: center;
+      padding: 25px 15px;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .tool-box {
+        padding: 22px;
+      }
+
+      .upload-area {
+        padding: 30px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <a class="logo" href="index.html">ToolNest</a>
+    <a class="home" href="index.html">← All Tools</a>
+  </div>
+</header>
+
+<section class="hero">
+  <h1>PDF to Word Converter</h1>
+  <p>
+    Convert your PDF file into an editable Word document quickly and easily.
+    Free online PDF to Word converter by ToolNest.
+  </p>
+</section>
+
+<main class="container">
+
+  <div class="tool-box">
+
+    <div class="upload-area">
+
+      <h2>Upload Your PDF</h2>
+
+      <p>Select a PDF file from your device.</p>
+
+      <label for="pdfFile" class="choose-btn">
+        Choose PDF File
+      </label>
+
+      <input
+        type="file"
+        id="pdfFile"
+        accept="application/pdf"
+      >
+
+      <div id="fileName">
+        No file selected
+      </div>
+
+    </div>
+
+    <button
+      id="convertBtn"
+      class="convert-btn"
+      disabled
+    >
+      Convert to Word
+    </button>
+
+    <div id="status"></div>
+
+    <div id="downloadArea"></div>
+
+  </div>
+
+  <div class="info">
+
+    <h2>How to Convert PDF to Word?</h2>
+
+    <p>
+      ToolNest's PDF to Word converter lets you extract text from a PDF
+      and save it as an editable Word document.
+    </p>
+
+    <ul>
+      <li>Click "Choose PDF File".</li>
+      <li>Select your PDF document.</li>
+      <li>Click "Convert to Word".</li>
+      <li>Wait for the conversion to finish.</li>
+      <li>Download your Word document.</li>
+    </ul>
+
+  </div>
+
+</main>
+
+<footer>
+  © 2026 ToolNest. Free Online Tools.
+</footer>
+
+<!-- PDF.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+
+<!-- JSZip -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+
+<script>
+
+  pdfjsLib.GlobalWorkerOptions.workerSrc =
+    "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+
+  const pdfFile = document.getElementById("pdfFile");
+  const fileName = document.getElementById("fileName");
+  const convertBtn = document.getElementById("convertBtn");
+  const status = document.getElementById("status");
+  const downloadArea = document.getElementById("downloadArea");
+
+  let selectedFile = null;
+
+  pdfFile.addEventListener("change", function () {
+
+    selectedFile = this.files[0];
+
+    if (!selectedFile) {
+      fileName.textContent = "No file selected";
+      convertBtn.disabled = true;
+      return;
+    }
+
+    if (selectedFile.type !== "application/pdf") {
+      fileName.textContent = "Please select a PDF file.";
+      convertBtn.disabled = true;
+      return;
+    }
+
+    fileName.textContent = selectedFile.name;
+    convertBtn.disabled = false;
+
+    status.textContent = "";
+    downloadArea.innerHTML = "";
+
+  });
+
+
+  convertBtn.addEventListener("click", async function () {
+
+    if (!selectedFile) {
+      return;
+    }
+
+    convertBtn.disabled = true;
+
+    status.textContent = "Reading PDF... Please wait.";
+
+    downloadArea.innerHTML = "";
+
+    try {
+
+      const arrayBuffer = await selectedFile.arrayBuffer();
+
+      const pdf = await pdfjsLib.getDocument({
+        data: arrayBuffer
+      }).promise;
+
+      let fullText = "";
+
+      for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
+
+        status.textContent =
+          "Processing page " +
+          pageNumber +
+          " of " +
+          pdf.numPages +
+          "...";
+
+        const page = await pdf.getPage(pageNumber);
+
+        const textContent = await page.getTextContent();
+
+        let pageText = "";
+
+        textContent.items.forEach(function(item) {
+          pageText += item.str + " ";
+        });
+
+        fullText +=
+          "Page " +
+          pageNumber +
+          "\n\n" +
+          pageText.trim() +
+          "\n\n";
+      }
+
+      if (!fullText.trim()) {
+
+        status.textContent =
+          "No selectable text was found in this PDF. Scanned/image PDFs may not work.";
+
+        convertBtn.disabled = false;
+        return;
+      }
+
+      status.textContent = "Creating Word document...";
+
+      const zip = new JSZip();
+
+      const documentXml = createDocumentXML(fullText);
+
+      zip.file(
+        "[Content_Types].xml",
+        contentTypesXML()
+      );
+
+      zip.folder("_rels").file(
+        ".rels",
+        rootRelsXML()
+      );
+
+      zip.folder("word").file(
+        "document.xml",
+        documentXml
+      );
+
+      zip.folder("word").folder("_rels").file(
+        "document.xml.rels",
+        documentRelsXML()
+      );
+
+      zip.folder("word").file(
+        "styles.xml",
+        stylesXML()
+      );
+
+      const blob = await zip.generateAsync({
+        type: "blob",
+        mimeType:
+          "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+      });
+
+      const url = URL.createObjectURL(blob);
+
+      const outputName =
+        selectedFile.name.replace(/\.pdf$/i, "") +
+        ".docx";
+
+      downloadArea.innerHTML =
+        '<a class="download-btn" href="' +
+        url +
+        '" download="' +
+        outputName +
+        '">Download Word File</a>';
+
+      status.textContent =
+        "Conversion completed successfully.";
+
+    } catch (error) {
+
+      console.error(error);
+
+      status.textContent =
+        "Something went wrong while converting the PDF.";
+
+    }
+
+    convertBtn.disabled = false;
+
+  });
+
+
+  function escapeXML(text) {
+
+    return text
+      .replace(/&/g, "&amp;")
+      .replace(/</g, "&lt;")
+      .replace(/>/g, "&gt;")
+      .replace(/"/g, "&quot;")
+      .replace(/'/g, "&apos;");
+
+  }
+
+
+  function createDocumentXML(text) {
+
+    const paragraphs = text
+      .split("\n")
+      .map(function(line) {
+
+        if (!line.trim()) {
+          return "<w:p/>";
+        }
+
+        return `
+          <w:p>
+            <w:r>
+              <w:t xml:space="preserve">${escapeXML(line)}</w:t>
+            </w:r>
+          </w:p>
+        `;
+
+      })
+      .join("");
+
+    return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<w:document
+xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+
+<w:body>
+
+${paragraphs}
+
+<w:sectPr>
+<w:pgSz w:w="12240" w:h="15840"/>
+<w:pgMar
+w:top="1440"
+w:right="1440"
+w:bottom="1440"
+w:left="1440"/>
+</w:sectPr>
+
+</w:body>
+
+</w:document>`;
+
+  }
+
+
+  function contentTypesXML() {
+
+    return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
+
+<Default Extension="rels"
+ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
+
+<Default Extension="xml"
+ContentType="application/xml"/>
+
+<Override PartName="/word/document.xml"
+ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
+
+<Override PartName="/word/styles.xml"
+ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>
+
+</Types>`;
+
+  }
+
+
+  function rootRelsXML() {
+
+    return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Relationships
+xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+
+<Relationship
+Id="rId1"
+Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument"
+Target="word/document.xml"/>
+
+</Relationships>`;
+
+  }
+
+
+  function documentRelsXML() {
+
+    return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<Relationships
+xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
+
+</Relationships>`;
+
+  }
+
+
+  function stylesXML() {
+
+    return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
+<w:styles
+xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
+
+<w:style
+w:type="paragraph"
+w:default="1"
+w:styleId="Normal">
+
+<w:name w:val="Normal"/>
+
+<w:rPr>
+<w:sz w:val="22"/>
+</w:rPr>
+
+</w:style>
+
+</w:styles>`;
+
+  }
+
+</script>
+
+</body>
+</html>
+```
