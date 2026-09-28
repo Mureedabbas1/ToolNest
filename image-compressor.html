@@ -2,23 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Free Image Compressor Online - Compress Images | ToolRivo</title>
-<meta name="description" content="Compress images online for free with ToolRivo. Reduce JPG, PNG and WebP image file size while maintaining good quality. Fast, simple and no software required.">
+  <title>Free Image Compressor Online - Compress Images | ToolRivo</title>
+
+  <meta name="description" content="Compress images online for free with ToolRivo. Reduce JPG, PNG and WebP image file size while maintaining good quality. Fast, simple and no software required.">
+
   <meta name="keywords" content="image compressor, compress image online, free image compressor, reduce image size, JPG compressor, PNG compressor, WebP compressor">
 
-  <meta name="author" content="ToolNest">
-
+  <meta name="author" content="ToolRivo">
   <meta name="robots" content="index, follow">
 
-  <link rel="canonical" href="https://mureedabbas1.github.io/ToolNest/image-compressor.html">
+  <link rel="canonical" href="https://mureedabbas1.github.io/ToolRivo/image-compressor.html">
 
-  <meta property="og:title" content="Free Image Compressor Online | ToolNest">
-  <meta property="og:description" content="Compress JPG, PNG and WebP images online for free with ToolNest.">
+  <meta property="og:title" content="Free Image Compressor Online | ToolRivo">
+  <meta property="og:description" content="Compress JPG, PNG and WebP images online for free with ToolRivo.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mureedabbas1.github.io/ToolNest/image-compressor.html">
+  <meta property="og:url" content="https://mureedabbas1.github.io/ToolRivo/image-compressor.html">
 
   <style>
     * {
@@ -60,7 +60,7 @@
       background: white;
       border-radius: 20px;
       padding: 30px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
 
@@ -129,7 +129,7 @@
       margin-top: 30px;
       padding: 30px;
       border-radius: 18px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
     }
 
     .info h2 {
@@ -154,6 +154,16 @@
       color: #64748b;
     }
 
+    footer a {
+      color: #4f46e5;
+      text-decoration: none;
+      margin: 0 6px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
     @media (max-width: 600px) {
       header h1 {
         font-size: 30px;
@@ -163,6 +173,11 @@
       .info {
         padding: 20px;
       }
+
+      button {
+        width: 100%;
+        margin: 8px 0;
+      }
     }
   </style>
 </head>
@@ -171,10 +186,16 @@
 
 <header>
   <h1>Free Image Compressor</h1>
-  <p>Compress JPG, PNG and WebP images online for free</p>
 
-  <a class="home-link" href="https://mureedabbas1.github.io/ToolNest/">
-    ← Back to ToolNest
+  <p>
+    Compress JPG, PNG and WebP images online for free
+  </p>
+
+  <a
+    class="home-link"
+    href="https://mureedabbas1.github.io/ToolRivo/"
+  >
+    ← Back to ToolRivo
   </a>
 </header>
 
@@ -183,17 +204,25 @@
   <div class="tool-box">
 
     <div class="upload-area">
+
       <h2>Compress Your Image</h2>
-      <p>Select an image from your device</p>
+
+      <p>
+        Select an image from your device
+      </p>
 
       <input
         type="file"
         id="imageInput"
         accept="image/jpeg,image/png,image/webp"
       >
+
     </div>
 
-    <img id="preview" alt="Image preview">
+    <img
+      id="preview"
+      alt="Image preview"
+    >
 
     <label for="quality">
       Compression Quality:
@@ -226,12 +255,13 @@
 
   </div>
 
+
   <div class="info">
 
     <h2>Free Image Compressor Online</h2>
 
     <p>
-      ToolNest's free image compressor lets you reduce image file size
+      ToolRivo's free image compressor lets you reduce image file size
       directly in your browser. You can compress JPG, PNG and WebP images
       without installing any software.
     </p>
@@ -256,7 +286,7 @@
     <h3>Is This Image Compressor Free?</h3>
 
     <p>
-      Yes. ToolNest provides this image compressor free of charge.
+      Yes. ToolRivo provides this image compressor free of charge.
       Your selected image is processed directly in your browser.
     </p>
 
@@ -271,8 +301,45 @@
 
 </div>
 
+
 <footer>
-  © 2026 ToolNest — Free Online Tools for Everyone
+
+  <p>
+    <strong>ToolRivo ✦</strong>
+  </p>
+
+  <p>
+    Free online tools for everyone.
+  </p>
+
+  <p>
+    <a href="https://mureedabbas1.github.io/ToolRivo/privacy-policy.html">
+      Privacy Policy
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/terms.html">
+      Terms & Conditions
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/about.html">
+      About
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/contact.html">
+      Contact
+    </a>
+  </p>
+
+  <p>
+    © 2026 ToolRivo. All rights reserved.
+  </p>
+
 </footer>
 
 
@@ -287,8 +354,11 @@
 
   let compressedImage = null;
 
+
   quality.addEventListener("input", function () {
+
     qualityValue.textContent = quality.value;
+
   });
 
 
@@ -303,14 +373,18 @@
     const reader = new FileReader();
 
     reader.onload = function (event) {
+
       preview.src = event.target.result;
       preview.style.display = "block";
+
     };
 
     reader.readAsDataURL(file);
 
     result.innerHTML = "";
     downloadBtn.style.display = "none";
+    compressedImage = null;
+
   });
 
 
@@ -319,68 +393,113 @@
     const file = imageInput.files[0];
 
     if (!file) {
+
       alert("Please select an image first.");
+
       return;
+
     }
 
+
     const reader = new FileReader();
+
 
     reader.onload = function (event) {
 
       const img = new Image();
 
+
       img.onload = function () {
 
         const canvas = document.createElement("canvas");
+
         const ctx = canvas.getContext("2d");
+
 
         canvas.width = img.width;
         canvas.height = img.height;
 
-        ctx.drawImage(img, 0, 0);
 
-        const compressionQuality = parseInt(quality.value) / 100;
-
-        compressedImage = canvas.toDataURL(
-          "image/jpeg",
-          compressionQuality
+        ctx.drawImage(
+          img,
+          0,
+          0
         );
+
+
+        const compressionQuality =
+          parseInt(quality.value, 10) / 100;
+
+
+        compressedImage =
+          canvas.toDataURL(
+            "image/jpeg",
+            compressionQuality
+          );
+
 
         const originalSize = file.size;
 
-        const base64Length = compressedImage.length - "data:image/jpeg;base64,".length;
 
-        const compressedSize = Math.round(
-          base64Length * 0.75
-        );
+        const base64Length =
+          compressedImage.length -
+          "data:image/jpeg;base64,".length;
 
-        const reduction = Math.max(
-          0,
+
+        const compressedSize =
           Math.round(
-            ((originalSize - compressedSize) / originalSize) * 100
-          )
-        );
+            base64Length * 0.75
+          );
+
+
+        const reduction =
+          Math.max(
+            0,
+            Math.round(
+              (
+                (originalSize - compressedSize) /
+                originalSize
+              ) * 100
+            )
+          );
+
 
         result.innerHTML =
           "Original size: " +
           formatBytes(originalSize) +
           "<br>" +
+
           "Compressed size: " +
           formatBytes(compressedSize) +
           "<br>" +
+
           "Approximate reduction: " +
           reduction +
           "%";
 
-        downloadBtn.style.display = "inline-block";
+
+        downloadBtn.style.display =
+          "inline-block";
 
       };
+
+
+      img.onerror = function () {
+
+        alert(
+          "Unable to load this image. Please try another image."
+        );
+
+      };
+
 
       img.src = event.target.result;
 
     };
 
+
     reader.readAsDataURL(file);
+
   }
 
 
@@ -390,16 +509,27 @@
       return;
     }
 
-    const link = document.createElement("a");
 
-    link.href = compressedImage;
-    link.download = "toolnest-compressed-image.jpg";
+    const link =
+      document.createElement("a");
+
+
+    link.href =
+      compressedImage;
+
+
+    link.download =
+      "toolrivo-compressed-image.jpg";
+
 
     document.body.appendChild(link);
 
+
     link.click();
 
+
     document.body.removeChild(link);
+
   }
 
 
@@ -409,6 +539,7 @@
       return "0 Bytes";
     }
 
+
     const sizes = [
       "Bytes",
       "KB",
@@ -416,17 +547,25 @@
       "GB"
     ];
 
-    const i = Math.floor(
-      Math.log(bytes) / Math.log(1024)
-    );
+
+    const i =
+      Math.floor(
+        Math.log(bytes) /
+        Math.log(1024)
+      );
+
 
     return (
       parseFloat(
-        (bytes / Math.pow(1024, i)).toFixed(2)
+        (
+          bytes /
+          Math.pow(1024, i)
+        ).toFixed(2)
       ) +
       " " +
       sizes[i]
     );
+
   }
 
 </script>
