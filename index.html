@@ -47,11 +47,11 @@ nav{
 position:sticky;
 top:0;
 z-index:100;
-padding:15px 6%;
+padding:13px 6%;
 display:flex;
 align-items:center;
 justify-content:space-between;
-background:rgba(255,255,255,.92);
+background:rgba(255,255,255,.94);
 backdrop-filter:blur(15px);
 border-bottom:1px solid #e6e7f0;
 }
@@ -89,27 +89,33 @@ color:#555a70;
 font-weight:700;
 }
 
+
+/* =========================
+   COMPACT HERO
+========================= */
+
 .hero{
 text-align:center;
-padding:75px 20px 55px;
+padding:32px 20px 20px;
 }
 
 .badge{
 display:inline-block;
-padding:8px 17px;
+padding:6px 13px;
 border-radius:50px;
 background:#e9e6ff;
 color:#5c50ce;
+font-size:13px;
 font-weight:800;
-margin-bottom:20px;
+margin-bottom:10px;
 }
 
 .hero h1{
-max-width:900px;
+max-width:800px;
 margin:auto;
-font-size:clamp(42px,7vw,72px);
-line-height:1.03;
-letter-spacing:-2px;
+font-size:clamp(32px,5vw,52px);
+line-height:1.08;
+letter-spacing:-1.5px;
 }
 
 .gradient-text{
@@ -119,12 +125,70 @@ color:transparent;
 }
 
 .hero p{
-max-width:750px;
-margin:22px auto 0;
+max-width:650px;
+margin:12px auto 0;
 color:#70758a;
-font-size:18px;
-line-height:1.7;
+font-size:15px;
+line-height:1.5;
 }
+
+
+/* =========================
+   QUICK ACCESS
+========================= */
+
+.quick-tools{
+width:min(1150px,92%);
+margin:0 auto 35px;
+padding:23px;
+background:rgba(255,255,255,.94);
+border:1px solid #e5e6ef;
+border-radius:22px;
+box-shadow:0 12px 35px rgba(50,50,100,.07);
+text-align:center;
+}
+
+.quick-tools h2{
+font-size:25px;
+margin-bottom:5px;
+}
+
+.quick-tools p{
+color:#777c90;
+font-size:14px;
+margin-bottom:17px;
+}
+
+.quick-buttons{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:9px;
+}
+
+.quick-buttons a{
+text-decoration:none;
+color:#5148ad;
+background:#efedff;
+border:1px solid #ddd9ff;
+padding:9px 13px;
+border-radius:10px;
+font-size:13px;
+font-weight:800;
+transition:.2s;
+}
+
+.quick-buttons a:hover{
+background:linear-gradient(135deg,#6859df,#4d8dea);
+color:white;
+transform:translateY(-2px);
+box-shadow:0 5px 14px rgba(90,80,220,.18);
+}
+
+
+/* =========================
+   MAIN
+========================= */
 
 .container{
 width:min(1150px,92%);
@@ -133,7 +197,7 @@ margin:auto;
 
 .section-title{
 text-align:center;
-margin:20px 0 30px;
+margin:15px 0 25px;
 }
 
 .section-title h2{
@@ -152,6 +216,7 @@ padding:14px 18px;
 background:rgba(255,255,255,.7);
 border-radius:15px;
 border:1px solid #e5e6ef;
+scroll-margin-top:85px;
 }
 
 .tools{
@@ -168,6 +233,7 @@ border-radius:24px;
 padding:26px;
 box-shadow:0 12px 35px rgba(50,50,100,.07);
 transition:.25s;
+scroll-margin-top:90px;
 }
 
 .card:hover{
@@ -385,7 +451,7 @@ border:1px solid #ddd;
 @media(max-width:600px){
 
 nav{
-padding:13px 5%;
+padding:11px 5%;
 }
 
 .logo{
@@ -402,11 +468,28 @@ font-size:13px;
 }
 
 .hero{
-padding-top:50px;
+padding:25px 15px 18px;
 }
 
 .hero h1{
 letter-spacing:-1px;
+}
+
+.quick-tools{
+padding:20px 14px;
+}
+
+.quick-tools h2{
+font-size:21px;
+}
+
+.quick-buttons{
+gap:7px;
+}
+
+.quick-buttons a{
+font-size:12px;
+padding:8px 10px;
 }
 
 .tools{
@@ -423,11 +506,30 @@ padding:22px;
 
 }
 
+
+/* =========================
+   QUICK ACCESS MOBILE
+========================= */
+
+@media(max-width:400px){
+
+.quick-buttons a{
+font-size:11px;
+padding:7px 9px;
+}
+
+}
+
 </style>
 
 </head>
 
 <body>
+
+
+<!-- =========================
+     NAVIGATION
+========================= -->
 
 <nav>
 
@@ -440,24 +542,97 @@ Tool<span>Rivo</span>
 
 </nav>
 
+
+<!-- =========================
+     HERO
+========================= -->
+
 <section class="hero">
 
 <div class="badge">✨ Simple • Fast • Free</div>
 
 <h1>
-Free online tools for your
-<span class="gradient-text">everyday life.</span>
+Free Online Tools
+<span class="gradient-text">All in One Place</span>
 </h1>
 
 <p>
-Compress images, resize photos, convert images, create QR codes,
-work with text, calculate numbers, generate passwords and use
-developer tools — all in one free online website.
+Fast, simple and free tools for images, text, QR codes,
+calculators, PDFs and more.
 </p>
 
 </section>
 
+
+<!-- =========================
+     QUICK ACCESS
+========================= -->
+
+<section class="quick-tools">
+
+<h2>🚀 Quick Access to All Tools</h2>
+
+<p>Click any tool below to jump directly to it.</p>
+
+<div class="quick-buttons">
+
+<a href="#image-compressor">🖼️ Image Compressor</a>
+
+<a href="#image-resizer">📐 Image Resizer</a>
+
+<a href="#jpg-png">🔄 JPG to PNG</a>
+
+<a href="#image-jpg">🎨 Image to JPG</a>
+
+<a href="#image-cropper">✂️ Image Cropper</a>
+
+<a href="#image-base64">🔢 Image to Base64</a>
+
+<a href="#base64-image">🖼️ Base64 to Image</a>
+
+<a href="#qr-generator">🔗 QR Generator</a>
+
+<a href="#qr-scanner">📷 QR Scanner</a>
+
+<a href="#pdf-to-jpg">📄 PDF to JPG</a>
+
+<a href="#text-to-pdf">📝 Text to PDF</a>
+
+<a href="#word-counter">✍️ Word Counter</a>
+
+<a href="#case-converter">🔤 Case Converter</a>
+
+<a href="#text-cleaner">🧹 Text Cleaner</a>
+
+<a href="#age-calculator">🎂 Age Calculator</a>
+
+<a href="#percentage">％ Percentage</a>
+
+<a href="#bmi">⚖️ BMI Calculator</a>
+
+<a href="#password">🔐 Password Generator</a>
+
+<a href="#json">🧾 JSON Formatter</a>
+
+<a href="#url-encoder">🔗 URL Encoder</a>
+
+<a href="#base64">🔤 Base64 Encoder</a>
+
+<a href="#random-number">🎲 Random Number</a>
+
+<a href="#timestamp">⏱️ Timestamp</a>
+
+<a href="#color-picker">🎨 Color Picker</a>
+
+<a href="#youtube-thumbnail">▶️ YouTube Thumbnail</a>
+
+</div>
+
+</section>
+
+
 <main class="container">
+
 
 <div class="section-title" id="tools">
 
@@ -476,14 +651,16 @@ Fast and simple tools for images, text, QR codes, calculations, documents and mo
 </div>
 
 
-<!-- IMAGE TOOLS -->
+<!-- =========================
+     IMAGE TOOLS
+========================= -->
 
 <h2 class="category-title">🖼️ Image Tools</h2>
 
 <section class="tools">
 
 
-<div class="card">
+<div class="card" id="image-compressor">
 
 <div class="icon">🖼️</div>
 
@@ -515,7 +692,7 @@ Open Full Tool →
 </div>
 
 
-<div class="card">
+<div class="card" id="image-resizer">
 
 <div class="icon">📐</div>
 
@@ -555,7 +732,7 @@ Open Full Tool →
 </div>
 
 
-<div class="card">
+<div class="card" id="jpg-png">
 
 <div class="icon">🔄</div>
 
@@ -579,7 +756,7 @@ JPG • JPEG
 </div>
 
 
-<div class="card">
+<div class="card" id="image-jpg">
 
 <div class="icon">🎨</div>
 
@@ -602,7 +779,7 @@ JPG • JPEG
 </div>
 
 
-<div class="card">
+<div class="card" id="image-cropper">
 
 <div class="icon">✂️</div>
 
@@ -633,7 +810,7 @@ JPG • JPEG
 </div>
 
 
-<div class="card">
+<div class="card" id="image-base64">
 
 <div class="icon">🔢</div>
 
@@ -656,7 +833,7 @@ JPG • JPEG
 </div>
 
 
-<div class="card">
+<div class="card" id="base64-image">
 
 <div class="icon">🖼️</div>
 
@@ -675,14 +852,16 @@ JPG • JPEG
 </section>
 
 
-<!-- QR TOOLS -->
+<!-- =========================
+     QR TOOLS
+========================= -->
 
 <h2 class="category-title">🔗 QR Tools</h2>
 
 <section class="tools">
 
 
-<div class="card">
+<div class="card" id="qr-generator">
 
 <div class="icon">🔗</div>
 
@@ -719,7 +898,7 @@ Download QR
 </div>
 
 
-<div class="card">
+<div class="card" id="qr-scanner">
 
 <div class="icon">📷</div>
 
@@ -744,14 +923,16 @@ Download QR
 </section>
 
 
-<!-- DOCUMENT TOOLS -->
+<!-- =========================
+     DOCUMENT TOOLS
+========================= -->
 
 <h2 class="category-title">📄 Document Tools</h2>
 
 <section class="tools">
 
 
-<div class="card">
+<div class="card" id="pdf-to-jpg">
 
 <div class="icon">📄</div>
 
@@ -766,9 +947,9 @@ Open PDF to JPG →
 </div>
 
 
-<div class="card">
+<div class="card" id="text-to-pdf">
 
-<div class="icon">📄</div>
+<div class="icon">📝</div>
 
 <h3>Text to PDF</h3>
 
@@ -787,14 +968,16 @@ Open PDF to JPG →
 </section>
 
 
-<!-- TEXT TOOLS -->
+<!-- =========================
+     TEXT TOOLS
+========================= -->
 
 <h2 class="category-title">✍️ Text Tools</h2>
 
 <section class="tools">
 
 
-<div class="card">
+<div class="card" id="word-counter">
 
 <div class="icon">✍️</div>
 
@@ -817,7 +1000,7 @@ Sentences: <strong id="sentences">0</strong>
 </div>
 
 
-<div class="card">
+<div class="card" id="case-converter">
 
 <div class="icon">🔤</div>
 
@@ -843,7 +1026,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<div class="card">
+<div class="card" id="text-cleaner">
 
 <div class="icon">🧹</div>
 
@@ -862,14 +1045,16 @@ placeholder="Enter your text..."></textarea>
 </section>
 
 
-<!-- CALCULATORS -->
+<!-- =========================
+     CALCULATORS
+========================= -->
 
 <h2 class="category-title">🧮 Calculators</h2>
 
 <section class="tools">
 
 
-<div class="card">
+<div class="card" id="age-calculator">
 
 <div class="icon">🎂</div>
 
@@ -886,7 +1071,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<div class="card">
+<div class="card" id="percentage">
 
 <div class="icon">％</div>
 
@@ -905,7 +1090,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<div class="card">
+<div class="card" id="bmi">
 
 <div class="icon">⚖️</div>
 
@@ -926,14 +1111,16 @@ placeholder="Enter your text..."></textarea>
 </section>
 
 
-<!-- SECURITY -->
+<!-- =========================
+     SECURITY
+========================= -->
 
 <h2 class="category-title">🔐 Security Tools</h2>
 
 <section class="tools">
 
 
-<div class="card">
+<div class="card" id="password">
 
 <div class="icon">🔐</div>
 
@@ -954,14 +1141,16 @@ placeholder="Enter your text..."></textarea>
 </section>
 
 
-<!-- DEVELOPER TOOLS -->
+<!-- =========================
+     DEVELOPER TOOLS
+========================= -->
 
 <h2 class="category-title">💻 Developer Tools</h2>
 
 <section class="tools">
 
 
-<div class="card">
+<div class="card" id="json">
 
 <div class="icon">🧾</div>
 
@@ -978,7 +1167,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<div class="card">
+<div class="card" id="url-encoder">
 
 <div class="icon">🔗</div>
 
@@ -1001,7 +1190,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<div class="card">
+<div class="card" id="base64">
 
 <div class="icon">🔤</div>
 
@@ -1024,7 +1213,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<div class="card">
+<div class="card" id="random-number">
 
 <div class="icon">🎲</div>
 
@@ -1047,7 +1236,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<div class="card">
+<div class="card" id="timestamp">
 
 <div class="icon">⏱️</div>
 
@@ -1062,7 +1251,7 @@ placeholder="Enter your text..."></textarea>
 </div>
 
 
-<div class="card">
+<div class="card" id="color-picker">
 
 <div class="icon">🎨</div>
 
@@ -1083,14 +1272,16 @@ placeholder="Enter your text..."></textarea>
 </section>
 
 
-<!-- YOUTUBE -->
+<!-- =========================
+     YOUTUBE
+========================= -->
 
 <h2 class="category-title">🎥 YouTube Tools</h2>
 
 <section class="tools">
 
 
-<div class="card">
+<div class="card" id="youtube-thumbnail">
 
 <div class="icon">▶️</div>
 
@@ -1110,6 +1301,10 @@ placeholder="Paste YouTube video URL">
 
 </section>
 
+
+<!-- =========================
+     INFO
+========================= -->
 
 <section class="info-section">
 
@@ -1131,6 +1326,11 @@ and mobile devices. No complicated software installation is required.
 </section>
 
 </main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
 
 <footer>
 
