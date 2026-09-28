@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta name="keywords" content="free online tools, image compressor, image resizer, JPG to PNG, PDF to JPG, QR code generator, word counter, text cleaner, age calculator, BMI calculator, password generator, JSON formatter, Base64 converter, URL encoder, YouTube thumbnail downloader">
-   <head>
+<head>
 
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>ToolRivo - Free Online Tools, Image, PDF, QR & Text Tools</title>
 
 <meta name="description" content="Free online tools for image compression, resizing, JPG to PNG, PDF, QR codes, text, calculators, JSON, Base64 and more. Fast, simple and free.">
-<meta name="keywords" content="free online tools, image compressor, image resizer, JPG to PNG, image converter, image cropper, QR code generator, QR scanner, PDF to JPG, word counter, case converter, age calculator, percentage calculator, BMI calculator, password generator, JSON formatter, URL encoder, Base64, YouTube thumbnail downloader">
 
 <meta name="author" content="ToolRivo">
+
 <meta name="robots" content="index, follow">
 
 <link rel="canonical" href="https://mureedabbas1.github.io/ToolRivo/">
@@ -41,6 +41,7 @@ radial-gradient(circle at 10% 10%,#e7e2ff 0,transparent 30%),
 radial-gradient(circle at 90% 20%,#dff4ff 0,transparent 28%),
 linear-gradient(135deg,#fafaff,#f1f6ff);
 min-height:100vh;
+line-height:1.5;
 }
 
 nav{
@@ -91,12 +92,12 @@ font-weight:700;
 
 
 /* =========================
-   COMPACT HERO
+   HERO
 ========================= */
 
 .hero{
 text-align:center;
-padding:32px 20px 20px;
+padding:34px 20px 22px;
 }
 
 .badge{
@@ -111,7 +112,7 @@ margin-bottom:10px;
 }
 
 .hero h1{
-max-width:800px;
+max-width:850px;
 margin:auto;
 font-size:clamp(32px,5vw,52px);
 line-height:1.08;
@@ -121,15 +122,16 @@ letter-spacing:-1.5px;
 .gradient-text{
 background:linear-gradient(90deg,#5f51dc,#398eea);
 -webkit-background-clip:text;
+background-clip:text;
 color:transparent;
 }
 
 .hero p{
-max-width:650px;
-margin:12px auto 0;
+max-width:700px;
+margin:13px auto 0;
 color:#70758a;
-font-size:15px;
-line-height:1.5;
+font-size:16px;
+line-height:1.6;
 }
 
 
@@ -261,7 +263,7 @@ margin-bottom:7px;
 .card>p{
 color:#74798c;
 margin-bottom:20px;
-line-height:1.5;
+line-height:1.6;
 }
 
 .upload{
@@ -311,6 +313,17 @@ textarea:focus,
 select:focus{
 border-color:#7567ed;
 box-shadow:0 0 0 3px rgba(117,103,237,.1);
+}
+
+input[type=color]{
+width:100%;
+height:55px;
+border:1px solid #d9dbe7;
+border-radius:11px;
+background:white;
+padding:5px;
+cursor:pointer;
+margin:6px 0 12px;
 }
 
 .row{
@@ -376,22 +389,60 @@ color:#73788b;
 }
 
 .info-section{
-background:rgba(255,255,255,.75);
+background:rgba(255,255,255,.78);
 border:1px solid #e5e6ef;
 border-radius:24px;
-padding:30px;
+padding:32px;
 margin:10px auto 50px;
-line-height:1.7;
+line-height:1.75;
 }
 
 .info-section h2{
-margin-bottom:12px;
-font-size:27px;
+margin-bottom:15px;
+font-size:28px;
+}
+
+.info-section h3{
+margin-top:22px;
+margin-bottom:7px;
+font-size:20px;
 }
 
 .info-section p{
 color:#666b7e;
-margin-bottom:12px;
+margin-bottom:13px;
+}
+
+.faq-section{
+background:rgba(255,255,255,.78);
+border:1px solid #e5e6ef;
+border-radius:24px;
+padding:32px;
+margin:10px auto 50px;
+}
+
+.faq-section h2{
+text-align:center;
+margin-bottom:25px;
+font-size:28px;
+}
+
+.faq-item{
+border-bottom:1px solid #e5e6ef;
+padding:18px 0;
+}
+
+.faq-item:last-child{
+border-bottom:0;
+}
+
+.faq-item h3{
+font-size:18px;
+margin-bottom:7px;
+}
+
+.faq-item p{
+color:#666b7e;
 }
 
 footer{
@@ -409,10 +460,21 @@ color:#6257d9;
 margin-bottom:8px;
 }
 
+.footer-links{
+margin-top:12px;
+}
+
+.footer-links a{
+color:#6659df;
+text-decoration:none;
+font-weight:700;
+margin:0 8px;
+}
+
 .note{
 font-size:13px;
 color:#85899a;
-margin-top:9px;
+margin-top:12px;
 }
 
 .tool-link{
@@ -504,12 +566,12 @@ grid-template-columns:1fr;
 padding:22px;
 }
 
+.info-section,
+.faq-section{
+padding:23px;
 }
 
-
-/* =========================
-   QUICK ACCESS MOBILE
-========================= */
+}
 
 @media(max-width:400px){
 
@@ -533,9 +595,12 @@ padding:7px 9px;
 
 <nav>
 
-<a class="logo" href="#">
+<a class="logo" href="index.html" aria-label="ToolRivo Home">
+
 <div class="logo-mark">✦</div>
+
 Tool<span>Rivo</span>
+
 </a>
 
 <a href="#tools">Explore Tools →</a>
@@ -557,8 +622,8 @@ Free Online Tools
 </h1>
 
 <p>
-Fast, simple and free tools for images, text, QR codes,
-calculators, PDFs and more.
+ToolRivo provides free online tools for images, text, QR codes,
+calculators, PDFs, developer utilities and other everyday digital tasks.
 </p>
 
 </section>
@@ -568,9 +633,9 @@ calculators, PDFs and more.
      QUICK ACCESS
 ========================= -->
 
-<section class="quick-tools">
+<section class="quick-tools" aria-labelledby="quick-access-title">
 
-<h2>🚀 Quick Access to All Tools</h2>
+<h2 id="quick-access-title">🚀 Quick Access to All Tools</h2>
 
 <p>Click any tool below to jump directly to it.</p>
 
@@ -639,14 +704,16 @@ calculators, PDFs and more.
 <h2>Explore Our Free Online Tools</h2>
 
 <p>
-Fast and simple tools for images, text, QR codes, calculations, documents and more.
+Fast and simple tools for images, text, QR codes, calculations,
+documents and developer utilities.
 </p>
 
 </div>
 
+
 <div class="tool-count">
 
-<strong>25+ Free Tools</strong> available on ToolRivo
+<strong>25 Free Tools</strong> available on ToolRivo
 
 </div>
 
@@ -666,7 +733,10 @@ Fast and simple tools for images, text, QR codes, calculations, documents and mo
 
 <h3>Image Compressor</h3>
 
-<p>Compress JPG, PNG and WebP images to reduce file size.</p>
+<p>
+Compress JPG, PNG and WebP images to reduce file size while maintaining
+good image quality.
+</p>
 
 <label class="upload">
 
@@ -698,7 +768,9 @@ Open Full Tool →
 
 <h3>Image Resizer</h3>
 
-<p>Resize images to your required width and height.</p>
+<p>
+Resize JPG, PNG and WebP images to your required width and height.
+</p>
 
 <label class="upload">
 
@@ -711,9 +783,9 @@ JPG • PNG • WebP
 
 <div class="row">
 
-<input type="number" id="resizeWidth" placeholder="Width">
+<input type="number" id="resizeWidth" placeholder="Width" aria-label="Image width">
 
-<input type="number" id="resizeHeight" placeholder="Height">
+<input type="number" id="resizeHeight" placeholder="Height" aria-label="Image height">
 
 </div>
 
@@ -738,7 +810,9 @@ Open Full Tool →
 
 <h3>JPG to PNG Converter</h3>
 
-<p>Convert JPG and JPEG images into PNG format.</p>
+<p>
+Convert JPG and JPEG images into PNG format directly in your browser.
+</p>
 
 <label class="upload">
 
@@ -762,7 +836,9 @@ JPG • JPEG
 
 <h3>Image to JPG Converter</h3>
 
-<p>Convert PNG, WebP and other images into JPG.</p>
+<p>
+Convert PNG, WebP and other supported image formats into JPG.
+</p>
 
 <label class="upload">
 
@@ -785,7 +861,9 @@ JPG • JPEG
 
 <h3>Image Cropper</h3>
 
-<p>Crop images using your preferred width and height.</p>
+<p>
+Crop an image by selecting the required width and height.
+</p>
 
 <label class="upload">
 
@@ -816,7 +894,9 @@ JPG • JPEG
 
 <h3>Image to Base64</h3>
 
-<p>Convert an image into Base64 text for web development.</p>
+<p>
+Convert an image into Base64 text for web development and coding projects.
+</p>
 
 <label class="upload">
 
@@ -839,9 +919,14 @@ JPG • JPEG
 
 <h3>Base64 to Image</h3>
 
-<p>Convert Base64 image data back into an image.</p>
+<p>
+Convert Base64 image data back into a viewable image.
+</p>
 
-<textarea id="base64ToImageInput" placeholder="Paste Base64 image data here..."></textarea>
+<textarea
+id="base64ToImageInput"
+placeholder="Paste Base64 image data here..."
+></textarea>
 
 <button onclick="base64ToImage()">Convert to Image</button>
 
@@ -867,9 +952,16 @@ JPG • JPEG
 
 <h3>QR Code Generator</h3>
 
-<p>Create a QR code for any website link or text.</p>
+<p>
+Create a QR code for a website link, URL or text.
+</p>
 
-<input type="text" id="qrText" placeholder="https://example.com">
+<input
+type="text"
+id="qrText"
+placeholder="https://example.com"
+aria-label="QR code text or URL"
+>
 
 <button onclick="generateQR()">Generate QR</button>
 
@@ -883,13 +975,19 @@ Open Full Tool →
 
 <div id="qrBox" class="result" style="text-align:center">
 
-<img id="qrImage"
+<img
+id="qrImage"
 style="max-width:300px;width:100%;border-radius:10px;"
-alt="Generated QR Code">
+alt="Generated QR Code"
+>
 
 <br><br>
 
-<a id="qrDownload" class="download" download="ToolRivo-qr.png">
+<a
+id="qrDownload"
+class="download"
+download="ToolRivo-qr.png"
+>
 Download QR
 </a>
 
@@ -904,7 +1002,9 @@ Download QR
 
 <h3>QR Code Scanner</h3>
 
-<p>Scan a QR code from an image and read its content.</p>
+<p>
+Scan a QR code from a supported image and read its content.
+</p>
 
 <label class="upload">
 
@@ -938,7 +1038,9 @@ Download QR
 
 <h3>PDF to JPG Converter</h3>
 
-<p>Convert PDF pages into JPG images.</p>
+<p>
+Convert PDF pages into JPG images using our dedicated PDF conversion tool.
+</p>
 
 <a class="download" href="pdf-to-jpg.html">
 Open PDF to JPG →
@@ -953,11 +1055,20 @@ Open PDF to JPG →
 
 <h3>Text to PDF</h3>
 
-<p>Create a simple PDF document from your text.</p>
+<p>
+Create a simple PDF document from text directly in your browser.
+</p>
 
-<input type="text" id="pdfTitle" placeholder="Document title">
+<input
+type="text"
+id="pdfTitle"
+placeholder="Document title"
+>
 
-<textarea id="pdfText" placeholder="Write your text here..."></textarea>
+<textarea
+id="pdfText"
+placeholder="Write your text here..."
+></textarea>
 
 <button onclick="createPDF()">Create PDF</button>
 
@@ -983,11 +1094,15 @@ Open PDF to JPG →
 
 <h3>Word Counter</h3>
 
-<p>Count words, characters and sentences.</p>
+<p>
+Count words, characters and sentences in your text.
+</p>
 
-<textarea id="wordText"
+<textarea
+id="wordText"
 placeholder="Type or paste your text here..."
-oninput="countWords()"></textarea>
+oninput="countWords()"
+></textarea>
 
 <div id="wordResult" class="result" style="display:block">
 
@@ -1006,10 +1121,14 @@ Sentences: <strong id="sentences">0</strong>
 
 <h3>Case Converter</h3>
 
-<p>Convert text to uppercase, lowercase or title case.</p>
+<p>
+Convert text to uppercase, lowercase or title case.
+</p>
 
-<textarea id="caseText"
-placeholder="Enter your text..."></textarea>
+<textarea
+id="caseText"
+placeholder="Enter your text..."
+></textarea>
 
 <div class="row">
 
@@ -1021,7 +1140,9 @@ placeholder="Enter your text..."></textarea>
 
 <br>
 
-<button class="secondary" onclick="titleCase()">Title Case</button>
+<button class="secondary" onclick="titleCase()">
+Title Case
+</button>
 
 </div>
 
@@ -1032,9 +1153,14 @@ placeholder="Enter your text..."></textarea>
 
 <h3>Text Cleaner</h3>
 
-<p>Remove extra spaces and clean unwanted blank lines.</p>
+<p>
+Remove extra spaces and unwanted blank lines from text.
+</p>
 
-<textarea id="cleanText" placeholder="Paste your text here..."></textarea>
+<textarea
+id="cleanText"
+placeholder="Paste your text here..."
+></textarea>
 
 <button onclick="cleanText()">Clean Text</button>
 
@@ -1060,7 +1186,9 @@ placeholder="Enter your text..."></textarea>
 
 <h3>Age Calculator</h3>
 
-<p>Calculate your age from your date of birth.</p>
+<p>
+Calculate your age from your date of birth.
+</p>
 
 <input type="date" id="birthDate">
 
@@ -1077,13 +1205,25 @@ placeholder="Enter your text..."></textarea>
 
 <h3>Percentage Calculator</h3>
 
-<p>Calculate percentages quickly and easily.</p>
+<p>
+Calculate percentages quickly and easily.
+</p>
 
-<input type="number" id="percentValue" placeholder="Enter number">
+<input
+type="number"
+id="percentValue"
+placeholder="Enter number"
+>
 
-<input type="number" id="percentTotal" placeholder="Enter total">
+<input
+type="number"
+id="percentTotal"
+placeholder="Enter total"
+>
 
-<button onclick="calculatePercentage()">Calculate</button>
+<button onclick="calculatePercentage()">
+Calculate
+</button>
 
 <div id="percentResult" class="result"></div>
 
@@ -1096,11 +1236,21 @@ placeholder="Enter your text..."></textarea>
 
 <h3>BMI Calculator</h3>
 
-<p>Calculate BMI using your height and weight.</p>
+<p>
+Calculate BMI using height and weight.
+</p>
 
-<input type="number" id="bmiWeight" placeholder="Weight in kg">
+<input
+type="number"
+id="bmiWeight"
+placeholder="Weight in kg"
+>
 
-<input type="number" id="bmiHeight" placeholder="Height in cm">
+<input
+type="number"
+id="bmiHeight"
+placeholder="Height in cm"
+>
 
 <button onclick="calculateBMI()">Calculate BMI</button>
 
@@ -1126,15 +1276,32 @@ placeholder="Enter your text..."></textarea>
 
 <h3>Password Generator</h3>
 
-<p>Create a strong random password instantly.</p>
+<p>
+Create a random password for general use.
+</p>
 
-<input type="number" id="passLength" value="16" min="6" max="50">
+<input
+type="number"
+id="passLength"
+value="16"
+min="6"
+max="50"
+>
 
-<input type="text" id="passwordOutput" readonly placeholder="Your password">
+<input
+type="text"
+id="passwordOutput"
+readonly
+placeholder="Your password"
+>
 
-<button onclick="generatePassword()">Generate Password</button>
+<button onclick="generatePassword()">
+Generate Password
+</button>
 
-<button class="secondary" onclick="copyPassword()">Copy</button>
+<button class="secondary" onclick="copyPassword()">
+Copy
+</button>
 
 </div>
 
@@ -1156,9 +1323,14 @@ placeholder="Enter your text..."></textarea>
 
 <h3>JSON Formatter</h3>
 
-<p>Format and validate JSON data instantly.</p>
+<p>
+Format and validate JSON data instantly.
+</p>
 
-<textarea id="jsonInput" placeholder='{"name":"ToolRivo","free":true}'></textarea>
+<textarea
+id="jsonInput"
+placeholder='{"name":"ToolRivo","free":true}'
+></textarea>
 
 <button onclick="formatJSON()">Format JSON</button>
 
@@ -1173,9 +1345,14 @@ placeholder="Enter your text..."></textarea>
 
 <h3>URL Encoder / Decoder</h3>
 
-<p>Encode or decode URLs and text.</p>
+<p>
+Encode or decode URLs and text.
+</p>
 
-<textarea id="urlInput" placeholder="Enter URL or text..."></textarea>
+<textarea
+id="urlInput"
+placeholder="Enter URL or text..."
+></textarea>
 
 <div class="row">
 
@@ -1196,9 +1373,14 @@ placeholder="Enter your text..."></textarea>
 
 <h3>Base64 Encoder / Decoder</h3>
 
-<p>Encode or decode normal text using Base64.</p>
+<p>
+Encode or decode normal text using Base64.
+</p>
 
-<textarea id="base64Input" placeholder="Enter text..."></textarea>
+<textarea
+id="base64Input"
+placeholder="Enter text..."
+></textarea>
 
 <div class="row">
 
@@ -1219,13 +1401,23 @@ placeholder="Enter your text..."></textarea>
 
 <h3>Random Number Generator</h3>
 
-<p>Generate a random number between two values.</p>
+<p>
+Generate a random number between two values.
+</p>
 
 <div class="row">
 
-<input type="number" id="randomMin" placeholder="Minimum">
+<input
+type="number"
+id="randomMin"
+placeholder="Minimum"
+>
 
-<input type="number" id="randomMax" placeholder="Maximum">
+<input
+type="number"
+id="randomMax"
+placeholder="Maximum"
+>
 
 </div>
 
@@ -1242,9 +1434,13 @@ placeholder="Enter your text..."></textarea>
 
 <h3>Unix Timestamp Converter</h3>
 
-<p>Convert the current date into a Unix timestamp.</p>
+<p>
+Get the current Unix timestamp and local date/time.
+</p>
 
-<button onclick="getTimestamp()">Get Current Timestamp</button>
+<button onclick="getTimestamp()">
+Get Current Timestamp
+</button>
 
 <div id="timestampResult" class="result"></div>
 
@@ -1257,13 +1453,25 @@ placeholder="Enter your text..."></textarea>
 
 <h3>Color Picker</h3>
 
-<p>Choose a color and get its HEX code.</p>
+<p>
+Choose a color and get its HEX code.
+</p>
 
-<input type="color" id="colorPicker" value="#6659df">
+<input
+type="color"
+id="colorPicker"
+value="#6659df"
+aria-label="Choose a color"
+>
 
 <div id="colorPreview" class="color-preview"></div>
 
-<input type="text" id="colorValue" value="#6659df" readonly>
+<input
+type="text"
+id="colorValue"
+value="#6659df"
+readonly
+>
 
 <button onclick="copyColor()">Copy HEX</button>
 
@@ -1287,13 +1495,19 @@ placeholder="Enter your text..."></textarea>
 
 <h3>YouTube Thumbnail Downloader</h3>
 
-<p>Get a YouTube video's thumbnail image.</p>
+<p>
+Get a YouTube video's available thumbnail image.
+</p>
 
-<input type="url"
+<input
+type="url"
 id="youtubeURL"
-placeholder="Paste YouTube video URL">
+placeholder="Paste YouTube video URL"
+>
 
-<button onclick="getYouTubeThumbnail()">Get Thumbnail</button>
+<button onclick="getYouTubeThumbnail()">
+Get Thumbnail
+</button>
 
 <div id="youtubeResult" class="result"></div>
 
@@ -1303,27 +1517,150 @@ placeholder="Paste YouTube video URL">
 
 
 <!-- =========================
-     INFO
+     INFORMATION
 ========================= -->
 
 <section class="info-section">
 
-<h2>Free Online Tools in One Place</h2>
+<h2>Free Online Tools for Everyday Digital Tasks</h2>
 
 <p>
-ToolRivo is a free online tools website designed to make everyday digital
-tasks easier. You can compress and resize images, convert image formats,
-create and scan QR codes, work with text, calculate age and percentages,
-calculate BMI, generate passwords, format JSON, encode URLs, work with
-Base64, generate random numbers and use other useful online tools.
+ToolRivo is a free online tools website designed to help users complete
+common digital tasks quickly and easily. Our tools are useful for students,
+content creators, website owners, developers and everyday internet users.
+</p>
+
+<h3>Image Tools</h3>
+
+<p>
+Use ToolRivo image tools to compress images, resize pictures, convert JPG
+and PNG formats, crop images and convert images to or from Base64. These
+tools are designed to make common image tasks simple without requiring
+additional desktop software.
+</p>
+
+<h3>QR and Document Tools</h3>
+
+<p>
+Create QR codes from website links or text, scan supported QR images,
+convert PDF pages to JPG images and create simple PDF documents from text.
+</p>
+
+<h3>Text and Calculator Tools</h3>
+
+<p>
+ToolRivo includes a word counter, case converter and text cleaner for
+everyday writing tasks. You can also calculate age, percentages and BMI
+using our browser-based calculators.
+</p>
+
+<h3>Developer and Utility Tools</h3>
+
+<p>
+Developers and technical users can use our JSON formatter, URL encoder and
+decoder, Base64 encoder and decoder, random number generator, Unix timestamp
+tool and color picker.
+</p>
+
+<h3>Simple and Easy to Use</h3>
+
+<p>
+ToolRivo tools are designed with a simple interface for desktop and mobile
+devices. Most tools process information directly in your browser. Select
+the tool you need, enter your information or upload a supported file, and
+follow the instructions shown on the page.
 </p>
 
 <p>
-Our tools are designed to be simple, fast and easy to use on both desktop
-and mobile devices. No complicated software installation is required.
+ToolRivo is continuously improving its collection of free online utilities
+and adding useful tools for common digital needs.
 </p>
 
 </section>
+
+
+<!-- =========================
+     FAQ
+========================= -->
+
+<section class="faq-section">
+
+<h2>Frequently Asked Questions</h2>
+
+
+<div class="faq-item">
+
+<h3>What is ToolRivo?</h3>
+
+<p>
+ToolRivo is a collection of free online tools for images, text, QR codes,
+calculators, PDF tasks and developer utilities.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>Are ToolRivo tools free?</h3>
+
+<p>
+Yes. ToolRivo provides these online utilities free of charge.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>Do I need to install software?</h3>
+
+<p>
+No. ToolRivo tools are designed to work through a modern web browser,
+so additional software installation is generally not required.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>Can I use ToolRivo on a mobile phone?</h3>
+
+<p>
+Yes. The website is responsive and designed to work on both desktop
+computers and mobile devices.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>What types of tools are available?</h3>
+
+<p>
+ToolRivo includes image tools, QR tools, document tools, text tools,
+calculators, security utilities, developer tools and YouTube utilities.
+</p>
+
+</div>
+
+
+<div class="faq-item">
+
+<h3>Does ToolRivo store my uploaded images?</h3>
+
+<p>
+Many browser-based image tools process files locally in the browser.
+For details about information handling and third-party services, please
+review the ToolRivo Privacy Policy.
+</p>
+
+</div>
+
+</section>
+
 
 </main>
 
@@ -1334,9 +1671,39 @@ and mobile devices. No complicated software installation is required.
 
 <footer>
 
-<div class="footer-logo">ToolRivo ✦</div>
+<div class="footer-logo">
+ToolRivo ✦
+</div>
 
-<p>Free online tools for everyone.</p>
+<p>
+Free online tools for everyone.
+</p>
+
+<div class="footer-links">
+
+<a href="privacy-policy.html">
+Privacy Policy
+</a>
+
+<span>•</span>
+
+<a href="terms.html">
+Terms & Conditions
+</a>
+
+<span>•</span>
+
+<a href="about.html">
+About
+</a>
+
+<span>•</span>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
 
 <p class="note">
 © 2026 ToolRivo. All rights reserved.
@@ -1415,6 +1782,14 @@ ctx.drawImage(img,0,0);
 
 canvas.toBlob(blob=>{
 
+if(!blob){
+
+showError(result,"Unable to compress this image.");
+
+return;
+
+}
+
 const url=URL.createObjectURL(blob);
 
 result.style.display="block";
@@ -1426,6 +1801,12 @@ result.innerHTML=
 '<a class="download" href="'+url+'" download="ToolRivo-compressed.jpg">Download</a>';
 
 },"image/jpeg",0.65);
+
+};
+
+img.onerror=()=>{
+
+showError(result,"Unable to read this image.");
 
 };
 
@@ -1464,9 +1845,9 @@ return;
 
 }
 
-if(!width||!height){
+if(!width||!height||width<1||height<1){
 
-showError(result,"Please enter width and height.");
+showError(result,"Please enter valid width and height.");
 
 return;
 
@@ -1491,6 +1872,14 @@ ctx.drawImage(img,0,0,width,height);
 
 canvas.toBlob(blob=>{
 
+if(!blob){
+
+showError(result,"Unable to resize this image.");
+
+return;
+
+}
+
 const url=URL.createObjectURL(blob);
 
 result.style.display="block";
@@ -1500,6 +1889,12 @@ result.innerHTML=
 '<a class="download" href="'+url+'" download="ToolRivo-resized.jpg">Download</a>';
 
 },"image/jpeg",.9);
+
+};
+
+img.onerror=()=>{
+
+showError(result,"Unable to read this image.");
 
 };
 
@@ -1547,6 +1942,14 @@ canvas.getContext("2d").drawImage(img,0,0);
 
 canvas.toBlob(blob=>{
 
+if(!blob){
+
+showError(result,"Unable to convert this image.");
+
+return;
+
+}
+
 const url=URL.createObjectURL(blob);
 
 result.style.display="block";
@@ -1556,6 +1959,12 @@ result.innerHTML=
 '<a class="download" href="'+url+'" download="ToolRivo-image.png">Download PNG</a>';
 
 },"image/png");
+
+};
+
+img.onerror=()=>{
+
+showError(result,"Unable to read this image.");
 
 };
 
@@ -1614,6 +2023,14 @@ ctx.drawImage(img,0,0);
 
 canvas.toBlob(blob=>{
 
+if(!blob){
+
+showError(result,"Unable to convert this image.");
+
+return;
+
+}
+
 const url=URL.createObjectURL(blob);
 
 result.style.display="block";
@@ -1623,6 +2040,12 @@ result.innerHTML=
 '<a class="download" href="'+url+'" download="ToolRivo-image.jpg">Download JPG</a>';
 
 },"image/jpeg",.9);
+
+};
+
+img.onerror=()=>{
+
+showError(result,"Unable to read this image.");
 
 };
 
@@ -1661,9 +2084,9 @@ return;
 
 }
 
-if(!width||!height){
+if(!width||!height||width<1||height<1){
 
-showError(result,"Please enter crop width and height.");
+showError(result,"Please enter valid crop width and height.");
 
 return;
 
@@ -1711,6 +2134,14 @@ height
 
 canvas.toBlob(blob=>{
 
+if(!blob){
+
+showError(result,"Unable to crop this image.");
+
+return;
+
+}
+
 const url=URL.createObjectURL(blob);
 
 result.style.display="block";
@@ -1720,6 +2151,12 @@ result.innerHTML=
 '<a class="download" href="'+url+'" download="ToolRivo-cropped.jpg">Download</a>';
 
 },"image/jpeg",.9);
+
+};
+
+img.onerror=()=>{
+
+showError(result,"Unable to read this image.");
 
 };
 
@@ -1760,10 +2197,10 @@ result.style.display="block";
 
 result.innerHTML=
 '<span class="success">✓ Image converted to Base64!</span><br><br>'+
-'<textarea id="base64ImageOutput" style="min-height:180px">'+
-data+
-'</textarea><br>'+
+'<textarea id="base64ImageOutput" style="min-height:180px"></textarea><br>'+
 '<button onclick="copyBase64Image()">Copy Base64</button>';
+
+document.getElementById("base64ImageOutput").value=data;
 
 };
 
@@ -1862,6 +2299,15 @@ download.href=url;
 
 };
 
+image.onerror=()=>{
+
+box.style.display="block";
+
+box.innerHTML=
+'<span class="error">Unable to generate QR code right now.</span>';
+
+};
+
 }
 
 
@@ -1930,7 +2376,7 @@ result.innerHTML=
 '<span class="success">✓ QR Code detected!</span><br><br>'+
 '<strong>Result:</strong><br><br>'+
 '<div style="word-break:break-all">'+
-value+
+escapeHTML(value)+
 '</div><br>'+
 '<button onclick="copyQRResult()">Copy Result</button>';
 
@@ -1942,6 +2388,13 @@ result.innerHTML=
 '<span class="error">Unable to scan this QR image.</span>';
 
 }
+
+};
+
+img.onerror=()=>{
+
+result.innerHTML=
+'<span class="error">Unable to read this image.</span>';
 
 };
 
@@ -2092,6 +2545,17 @@ const birth=new Date(input);
 
 const today=new Date();
 
+if(birth>today){
+
+showError(
+result,
+"Date of birth cannot be in the future."
+);
+
+return;
+
+}
+
 let years=
 today.getFullYear()-birth.getFullYear();
 
@@ -2199,11 +2663,16 @@ document.getElementById("bmiHeight").value
 const result=
 document.getElementById("bmiResult");
 
-if(!weight||!height){
+if(
+!weight||
+!height||
+weight<=0||
+height<=0
+){
 
 showError(
 result,
-"Please enter weight and height."
+"Please enter valid weight and height."
 );
 
 return;
@@ -2500,7 +2969,7 @@ result.style.display="block";
 result.innerHTML=
 '<span class="success">Base64:</span><br><br>'+
 '<div class="code-output">'+
-encoded+
+escapeHTML(encoded)+
 '</div>';
 
 window.lastBase64=encoded;
@@ -2805,7 +3274,7 @@ thumbnail+
 '<br><br>'+
 '<a class="download" href="'+
 thumbnail+
-'" target="_blank">'+
+'" target="_blank" rel="noopener">'+
 "Open Thumbnail"+
 "</a>";
 
@@ -3043,48 +3512,5 @@ return pdf;
 
 </script>
 
-<footer style="
-text-align:center;
-padding:35px 20px;
-background:white;
-border-top:1px solid #e5e6ef;
-color:#777c90;
-">
-
-<p style="margin:0 0 12px;">
-© 2026 ToolRivo. All rights reserved.
-</p>
-
-<div>
-
-<a href="privacy-policy.html"
-style="color:#6659df;text-decoration:none;font-weight:700;margin:0 8px;">
-Privacy Policy
-</a>
-
-<span>•</span>
-
-<a href="terms.html"
-style="color:#6659df;text-decoration:none;font-weight:700;margin:0 8px;">
-Terms & Conditions
-</a>
-
-<span>•</span>
-
-<a href="about.html"
-style="color:#6659df;text-decoration:none;font-weight:700;margin:0 8px;">
-About
-</a>
-
-<span>•</span>
-
-<a href="contact.html"
-style="color:#6659df;text-decoration:none;font-weight:700;margin:0 8px;">
-Contact
-</a>
-
-</div>
-
-</footer>
 </body>
 </html>
