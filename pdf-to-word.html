@@ -1,23 +1,24 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PDF to Word Converter – Free Online Tool | ToolNest</title>
+  <title>PDF to Word Converter - Free Online Tool | ToolRivo</title>
 
-  <meta name="description" content="Convert PDF files to editable Word documents online for free with ToolNest. Fast, simple and browser-based PDF to Word converter.">
+  <meta name="description" content="Convert PDF files to editable Word documents online for free with ToolRivo. Fast, simple and browser-based PDF to Word converter.">
 
-  <meta name="keywords" content="PDF to Word, PDF to DOCX, convert PDF to Word, free PDF converter, online PDF tools, ToolNest">
+  <meta name="keywords" content="PDF to Word, PDF to DOCX, convert PDF to Word, free PDF converter, online PDF tools, ToolRivo">
 
-  <link rel="canonical" href="https://mureedabbas1.github.io/ToolNest/pdf-to-word.html">
+  <meta name="author" content="ToolRivo">
+  <meta name="robots" content="index, follow">
 
-  <meta property="og:title" content="PDF to Word Converter – Free Online Tool | ToolNest">
-  <meta property="og:description" content="Convert PDF files to editable Word documents online for free.">
+  <link rel="canonical" href="https://mureedabbas1.github.io/ToolRivo/pdf-to-word.html">
+
+  <meta property="og:title" content="PDF to Word Converter - Free Online Tool | ToolRivo">
+  <meta property="og:description" content="Convert PDF files to editable Word documents online for free with ToolRivo.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://mureedabbas1.github.io/ToolNest/pdf-to-word.html">
+  <meta property="og:url" content="https://mureedabbas1.github.io/ToolRivo/pdf-to-word.html">
 
   <style>
     * {
@@ -60,6 +61,11 @@
       font-size: 15px;
     }
 
+    .home:hover,
+    .logo:hover {
+      opacity: 0.9;
+    }
+
     .hero {
       text-align: center;
       padding: 55px 20px 35px;
@@ -88,7 +94,7 @@
       background: white;
       border-radius: 18px;
       padding: 35px;
-      box-shadow: 0 10px 35px rgba(0,0,0,0.08);
+      box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
       text-align: center;
     }
 
@@ -133,6 +139,7 @@
       margin-top: 15px;
       color: #344054;
       font-size: 14px;
+      word-break: break-word;
     }
 
     .convert-btn {
@@ -186,7 +193,7 @@
       background: white;
       padding: 30px;
       border-radius: 15px;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
     }
 
     .info h2 {
@@ -214,9 +221,33 @@
       text-align: center;
       padding: 25px 15px;
       font-size: 14px;
+      line-height: 1.8;
+    }
+
+    footer a {
+      color: #a5b4fc;
+      text-decoration: none;
+      margin: 0 5px;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
     }
 
     @media (max-width: 600px) {
+
+      .nav {
+        gap: 10px;
+      }
+
+      .logo {
+        font-size: 21px;
+      }
+
+      .home {
+        font-size: 14px;
+      }
+
       .hero h1 {
         font-size: 29px;
       }
@@ -232,6 +263,10 @@
       .upload-area {
         padding: 30px 15px;
       }
+
+      .choose-btn {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -239,19 +274,41 @@
 <body>
 
 <header>
+
   <div class="nav">
-    <a class="logo" href="index.html">ToolNest</a>
-    <a class="home" href="index.html">← All Tools</a>
+
+    <a
+      class="logo"
+      href="https://mureedabbas1.github.io/ToolRivo/"
+    >
+      ToolRivo
+    </a>
+
+    <a
+      class="home"
+      href="https://mureedabbas1.github.io/ToolRivo/"
+    >
+      ← All Tools
+    </a>
+
   </div>
+
 </header>
 
+
 <section class="hero">
-  <h1>PDF to Word Converter</h1>
+
+  <h1>
+    PDF to Word Converter
+  </h1>
+
   <p>
     Convert your PDF file into an editable Word document quickly and easily.
-    Free online PDF to Word converter by ToolNest.
+    Free online PDF to Word converter by ToolRivo.
   </p>
+
 </section>
+
 
 <main class="container">
 
@@ -259,11 +316,18 @@
 
     <div class="upload-area">
 
-      <h2>Upload Your PDF</h2>
+      <h2>
+        Upload Your PDF
+      </h2>
 
-      <p>Select a PDF file from your device.</p>
+      <p>
+        Select a PDF file from your device.
+      </p>
 
-      <label for="pdfFile" class="choose-btn">
+      <label
+        for="pdfFile"
+        class="choose-btn"
+      >
         Choose PDF File
       </label>
 
@@ -279,6 +343,7 @@
 
     </div>
 
+
     <button
       id="convertBtn"
       class="convert-btn"
@@ -287,36 +352,102 @@
       Convert to Word
     </button>
 
+
     <div id="status"></div>
 
     <div id="downloadArea"></div>
 
   </div>
 
+
   <div class="info">
 
-    <h2>How to Convert PDF to Word?</h2>
+    <h2>
+      How to Convert PDF to Word?
+    </h2>
 
     <p>
-      ToolNest's PDF to Word converter lets you extract text from a PDF
+      ToolRivo's PDF to Word converter lets you extract text from a PDF
       and save it as an editable Word document.
     </p>
 
     <ul>
-      <li>Click "Choose PDF File".</li>
-      <li>Select your PDF document.</li>
-      <li>Click "Convert to Word".</li>
-      <li>Wait for the conversion to finish.</li>
-      <li>Download your Word document.</li>
+
+      <li>
+        Click "Choose PDF File".
+      </li>
+
+      <li>
+        Select your PDF document.
+      </li>
+
+      <li>
+        Click "Convert to Word".
+      </li>
+
+      <li>
+        Wait for the conversion to finish.
+      </li>
+
+      <li>
+        Download your Word document.
+      </li>
+
     </ul>
+
+    <h2 style="margin-top: 25px;">
+      Important Note
+    </h2>
+
+    <p>
+      This converter extracts selectable text from PDF files.
+      Scanned or image-based PDFs may not convert correctly because
+      they require OCR technology.
+    </p>
 
   </div>
 
 </main>
 
+
 <footer>
-  © 2026 ToolNest. Free Online Tools.
+
+  <p>
+    <strong>ToolRivo</strong> — Free Online Tools
+  </p>
+
+  <p>
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/privacy-policy.html">
+      Privacy Policy
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/terms.html">
+      Terms & Conditions
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/about.html">
+      About
+    </a>
+
+    •
+
+    <a href="https://mureedabbas1.github.io/ToolRivo/contact.html">
+      Contact
+    </a>
+
+  </p>
+
+  <p>
+    © 2026 ToolRivo. All rights reserved.
+  </p>
+
 </footer>
+
 
 <!-- PDF.js -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
@@ -324,167 +455,274 @@
 <!-- JSZip -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
 
+
 <script>
 
   pdfjsLib.GlobalWorkerOptions.workerSrc =
     "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
 
-  const pdfFile = document.getElementById("pdfFile");
-  const fileName = document.getElementById("fileName");
-  const convertBtn = document.getElementById("convertBtn");
-  const status = document.getElementById("status");
-  const downloadArea = document.getElementById("downloadArea");
+
+  const pdfFile =
+    document.getElementById("pdfFile");
+
+  const fileName =
+    document.getElementById("fileName");
+
+  const convertBtn =
+    document.getElementById("convertBtn");
+
+  const status =
+    document.getElementById("status");
+
+  const downloadArea =
+    document.getElementById("downloadArea");
+
 
   let selectedFile = null;
+
 
   pdfFile.addEventListener("change", function () {
 
     selectedFile = this.files[0];
 
-    if (!selectedFile) {
-      fileName.textContent = "No file selected";
-      convertBtn.disabled = true;
-      return;
-    }
-
-    if (selectedFile.type !== "application/pdf") {
-      fileName.textContent = "Please select a PDF file.";
-      convertBtn.disabled = true;
-      return;
-    }
-
-    fileName.textContent = selectedFile.name;
-    convertBtn.disabled = false;
-
-    status.textContent = "";
     downloadArea.innerHTML = "";
+    status.textContent = "";
+
+
+    if (!selectedFile) {
+
+      fileName.textContent =
+        "No file selected";
+
+      convertBtn.disabled = true;
+
+      return;
+
+    }
+
+
+    if (
+      selectedFile.type !== "application/pdf" &&
+      !selectedFile.name.toLowerCase().endsWith(".pdf")
+    ) {
+
+      fileName.textContent =
+        "Please select a PDF file.";
+
+      convertBtn.disabled = true;
+
+      selectedFile = null;
+
+      return;
+
+    }
+
+
+    fileName.textContent =
+      selectedFile.name;
+
+    convertBtn.disabled = false;
 
   });
 
 
-  convertBtn.addEventListener("click", async function () {
+  convertBtn.addEventListener(
+    "click",
+    async function () {
 
-    if (!selectedFile) {
-      return;
-    }
-
-    convertBtn.disabled = true;
-
-    status.textContent = "Reading PDF... Please wait.";
-
-    downloadArea.innerHTML = "";
-
-    try {
-
-      const arrayBuffer = await selectedFile.arrayBuffer();
-
-      const pdf = await pdfjsLib.getDocument({
-        data: arrayBuffer
-      }).promise;
-
-      let fullText = "";
-
-      for (let pageNumber = 1; pageNumber <= pdf.numPages; pageNumber++) {
-
-        status.textContent =
-          "Processing page " +
-          pageNumber +
-          " of " +
-          pdf.numPages +
-          "...";
-
-        const page = await pdf.getPage(pageNumber);
-
-        const textContent = await page.getTextContent();
-
-        let pageText = "";
-
-        textContent.items.forEach(function(item) {
-          pageText += item.str + " ";
-        });
-
-        fullText +=
-          "Page " +
-          pageNumber +
-          "\n\n" +
-          pageText.trim() +
-          "\n\n";
-      }
-
-      if (!fullText.trim()) {
-
-        status.textContent =
-          "No selectable text was found in this PDF. Scanned/image PDFs may not work.";
-
-        convertBtn.disabled = false;
+      if (!selectedFile) {
         return;
       }
 
-      status.textContent = "Creating Word document...";
 
-      const zip = new JSZip();
-
-      const documentXml = createDocumentXML(fullText);
-
-      zip.file(
-        "[Content_Types].xml",
-        contentTypesXML()
-      );
-
-      zip.folder("_rels").file(
-        ".rels",
-        rootRelsXML()
-      );
-
-      zip.folder("word").file(
-        "document.xml",
-        documentXml
-      );
-
-      zip.folder("word").folder("_rels").file(
-        "document.xml.rels",
-        documentRelsXML()
-      );
-
-      zip.folder("word").file(
-        "styles.xml",
-        stylesXML()
-      );
-
-      const blob = await zip.generateAsync({
-        type: "blob",
-        mimeType:
-          "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-      });
-
-      const url = URL.createObjectURL(blob);
-
-      const outputName =
-        selectedFile.name.replace(/\.pdf$/i, "") +
-        ".docx";
-
-      downloadArea.innerHTML =
-        '<a class="download-btn" href="' +
-        url +
-        '" download="' +
-        outputName +
-        '">Download Word File</a>';
+      convertBtn.disabled = true;
 
       status.textContent =
-        "Conversion completed successfully.";
+        "Reading PDF... Please wait.";
 
-    } catch (error) {
+      downloadArea.innerHTML = "";
 
-      console.error(error);
 
-      status.textContent =
-        "Something went wrong while converting the PDF.";
+      try {
+
+        const arrayBuffer =
+          await selectedFile.arrayBuffer();
+
+
+        const pdf =
+          await pdfjsLib.getDocument({
+            data: arrayBuffer
+          }).promise;
+
+
+        let fullText = "";
+
+
+        for (
+          let pageNumber = 1;
+          pageNumber <= pdf.numPages;
+          pageNumber++
+        ) {
+
+          status.textContent =
+            "Processing page " +
+            pageNumber +
+            " of " +
+            pdf.numPages +
+            "...";
+
+
+          const page =
+            await pdf.getPage(pageNumber);
+
+
+          const textContent =
+            await page.getTextContent();
+
+
+          let pageText = "";
+
+
+          textContent.items.forEach(
+            function(item) {
+
+              pageText +=
+                item.str + " ";
+
+            }
+          );
+
+
+          fullText +=
+            "Page " +
+            pageNumber +
+            "\n\n" +
+            pageText.trim() +
+            "\n\n";
+
+        }
+
+
+        if (!fullText.trim()) {
+
+          status.textContent =
+            "No selectable text was found in this PDF. Scanned or image-based PDFs may not work.";
+
+          convertBtn.disabled = false;
+
+          return;
+
+        }
+
+
+        status.textContent =
+          "Creating Word document...";
+
+
+        const zip =
+          new JSZip();
+
+
+        const documentXml =
+          createDocumentXML(fullText);
+
+
+        zip.file(
+          "[Content_Types].xml",
+          contentTypesXML()
+        );
+
+
+        zip.folder("_rels").file(
+          ".rels",
+          rootRelsXML()
+        );
+
+
+        zip.folder("word").file(
+          "document.xml",
+          documentXml
+        );
+
+
+        zip.folder("word").folder("_rels").file(
+          "document.xml.rels",
+          documentRelsXML()
+        );
+
+
+        zip.folder("word").file(
+          "styles.xml",
+          stylesXML()
+        );
+
+
+        const blob =
+          await zip.generateAsync({
+
+            type: "blob",
+
+            mimeType:
+              "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+
+          });
+
+
+        const url =
+          URL.createObjectURL(blob);
+
+
+        const outputName =
+          selectedFile.name.replace(
+            /\.pdf$/i,
+            ""
+          ) +
+          ".docx";
+
+
+        const downloadLink =
+          document.createElement("a");
+
+        downloadLink.className =
+          "download-btn";
+
+        downloadLink.href =
+          url;
+
+        downloadLink.download =
+          outputName;
+
+        downloadLink.textContent =
+          "Download Word File";
+
+
+        downloadArea.innerHTML = "";
+
+        downloadArea.appendChild(
+          downloadLink
+        );
+
+
+        status.textContent =
+          "Conversion completed successfully.";
+
+      }
+
+
+      catch (error) {
+
+        console.error(error);
+
+        status.textContent =
+          "Something went wrong while converting the PDF. Please try another file.";
+
+      }
+
+
+      convertBtn.disabled = false;
 
     }
-
-    convertBtn.disabled = false;
-
-  });
+  );
 
 
   function escapeXML(text) {
@@ -501,26 +739,30 @@
 
   function createDocumentXML(text) {
 
-    const paragraphs = text
-      .split("\n")
-      .map(function(line) {
+    const paragraphs =
+      text
+        .split("\n")
+        .map(function(line) {
 
-        if (!line.trim()) {
-          return "<w:p/>";
-        }
+          if (!line.trim()) {
+            return "<w:p/>";
+          }
 
-        return `
-          <w:p>
-            <w:r>
-              <w:t xml:space="preserve">${escapeXML(line)}</w:t>
-            </w:r>
-          </w:p>
-        `;
 
-      })
-      .join("");
+          return `
+            <w:p>
+              <w:r>
+                <w:t xml:space="preserve">${escapeXML(line)}</w:t>
+              </w:r>
+            </w:p>
+          `;
+
+        })
+        .join("");
+
 
     return `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+
 <w:document
 xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
 
@@ -529,12 +771,17 @@ xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
 ${paragraphs}
 
 <w:sectPr>
-<w:pgSz w:w="12240" w:h="15840"/>
+
+<w:pgSz
+w:w="12240"
+w:h="15840"/>
+
 <w:pgMar
 w:top="1440"
 w:right="1440"
 w:bottom="1440"
 w:left="1440"/>
+
 </w:sectPr>
 
 </w:body>
@@ -550,16 +797,20 @@ w:left="1440"/>
 
 <Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types">
 
-<Default Extension="rels"
+<Default
+Extension="rels"
 ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
 
-<Default Extension="xml"
+<Default
+Extension="xml"
 ContentType="application/xml"/>
 
-<Override PartName="/word/document.xml"
+<Override
+PartName="/word/document.xml"
 ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
 
-<Override PartName="/word/styles.xml"
+<Override
+PartName="/word/styles.xml"
 ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/>
 
 </Types>`;
@@ -624,4 +875,3 @@ w:styleId="Normal">
 
 </body>
 </html>
-```
