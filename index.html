@@ -961,7 +961,148 @@ background:linear-gradient(135deg,#7c6cff,#3ea6ff) padding-box,linear-gradient(1
 [data-theme="light"] .footer-logo,
 [data-theme="light"] .footer-links a{color:#6659df}
 </style>
-</head>
+<style>
+/* ===== ToolRivo Demo Look ===== */
+
+.card{position:relative;border-top:3px solid var(--cat,#7c6cff)}
+.card:hover{border-top-color:var(--cat,#7c6cff)}
+.icon{box-shadow:0 0 22px color-mix(in srgb,var(--cat,#7c6cff) 45%,transparent)}
+.category-title{border-left-color:var(--cat,#7c6cff)}
+.category-title::after{background:var(--cat,#7c6cff)}
+
+.card button,.card .download{
+border-radius:10px;
+padding:10px 18px;
+font-weight:600;
+}
+button:active,.download:active{transform:scale(.97)}
+
+.spin{
+width:14px;height:14px;
+border:2px solid rgba(255,255,255,.35);
+border-top-color:#fff;
+border-radius:50%;
+display:inline-block;
+animation:sp .7s linear infinite;
+vertical-align:-2px;
+margin-right:7px;
+}
+@keyframes sp{to{transform:rotate(360deg)}}
+
+/* quick banner buttons */
+.quick-buttons a{border-radius:999px}
+.quick-buttons a::after{
+content:"";
+width:7px;height:7px;
+border-radius:50%;
+background:var(--cat,#7c6cff);
+box-shadow:0 0 8px var(--cat,#7c6cff);
+margin-left:9px;
+}
+
+/* category tabs */
+.cat-tabs{
+display:flex;flex-wrap:wrap;justify-content:center;
+gap:8px;
+width:min(1000px,92%);
+margin:0 auto 24px;
+}
+.tab{
+background:var(--card);
+color:var(--muted);
+border:1px solid var(--line);
+border-radius:999px;
+padding:8px 16px;
+font-size:13px;
+font-weight:600;
+box-shadow:none;
+display:inline-flex;
+align-items:center;
+}
+.tab:hover{
+color:var(--text);
+border-color:var(--cat,#7c6cff);
+transform:translateY(-2px);
+box-shadow:none;
+}
+.tab.on{
+background:linear-gradient(135deg,#7c6cff,#3ea6ff);
+color:#fff;
+border-color:transparent;
+box-shadow:0 6px 18px rgba(124,108,255,.4);
+}
+.tab .dot{
+width:8px;height:8px;
+border-radius:50%;
+background:var(--cat,#fff);
+display:inline-block;
+margin-right:7px;
+}
+.tab-hide{display:none!important}
+
+/* popular / new tags */
+.pill{
+position:absolute;
+top:18px;right:18px;
+font-size:11px;
+font-weight:700;
+padding:3px 10px;
+border-radius:999px;
+background:rgba(251,146,60,.18);
+color:#fdba74;
+}
+.pill.new{background:rgba(52,211,153,.18);color:#34d399}
+
+/* upload box */
+.upload.drag{
+border-color:#7c6cff;
+background:rgba(124,108,255,.15);
+}
+.upload.has-file{
+border-color:#34d399;
+background:rgba(52,211,153,.08);
+}
+.file-info{margin-top:8px;font-size:12px;color:#34d399;word-break:break-all}
+.thumb{display:block;margin:8px auto 0;max-height:80px;max-width:100%;border-radius:8px}
+
+/* toast */
+.toast{
+position:fixed;
+left:50%;bottom:26px;
+transform:translateX(-50%) translateY(20px);
+background:#34d399;
+color:#04342C;
+padding:10px 20px;
+border-radius:999px;
+font-weight:700;
+font-size:14px;
+opacity:0;
+transition:.3s;
+z-index:400;
+pointer-events:none;
+}
+.toast.show{opacity:1;transform:translateX(-50%)}
+
+/* cursor glow */
+.cursor-glow{
+position:fixed;
+left:0;top:0;
+width:340px;height:340px;
+border-radius:50%;
+background:radial-gradient(circle,rgba(124,108,255,.28),transparent 70%);
+pointer-events:none;
+z-index:-1;
+transform:translate(-50%,-50%);
+opacity:0;
+transition:opacity .3s;
+}
+.cursor-glow.on{opacity:1}
+
+@media(max-width:600px){
+.cat-tabs{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:6px}
+.tab{flex:0 0 auto}
+}
+</style></head>
 
 <body>
 
@@ -4017,6 +4158,211 @@ f.innerHTML=
 '<a href="terms.html">Terms &amp; Conditions</a></div></div>'+
 '<p class="note">© 2026 ToolRivo. All rights reserved.</p>';
 }
+
+})();
+</script><script>
+(function(){
+
+var $=function(s,p){return (p||document).querySelector(s)};
+var $$=function(s,p){return Array.prototype.slice.call((p||document).querySelectorAll(s))};
+
+/* Toast */
+var toastEl=document.createElement('div');
+toastEl.className='toast';
+document.body.appendChild(toastEl);
+var tt;
+function toast(m){
+toastEl.textContent=m;
+toastEl.classList.add('show');
+clearTimeout(tt);
+tt=setTimeout(function(){toastEl.classList.remove('show')},1600);
+}
+
+/* Cursor glow (desktop only) */
+if(window.matchMedia&&matchMedia('(hover:hover)').matches){
+var g=document.createElement('div');
+g.className='cursor-glow';
+document.body.appendChild(g);
+window.addEventListener('mousemove',function(e){
+g.style.left=e.clientX+'px';
+g.style.top=e.clientY+'px';
+g.classList.add('on');
+});
+document.addEventListener('mouseleave',function(){g.classList.remove('on')});
+}
+
+/* Category colors */
+var cols=['#7c6cff','#3ea6ff','#2dd4bf','#34d399','#fb923c','#fbbf24','#f472b6','#f87171'];
+$$('section.tools').forEach(function(sec,i){
+var c=cols[i%cols.length];
+sec.style.setProperty('--cat',c);
+var h=sec.previousElementSibling;
+if(h&&h.classList.contains('category-title')){
+h.style.setProperty('--cat',c);
+}
+});
+
+/* Banner buttons color dot */
+$$('.quick-buttons a').forEach(function(a){
+var id=(a.getAttribute('href')||'').slice(1);
+var card=document.getElementById(id);
+var sec=card&&card.closest('section.tools');
+if(sec){
+a.style.setProperty('--cat',sec.style.getPropertyValue('--cat'));
+}
+});
+
+/* Popular / New tags */
+function tag(id,text,cls){
+var card=document.getElementById(id);
+if(!card)return;
+var s=document.createElement('span');
+s.className='pill '+cls;
+s.textContent=text;
+card.appendChild(s);
+}
+['image-compressor','qr-generator','pdf-to-jpg','word-counter','json'].forEach(function(id){
+tag(id,'🔥 Popular','');
+});
+['youtube-thumbnail','timestamp'].forEach(function(id){
+tag(id,'✨ New','new');
+});
+
+/* Category tabs */
+var count=$('.tool-count');
+var titles=$$('.category-title');
+if(count&&titles.length){
+var bar=document.createElement('div');
+bar.className='cat-tabs';
+
+var all=document.createElement('button');
+all.className='tab on';
+all.dataset.i='all';
+all.textContent='All';
+bar.appendChild(all);
+
+titles.forEach(function(h,i){
+var b=document.createElement('button');
+b.className='tab';
+b.dataset.i=i;
+b.style.setProperty('--cat',h.style.getPropertyValue('--cat'));
+b.innerHTML='<i class="dot"></i>';
+b.appendChild(document.createTextNode(
+h.textContent.replace(/^[^A-Za-z]+/,'').replace(/\s*Tools\s*$/,'').trim()
+));
+bar.appendChild(b);
+});
+
+count.parentNode.insertBefore(bar,count);
+
+bar.addEventListener('click',function(e){
+var b=e.target.closest('.tab');
+if(!b)return;
+$$('.tab',bar).forEach(function(x){x.classList.remove('on')});
+b.classList.add('on');
+
+var s=$('#toolSearch');
+if(s&&s.value){
+s.value='';
+s.dispatchEvent(new Event('input'));
+}
+
+titles.forEach(function(h,i){
+var sec=h.nextElementSibling;
+var hide=b.dataset.i!=='all'&&+b.dataset.i!==i;
+h.classList.toggle('tab-hide',hide);
+if(sec)sec.classList.toggle('tab-hide',hide);
+});
+});
+}
+
+/* Counters */
+$$('.stats b').forEach(function(el){
+var m=/^(\d+)(%?)$/.exec(el.textContent.trim());
+if(!m)return;
+var to=+m[1],suf=m[2],t0=null;
+function step(t){
+if(!t0)t0=t;
+var p=Math.min((t-t0)/1000,1);
+el.textContent=Math.round(to*p)+suf;
+if(p<1)requestAnimationFrame(step);
+}
+requestAnimationFrame(step);
+});
+
+/* Upload: drag and drop + preview */
+function size(n){
+return n<1024?n+' B':n<1048576?(n/1024).toFixed(1)+' KB':(n/1048576).toFixed(1)+' MB';
+}
+
+$$('label.upload').forEach(function(up){
+var inp=$('input[type=file]',up);
+if(!inp)return;
+
+['dragenter','dragover'].forEach(function(n){
+up.addEventListener(n,function(e){
+e.preventDefault();
+up.classList.add('drag');
+});
+});
+
+['dragleave','drop'].forEach(function(n){
+up.addEventListener(n,function(){up.classList.remove('drag')});
+});
+
+up.addEventListener('drop',function(e){
+e.preventDefault();
+var f=e.dataTransfer&&e.dataTransfer.files;
+if(f&&f.length){
+try{inp.files=f}catch(x){}
+inp.dispatchEvent(new Event('change'));
+}
+});
+
+inp.addEventListener('change',function(){
+var f=inp.files[0];
+if(!f)return;
+$$('.file-info,.thumb',up).forEach(function(x){x.remove()});
+var d=document.createElement('div');
+d.className='file-info';
+d.textContent='✓ '+f.name+' ('+size(f.size)+')';
+up.appendChild(d);
+if(/^image\//.test(f.type)){
+var im=document.createElement('img');
+im.className='thumb';
+im.alt='Preview';
+im.src=URL.createObjectURL(f);
+up.appendChild(im);
+}
+up.classList.add('has-file');
+});
+});
+
+window.addEventListener('dragover',function(e){e.preventDefault()});
+window.addEventListener('drop',function(e){e.preventDefault()});
+
+/* Buttons: copy toast + loading spinner */
+document.addEventListener('click',function(e){
+var b=e.target.closest('button');
+if(!b)return;
+var t=b.textContent.trim();
+
+if(/^copy/i.test(t)){
+toast('Copied!');
+return;
+}
+
+if(!b.closest('.card')||b.classList.contains('secondary')||b.dataset.busy)return;
+
+b.dataset.busy='1';
+var old=b.innerHTML;
+b.innerHTML='<span class="spin"></span>';
+b.appendChild(document.createTextNode(t));
+setTimeout(function(){
+b.innerHTML=old;
+delete b.dataset.busy;
+},600);
+});
 
 })();
 </script>
