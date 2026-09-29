@@ -856,7 +856,111 @@ color:var(--muted);
 .footer-links a{color:#a79bff}
 .note{color:#6b7299}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ===== ToolRivo Pro Extras ===== */
+body,input,textarea,select,button{font-family:'Poppins','Segoe UI',system-ui,Arial,sans-serif}
 
+/* scrollbar */
+html{scrollbar-color:#7c6cff #0b0d1a}
+::-webkit-scrollbar{width:11px}
+::-webkit-scrollbar-track{background:#0b0d1a}
+::-webkit-scrollbar-thumb{background:linear-gradient(#7c6cff,#3ea6ff);border-radius:10px}
+
+/* nav */
+nav.scrolled{box-shadow:0 8px 30px rgba(0,0,0,.35)}
+.theme-btn,.to-top{
+width:42px;height:42px;padding:0;border-radius:50%;
+background:rgba(124,108,255,.15);border:1px solid var(--line);
+color:var(--text);font-size:18px;cursor:pointer;box-shadow:none;
+}
+.theme-btn{margin-left:auto;margin-right:12px}
+
+/* hero */
+.hero{position:relative;isolation:isolate;overflow:hidden}
+.hero::before,.hero::after{content:"";position:absolute;z-index:-1;border-radius:50%;filter:blur(70px);opacity:.45}
+.hero::before{width:320px;height:320px;background:#7c6cff;top:-90px;left:8%}
+.hero::after{width:280px;height:280px;background:#3ea6ff;bottom:-80px;right:8%}
+.hero-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-top:26px}
+.hero-actions a{padding:14px 26px;border-radius:999px;font-weight:700;text-decoration:none;transition:.25s}
+.hero-actions a:hover{transform:translateY(-3px)}
+.btn-main{background:linear-gradient(135deg,#7c6cff,#3ea6ff);color:#fff;box-shadow:0 10px 26px rgba(124,108,255,.45)}
+.btn-ghost{border:1px solid var(--line);color:var(--text);background:rgba(255,255,255,.06)}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:26px}
+.stats span{padding:8px 16px;border-radius:999px;background:rgba(124,108,255,.10);border:1px solid var(--line);font-size:13px;color:var(--muted)}
+.stats b{color:var(--text)}
+
+/* search */
+.search-wrap{width:min(700px,92%);margin:0 auto 30px;position:relative}
+.search-wrap input{width:100%;padding:15px 18px 15px 50px;border-radius:999px;margin:0;font-size:15px}
+.search-icon{position:absolute;left:19px;top:14px;font-size:18px}
+.no-results{display:none;text-align:center;color:var(--muted);margin-top:16px}
+
+/* cards + titles */
+.card{background:rgba(20,24,48,.72);backdrop-filter:blur(12px);border-radius:28px}
+.icon{box-shadow:0 0 22px rgba(124,108,255,.35)}
+.category-title::after{content:"";display:block;width:60px;height:3px;margin-top:8px;border-radius:3px;background:linear-gradient(90deg,#7c6cff,#3ea6ff)}
+
+/* scroll animation */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s,transform .6s}
+.reveal.in{opacity:1;transform:none}
+
+/* faq accordion */
+.faq-section.acc .faq-item h3{cursor:pointer;display:flex;justify-content:space-between;gap:12px}
+.faq-section.acc .faq-item h3::after{content:"+";color:#a79bff;font-size:22px;line-height:1}
+.faq-section.acc .faq-item.open h3::after{content:"-"}
+.faq-section.acc .faq-item p{display:none}
+.faq-section.acc .faq-item.open p{display:block}
+
+/* footer */
+.f-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:30px;text-align:left;max-width:1100px;margin:0 auto 25px}
+.f-col h4{color:var(--text);margin-bottom:8px}
+.f-col a{display:block;color:var(--muted);text-decoration:none;margin:8px 0;transition:.2s}
+.f-col a:hover{color:#a79bff;transform:translateX(4px)}
+
+/* back to top */
+.to-top{position:fixed;right:20px;bottom:20px;z-index:200;opacity:0;pointer-events:none;transition:.3s;background:linear-gradient(135deg,#7c6cff,#3ea6ff);color:#fff;border:0}
+.to-top.show{opacity:1;pointer-events:auto}
+
+@media(max-width:700px){
+.f-grid{grid-template-columns:1fr;text-align:center}
+.hero{padding-top:45px}
+}
+
+/* ===== LIGHT MODE ===== */
+:root[data-theme="light"]{
+--bg:#f4f6ff;--card:#ffffff;--input:#f6f7ff;--line:#dfe2f3;--text:#1e2140;--muted:#666c8a;
+color-scheme:light;
+}
+[data-theme="light"] body{
+background:
+radial-gradient(circle at 15% 0%,rgba(124,108,255,.20),transparent 35%),
+radial-gradient(circle at 85% 8%,rgba(62,166,255,.18),transparent 30%),
+#f4f6ff;
+}
+[data-theme="light"] ::-webkit-scrollbar-track{background:#f4f6ff}
+[data-theme="light"] nav{background:rgba(255,255,255,.85)}
+[data-theme="light"] .badge{color:#5c50ce}
+[data-theme="light"] .quick-buttons a{
+color:#4b43b5;
+background:linear-gradient(#fff,#fff) padding-box,linear-gradient(135deg,rgba(124,108,255,.75),rgba(62,166,255,.75)) border-box;
+box-shadow:0 4px 12px rgba(90,80,200,.12);
+}
+[data-theme="light"] .quick-buttons a:hover{
+color:#fff;
+background:linear-gradient(135deg,#7c6cff,#3ea6ff) padding-box,linear-gradient(135deg,#a79bff,#5cc0ff) border-box;
+}
+[data-theme="light"] .card{background:rgba(255,255,255,.88);box-shadow:0 10px 30px rgba(60,60,130,.10)}
+[data-theme="light"] .upload{background:#fbfaff;border-color:#c9c6eb}
+[data-theme="light"] .result{color:#4a4f6e}
+[data-theme="light"] .secondary{color:#5148ad}
+[data-theme="light"] .info-section h3{color:#5b4fd6}
+[data-theme="light"] footer{background:#fff}
+[data-theme="light"] .footer-logo,
+[data-theme="light"] .footer-links a{color:#6659df}
+</style>
 </head>
 
 <body>
@@ -3784,6 +3888,137 @@ return pdf;
 }
 
 </script>
+<script>
+(function(){
 
+var $=function(s,p){return (p||document).querySelector(s)};
+var $$=function(s,p){return Array.prototype.slice.call((p||document).querySelectorAll(s))};
+var root=document.documentElement;
+var nav=$('nav');
+
+/* Hero buttons + stats */
+var hero=$('.hero');
+if(hero){
+hero.insertAdjacentHTML('beforeend',
+'<div class="hero-actions">'+
+'<a class="btn-main" href="#tools">🚀 Explore Tools</a>'+
+'<a class="btn-ghost" href="#image-compressor">🖼️ Image Tools</a></div>'+
+'<div class="stats"><span><b>25</b> Free Tools</span><span><b>100%</b> Free</span><span><b>No</b> Signup</span><span><b>Mobile</b> Friendly</span></div>');
+}
+
+/* Search box */
+var count=$('.tool-count');
+if(count){
+var wrap=document.createElement('div');
+wrap.className='search-wrap';
+wrap.innerHTML='<span class="search-icon">🔍</span>'+
+'<input type="text" id="toolSearch" placeholder="Search tools... (QR, image, JSON)" aria-label="Search tools">'+
+'<p class="no-results" id="noResults">No tool found. Try another word.</p>';
+count.parentNode.insertBefore(wrap,count);
+
+$('#toolSearch').addEventListener('input',function(){
+var q=this.value.toLowerCase().trim(),total=0;
+$$('section.tools').forEach(function(sec){
+var shown=0;
+$$('.card',sec).forEach(function(c){
+var p=c.querySelector(':scope > p');
+var t=($('h3',c).textContent+' '+(p?p.textContent:'')).toLowerCase();
+var ok=!q||t.indexOf(q)>-1;
+c.style.display=ok?'':'none';
+if(ok)shown++;
+});
+sec.style.display=shown?'':'none';
+var h=sec.previousElementSibling;
+if(h&&h.classList.contains('category-title'))h.style.display=shown?'':'none';
+total+=shown;
+});
+$('#noResults').style.display=total?'none':'block';
+});
+}
+
+/* Scroll animation */
+if('IntersectionObserver' in window){
+var io=new IntersectionObserver(function(entries){
+entries.forEach(function(e){
+if(e.isIntersecting){
+var el=e.target;
+el.classList.add('in');
+io.unobserve(el);
+setTimeout(function(){el.classList.remove('reveal','in')},800);
+}
+});
+},{threshold:.08});
+$$('.card,.category-title').forEach(function(el){
+el.classList.add('reveal');
+io.observe(el);
+});
+}
+
+/* Dark / Light toggle */
+var themeBtn=document.createElement('button');
+themeBtn.className='theme-btn';
+themeBtn.setAttribute('aria-label','Toggle theme');
+nav.insertBefore(themeBtn,$('nav > a:last-child'));
+
+function setTheme(t){
+if(t==='light'){root.setAttribute('data-theme','light')}
+else{root.removeAttribute('data-theme')}
+themeBtn.textContent=(t==='light')?'🌙':'☀️';
+try{localStorage.setItem('tr-theme',t)}catch(e){}
+}
+var saved='dark';
+try{saved=localStorage.getItem('tr-theme')||'dark'}catch(e){}
+setTheme(saved);
+themeBtn.onclick=function(){
+setTheme(root.getAttribute('data-theme')==='light'?'dark':'light');
+};
+
+/* Back to top + sticky nav shadow */
+var toTop=document.createElement('button');
+toTop.className='to-top';
+toTop.textContent='↑';
+toTop.setAttribute('aria-label','Back to top');
+document.body.appendChild(toTop);
+toTop.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+window.addEventListener('scroll',function(){
+toTop.classList.toggle('show',window.scrollY>400);
+nav.classList.toggle('scrolled',window.scrollY>10);
+});
+
+/* FAQ accordion */
+var faq=$('.faq-section');
+if(faq){
+faq.classList.add('acc');
+$$('.faq-item',faq).forEach(function(it,i){
+if(i===0)it.classList.add('open');
+$('h3',it).addEventListener('click',function(){
+it.classList.toggle('open');
+});
+});
+}
+
+/* Footer 3 columns */
+var f=$('footer');
+if(f){
+f.innerHTML=
+'<div class="f-grid">'+
+'<div><div class="footer-logo">ToolRivo ✦</div>'+
+'<p>Free online tools for images, text, QR codes, calculators and developers. Simple, fast and free.</p></div>'+
+'<div class="f-col"><h4>Popular Tools</h4>'+
+'<a href="#image-compressor">Image Compressor</a>'+
+'<a href="#qr-generator">QR Generator</a>'+
+'<a href="#json">JSON Formatter</a>'+
+'<a href="#password">Password Generator</a>'+
+'<a href="#word-counter">Word Counter</a></div>'+
+'<div class="f-col"><h4>Company</h4>'+
+'<a href="about.html">About</a>'+
+'<a href="contact.html">Contact</a>'+
+'<a href="privacy-policy.html">Privacy Policy</a>'+
+'<a href="terms.html">Terms &amp; Conditions</a></div></div>'+
+'<p class="note">© 2026 ToolRivo. All rights reserved.</p>';
+}
+
+})();
+</script>
 </body>
 </html>
