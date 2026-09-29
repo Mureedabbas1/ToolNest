@@ -582,6 +582,83 @@ padding:7px 9px;
 
 }
 
+</style><style>
+/* ===== Premium Quick Access Buttons ===== */
+.quick-buttons{
+gap:12px;
+}
+
+.quick-buttons a{
+position:relative;
+overflow:hidden;
+display:inline-flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:12px 18px;
+border-radius:14px;
+font-size:14px;
+font-weight:700;
+letter-spacing:.2px;
+color:#e6e8ff;
+border:1px solid transparent;
+background:
+linear-gradient(#171b38,#171b38) padding-box,
+linear-gradient(135deg,rgba(124,108,255,.75),rgba(62,166,255,.75)) border-box;
+box-shadow:0 4px 14px rgba(0,0,0,.35);
+transition:transform .25s,box-shadow .25s,color .25s;
+}
+
+/* shine effect */
+.quick-buttons a::before{
+content:"";
+position:absolute;
+top:0;
+left:-75%;
+width:50%;
+height:100%;
+background:linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
+transform:skewX(-20deg);
+transition:left .6s;
+}
+
+.quick-buttons a:hover{
+color:#fff;
+transform:translateY(-3px) scale(1.04);
+background:
+linear-gradient(135deg,#7c6cff,#3ea6ff) padding-box,
+linear-gradient(135deg,#a79bff,#5cc0ff) border-box;
+box-shadow:0 10px 26px rgba(124,108,255,.5);
+}
+
+.quick-buttons a:hover::before{
+left:130%;
+}
+
+.quick-buttons a:active{
+transform:scale(.97);
+}
+
+.quick-buttons a:focus-visible{
+outline:2px solid #a79bff;
+outline-offset:3px;
+}
+
+@media(max-width:600px){
+
+.quick-buttons{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:9px;
+}
+
+.quick-buttons a{
+font-size:12.5px;
+padding:11px 8px;
+border-radius:12px;
+}
+
+}
 </style>
 <style>
 /* ===== ToolRivo Pro Dark Theme ===== */
@@ -779,6 +856,7 @@ color:var(--muted);
 .footer-links a{color:#a79bff}
 .note{color:#6b7299}
 </style>
+
 </head>
 
 <body>
