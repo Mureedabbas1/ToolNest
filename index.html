@@ -1201,6 +1201,32 @@ button:hover,.download:hover,.btn-main:hover{
 @media(prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}
 }
+</style><style id="toolrivo-3d-premium">
+/* ===== TOOLRIVO VISIBLE 3D REDESIGN ===== */
+html{scroll-behavior:smooth}
+body{background:radial-gradient(circle at 50% -10%,rgba(124,108,255,.22),transparent 34%),#070914!important;perspective:1800px}
+body:after{content:"";position:fixed;inset:0;pointer-events:none;z-index:-3;background:linear-gradient(rgba(124,108,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(124,108,255,.035) 1px,transparent 1px);background-size:46px 46px;mask-image:linear-gradient(to bottom,black,transparent 80%);transform:perspective(650px) rotateX(58deg) translateY(35%);transform-origin:center bottom;opacity:.7}
+.hero{position:relative;isolation:isolate;transform-style:preserve-3d;min-height:520px}
+.hero:before{content:"";position:absolute;width:430px;height:430px;right:4%;top:0;border-radius:50%;background:radial-gradient(circle at 35% 30%,rgba(255,255,255,.34),rgba(124,108,255,.35) 8%,rgba(62,166,255,.14) 35%,transparent 68%);filter:blur(3px);animation:heroOrb 7s ease-in-out infinite;z-index:-1}
+.hero:after{content:"";position:absolute;width:260px;height:260px;right:16%;top:85px;border:1px solid rgba(170,160,255,.3);border-radius:50%;box-shadow:0 0 60px rgba(124,108,255,.22),inset 0 0 40px rgba(62,166,255,.1);transform:translateZ(80px) rotateX(65deg) rotateZ(-15deg);animation:ring3d 10s linear infinite;z-index:-1}
+@keyframes heroOrb{0%,100%{transform:translate3d(0,0,40px) scale(1)}50%{transform:translate3d(25px,-22px,90px) scale(1.08)}}
+@keyframes ring3d{to{transform:translateZ(80px) rotateX(65deg) rotateZ(345deg)}}
+.hero h1{font-size:clamp(3rem,7vw,6.4rem)!important;letter-spacing:-.055em;text-shadow:0 3px 0 rgba(0,0,0,.35),0 18px 50px rgba(124,108,255,.3);transform:translateZ(100px)}
+.hero p{transform:translateZ(65px)}
+.hero .btn,.hero button,.hero-actions{transform:translateZ(85px)}
+.stats{transform:translateZ(55px)}
+.card{background:linear-gradient(145deg,rgba(30,35,75,.9),rgba(9,12,28,.86))!important;border:1px solid rgba(164,153,255,.3)!important;border-radius:26px!important;box-shadow:0 35px 55px rgba(0,0,0,.45),0 12px 0 rgba(8,10,24,.8),0 0 45px rgba(124,108,255,.08),inset 0 1px rgba(255,255,255,.11)!important;transform-style:preserve-3d}
+.card:before{background:linear-gradient(125deg,rgba(255,255,255,.13),transparent 24%,transparent 72%,rgba(62,166,255,.1))!important}
+.card .icon{transform:translateZ(55px) scale(1.03)!important;border-radius:18px;box-shadow:0 20px 35px rgba(124,108,255,.28),0 5px 0 rgba(55,45,130,.7),inset 0 1px rgba(255,255,255,.2)!important}
+.card h3{transform:translateZ(38px)!important}
+.card p{transform:translateZ(25px)!important}
+.card a,.card button{transform:translateZ(42px)!important}
+.quick-tools{transform:translateZ(30px);box-shadow:0 30px 70px rgba(0,0,0,.38),inset 0 1px rgba(255,255,255,.07)}
+.quick-tools a,.quick-tools button{transform:translateZ(28px);box-shadow:0 12px 25px rgba(0,0,0,.28),inset 0 1px rgba(255,255,255,.1)}
+.category-title{transform:translateZ(35px)}
+footer{position:relative;box-shadow:0 -30px 70px rgba(0,0,0,.25)}
+@media(max-width:800px){.hero{min-height:auto}.hero:before{right:-120px;top:40px;opacity:.55}.hero:after{right:-20px}.hero h1{transform:translateZ(30px);font-size:clamp(2.6rem,13vw,4.5rem)!important}.hero p,.hero .btn,.hero button,.hero-actions,.stats{transform:translateZ(20px)}}
+@media(prefers-reduced-motion:reduce){.hero:before,.hero:after{animation:none}}
 </style></head>
 
 <body>
@@ -4498,5 +4524,25 @@ delete b.dataset.busy;
   frame();
 })();
 </script>
-</body>
+<script id="toolrivo-3d-premium-js">
+(function(){
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches)return;
+const targets=document.querySelectorAll(".card,.quick-tools .quick-btn,.quick-tools a");
+targets.forEach(el=>{
+ el.addEventListener("pointermove",function(e){
+  if(innerWidth<801)return;
+  const r=el.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+  el.style.transform="perspective(1000px) rotateX("+(-y*9).toFixed(2)+"deg) rotateY("+(x*11).toFixed(2)+"deg) translateY(-9px) translateZ(8px)";
+  el.style.setProperty("--mx",(x*100)+"%");el.style.setProperty("--my",(y*100)+"%");
+ });
+ el.addEventListener("pointerleave",function(){el.style.transform=""});
+});
+const hero=document.querySelector(".hero");
+if(hero)hero.addEventListener("pointermove",e=>{
+ if(innerWidth<801)return;
+ const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+ hero.style.setProperty("--hx",(x*18).toFixed(2)+"px");hero.style.setProperty("--hy",(y*12).toFixed(2)+"px");
+});
+})();
+</script></body>
 </html>
