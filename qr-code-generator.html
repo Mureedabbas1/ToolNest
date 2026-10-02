@@ -158,7 +158,22 @@
       }
     }
   </style>
-</head>
+<style>
+/* ToolRivo shared 3D tool-page layer */
+body{perspective:1400px;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20%;z-index:-5;pointer-events:none;background:radial-gradient(circle at 15% 20%,rgba(124,108,255,.16),transparent 22%),radial-gradient(circle at 85% 18%,rgba(62,166,255,.12),transparent 20%),radial-gradient(circle at 55% 85%,rgba(164,91,255,.09),transparent 24%);animation:tr3dAmbient 12s ease-in-out infinite alternate}
+@keyframes tr3dAmbient{from{transform:translate3d(-1%,0,0)}to{transform:translate3d(1%,-1%,0) scale(1.05)}}
+.card,.tool-card,.tool-box,.container,.panel,.upload-box,.result-box,.content,.feature-card,.contact-card,.faq-item{transform-style:preserve-3d;transition:transform .18s ease-out,box-shadow .25s ease,border-color .25s ease}
+.card:hover,.tool-card:hover,.feature-card:hover,.contact-card:hover{border-color:rgba(167,155,255,.58)!important;box-shadow:0 28px 60px rgba(0,0,0,.4),0 15px 45px rgba(124,108,255,.15),inset 0 1px rgba(255,255,255,.08)}
+.card::after,.tool-card::after,.tool-box::after,.panel::after,.upload-box::after,.result-box::after{content:"";position:absolute;inset:0;pointer-events:none;border-radius:inherit;background:linear-gradient(120deg,rgba(255,255,255,.08),transparent 32%,transparent 70%,rgba(62,166,255,.05));opacity:.55}
+button,.btn,.download,.primary-btn{box-shadow:0 10px 25px rgba(124,108,255,.22),inset 0 1px rgba(255,255,255,.16);transition:transform .2s,box-shadow .2s}
+button:hover,.btn:hover,.download:hover,.primary-btn:hover{transform:translateY(-2px);box-shadow:0 15px 32px rgba(124,108,255,.35),inset 0 1px rgba(255,255,255,.2)}
+.tr3d-orb{position:fixed;width:150px;height:150px;border-radius:50%;pointer-events:none;z-index:-2;background:radial-gradient(circle at 30% 25%,rgba(255,255,255,.2),rgba(124,108,255,.17) 18%,rgba(62,166,255,.06) 48%,transparent 70%);filter:blur(2px);opacity:.5;animation:tr3dFloat 10s ease-in-out infinite}
+.tr3d-orb.o1{top:18%;left:-55px}.tr3d-orb.o2{top:62%;right:-65px;animation-delay:-4s;width:190px;height:190px}
+@keyframes tr3dFloat{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(24px,-32px,0)}}
+@media(max-width:700px){.card,.tool-card,.tool-box,.container,.panel,.upload-box,.result-box,.content,.feature-card,.contact-card,.faq-item{transform:none!important}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+</style></head>
 
 <body>
 
@@ -365,5 +380,12 @@
 
 </script>
 
-</body>
+<script>/* ToolRivo shared 3D tool-page interaction */
+(function(){
+const b=document.body;["o1","o2"].forEach(c=>{const o=document.createElement("div");o.className="tr3d-orb "+c;b.appendChild(o)});
+if(matchMedia("(prefers-reduced-motion: reduce)").matches||innerWidth<701)return;
+const els=[...document.querySelectorAll(".card,.tool-card,.tool-box,.feature-card,.contact-card,.panel,.upload-box,.result-box,.content")];
+els.forEach(el=>{el.addEventListener("pointermove",e=>{const r=el.getBoundingClientRect(),x=e.clientX/r.width-(r.left/r.width)-.5,y=e.clientY/r.height-(r.top/r.height)-.5;el.style.transform="perspective(950px) rotateX("+(-y*4).toFixed(2)+"deg) rotateY("+(x*5).toFixed(2)+"deg) translateY(-4px)"});el.addEventListener("pointerleave",()=>el.style.transform="")});
+})();
+</script></body>
 </html>
