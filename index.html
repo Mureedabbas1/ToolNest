@@ -1274,6 +1274,11 @@ body:after{background:linear-gradient(rgba(37,99,235,.045) 1px,transparent 1px),
 .quick-tools h2{color:#12213f!important}.quick-tools p{color:#667895!important}.quick-buttons a{color:#1749a2!important;background:linear-gradient(135deg,#fff,#eef5ff)!important;border-color:#cfe0fa!important;box-shadow:0 8px 18px rgba(37,99,235,.08)!important}
 .card{background:linear-gradient(145deg,rgba(255,255,255,.96),rgba(237,244,253,.94))!important;border-color:rgba(148,163,184,.3)!important;box-shadow:0 28px 55px rgba(55,85,130,.13),0 7px 0 rgba(190,204,222,.55),inset 0 1px #fff!important}.card h3{color:#172d52!important}.card p{color:#667895!important}
 .section-title h2,.category-title,.tool-count{color:#12213f!important}
+</style><style id="toolrivo-essential-v2">
+.tr-essential{width:min(1320px,94%)!important;margin:22px auto 30px!important;padding:22px 24px!important;border-radius:22px!important;background:rgba(255,255,255,.8)!important;border:1px solid rgba(148,163,184,.28)!important;backdrop-filter:blur(18px);box-shadow:0 20px 55px rgba(55,85,130,.1)!important}
+.tr-essential-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px}.tr-essential-head h2{margin:0 0 3px!important;font-size:23px!important;color:#10203d!important}.tr-essential-head p{margin:0!important;color:#6a7c99!important;font-size:13px!important}.tr-essential-head>a{color:#1559c7!important;text-decoration:none;font-weight:800;font-size:13px}
+.tr-essential-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:13px}.tr-essential-card{position:relative;min-height:142px;padding:17px 15px!important;border-radius:18px!important;text-decoration:none!important;background:linear-gradient(145deg,#fff,#edf4fd)!important;border:1px solid #d8e5f5!important;box-shadow:0 12px 25px rgba(37,99,235,.08),inset 0 1px #fff!important;transition:.25s;transform-style:preserve-3d}.tr-essential-card:hover{transform:translateY(-8px) rotateX(4deg);box-shadow:0 22px 35px rgba(37,99,235,.14),inset 0 1px #fff!important}.tr-essential-card span{display:flex;width:45px;height:45px;align-items:center;justify-content:center;border-radius:13px;background:linear-gradient(145deg,#eef5ff,#fff);border:1px solid #d2e2f8;box-shadow:0 8px 17px rgba(37,99,235,.13);font-size:22px;margin-bottom:12px;transform:translateZ(20px)}.tr-essential-card b{display:block;color:#172d52;font-size:14px}.tr-essential-card small{display:block;color:#71829d;font-size:11px;margin-top:3px}.tr-essential-card i{position:absolute;right:13px;bottom:13px;width:25px;height:25px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#e4efff;color:#2563eb;font-style:normal;font-weight:900}
+@media(max-width:1050px){.tr-essential-grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.tr-essential{width:calc(100% - 20px)}.tr-essential-head>a{display:none}.tr-essential-grid{grid-template-columns:repeat(2,1fr)}.tr-essential-card{min-height:125px}}@media(max-width:400px){.tr-essential-grid{grid-template-columns:1fr}}
 </style></head>
 
 <body>
@@ -1296,66 +1301,16 @@ body:after{background:linear-gradient(rgba(37,99,235,.045) 1px,transparent 1px),
      HERO
 ========================= -->
 
-<section class="quick-tools" aria-labelledby="quick-access-title" id="essential-tools">
-
-<h2 id="quick-access-title">⚡ Essential Tools</h2>
-
-<p>Quick access to the most useful tools you need.</p>
-
-<div class="quick-buttons">
-
-<a href="#image-compressor">🖼️ Image Compressor</a>
-
-<a href="#image-resizer">📐 Image Resizer</a>
-
-<a href="#jpg-png">🔄 JPG to PNG</a>
-
-<a href="#image-jpg">🎨 Image to JPG</a>
-
-<a href="#image-cropper">✂️ Image Cropper</a>
-
-<a href="#image-base64">🔢 Image to Base64</a>
-
-<a href="#base64-image">🖼️ Base64 to Image</a>
-
-<a href="#qr-generator">🔗 QR Generator</a>
-
-<a href="#qr-scanner">📷 QR Scanner</a>
-
-<a href="#pdf-to-jpg">📄 PDF to JPG</a>
-
-<a href="#text-to-pdf">📝 Text to PDF</a>
-
-<a href="#word-counter">✍️ Word Counter</a>
-
-<a href="#case-converter">🔤 Case Converter</a>
-
-<a href="#text-cleaner">🧹 Text Cleaner</a>
-
-<a href="#age-calculator">🎂 Age Calculator</a>
-
-<a href="#percentage">％ Percentage</a>
-
-<a href="#bmi">⚖️ BMI Calculator</a>
-
-<a href="#password">🔐 Password Generator</a>
-
-<a href="#json">🧾 JSON Formatter</a>
-
-<a href="#url-encoder">🔗 URL Encoder</a>
-
-<a href="#base64">🔤 Base64 Encoder</a>
-
-<a href="#random-number">🎲 Random Number</a>
-
-<a href="#timestamp">⏱️ Timestamp</a>
-
-<a href="#color-picker">🎨 Color Picker</a>
-
-<a href="#youtube-thumbnail">▶️ YouTube Thumbnail</a>
-
+<section class="quick-tools tr-essential" aria-labelledby="quick-access-title" id="essential-tools">
+<div class="tr-essential-head"><div><h2 id="quick-access-title">⚡ Essential Tools</h2><p>Quick access to the most popular tools you need.</p></div><a href="#tools">View All Tools →</a></div>
+<div class="tr-essential-grid">
+<a class="tr-essential-card" href="#image-compressor"><span>🖼️</span><b>Image Compressor</b><small>Reduce image size fast</small><i>→</i></a>
+<a class="tr-essential-card" href="#image-resizer"><span>📐</span><b>Image Resizer</b><small>Resize images instantly</small><i>→</i></a>
+<a class="tr-essential-card" href="#qr-generator"><span>🔗</span><b>QR Generator</b><small>Create QR codes easily</small><i>→</i></a>
+<a class="tr-essential-card" href="#pdf-to-jpg"><span>📄</span><b>PDF to JPG</b><small>Convert PDFs to images</small><i>→</i></a>
+<a class="tr-essential-card" href="#word-counter"><span>✍️</span><b>Word Counter</b><small>Count words & characters</small><i>→</i></a>
+<a class="tr-essential-card" href="#json"><span>&lt;/&gt;</span><b>JSON Formatter</b><small>Format JSON instantly</small><i>→</i></a>
 </div>
-
 </section>
 
 <section class="hero tr-hero">
